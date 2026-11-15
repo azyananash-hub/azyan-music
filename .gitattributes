@@ -1,0 +1,15 @@
+* text=auto
+
+# Keep shell scripts LF so CI can execute ./gradlew
+gradlew text eol=lf
+*.sh text eol=lf
+
+# Windows launchers
+*.bat text eol=crlf
+
+# Binary
+*.jar binary
+*.png binary
+*.apk binary
+*.keystore binary
+*.jks binary
