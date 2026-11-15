@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.azyan.music.ui.WelcomeScreen
+import com.azyan.music.ui.library.MusicHomeScreen
 import com.azyan.music.ui.theme.AzyanMusicTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,14 +22,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AzyanMusicApp() {
     AzyanMusicTheme {
-        WelcomeScreen()
+        MusicHomeScreen()
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun WelcomePreview() {
+private fun AppPreview() {
     AzyanMusicTheme(dynamicColor = false) {
-        WelcomeScreen()
+        MusicHomeScreen()
     }
 }
