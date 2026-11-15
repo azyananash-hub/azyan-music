@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Azyan Music</string>
+    <string name="welcome_title">Azyan Music</string>
+    <string name="welcome_subtitle">Pemutar musik lokal untuk Infinix Note 40 Pro</string>
+    <string name="welcome_status">Fase 0 selesai — build berhasil</string>
+</resources>
