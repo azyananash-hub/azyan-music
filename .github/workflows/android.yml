@@ -25,13 +25,24 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Ensure SDK packages are installed
+      # ubuntu-latest already ships with the Android SDK (ANDROID_HOME is set).
+      # Only install platform 35 if the runner image does not provide it yet.
+      - name: Ensure Android SDK platform 35 is available
         run: |
-          yes | sdkmanager --licenses > /dev/null 2>&1 || true
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          echo "ANDROID_HOME=${ANDROID_HOME:-<empty>}"
+          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-<empty>}"
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          if [ -d "$SDK_ROOT/platforms/android-35" ]; then
+            echo "android-35 already installed"
+          else
+            echo "Installing platforms;android-35 and build-tools;35.0.0"
+            SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+            ls "$SDK_ROOT/cmdline-tools" || true
+            yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
+            "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0"
+          fi
+          ls "$SDK_ROOT/platforms" || true
+          ls "$SDK_ROOT/build-tools" || true
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
