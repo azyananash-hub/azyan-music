@@ -7,7 +7,9 @@ import androidx.core.content.ContextCompat
 import androidx.media3.common.Player
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import com.azyan.music.data.LibraryStore
 import com.azyan.music.data.Song
+import com.azyan.music.data.toSong
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -38,9 +40,11 @@ object PlayerController {
 
     private const val TAG = "PlayerController"
     private const val TICK_MS = 500L
+    private const val PERSIST_INTERVAL_MS = 5_000L
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private var ticker: Job? = null
+    private var persistJob: Job? = null
 
     private var controller: MediaController? = null
     private var connecting = false
@@ -52,6 +56,7 @@ object PlayerController {
     private val listener = object : Player.Listener {
         override fun onEvents(player: Player, events: Player.Events) {
             if (player.isPlaying) startTicker() else stopTicker()
+            if (!player.isPlaying) persistPlayback()
             publish()
         }
     }
@@ -70,8 +75,13 @@ object PlayerController {
                 val connected = future.get()
                 controller = connected
                 connected.addListener(listener)
+
+                val hadPendingAction = pendingAction != null
                 pendingAction?.invoke(connected)
                 pendingAction = null
+
+                if (!hadPendingAction) restoreLastSession()
+                startPersisting()
                 publish()
             } catch (e: Exception) {
                 Log.e(TAG, "Gagal terhubung ke MusicService", e)
@@ -169,5 +179,54 @@ object PlayerController {
     private fun stopTicker() {
         ticker?.cancel()
         ticker = null
+    }
+
+    /**
+     * Restores the previous queue (paused, at the last position) when the app is
+     * reopened and nothing is loaded in the service.
+     */
+    private fun restoreLastSession() {
+        val player = controller ?: return
+        if (player.mediaItemCount > 0) return
+
+        val saved = LibraryStore.data.value.lastQueue
+        if (saved.isEmpty()) return
+
+        val songs = saved.map { it.toSong() }
+        val index = LibraryStore.data.value.lastIndex.coerceIn(0, songs.lastIndex)
+
+        PlaybackQueue.set(songs)
+        player.setMediaItems(
+            songs.map { it.toMediaItem() },
+            index,
+            LibraryStore.data.value.lastPositionMs
+        )
+        player.shuffleModeEnabled = LibraryStore.data.value.lastShuffle
+        player.repeatMode = LibraryStore.data.value.lastRepeatMode
+        player.prepare()
+    }
+
+    private fun persistPlayback() {
+        val player = controller ?: return
+        val queue = PlaybackQueue.songs.value
+        if (queue.isEmpty()) return
+
+        LibraryStore.savePlayback(
+            queue = queue,
+            index = player.currentMediaItemIndex.coerceAtLeast(0),
+            positionMs = player.currentPosition.coerceAtLeast(0L),
+            shuffle = player.shuffleModeEnabled,
+            repeatMode = player.repeatMode
+        )
+    }
+
+    private fun startPersisting() {
+        if (persistJob?.isActive == true) return
+        persistJob = scope.launch {
+            while (true) {
+                delay(PERSIST_INTERVAL_MS)
+                if (controller?.isPlaying == true) persistPlayback()
+            }
+        }
     }
 }

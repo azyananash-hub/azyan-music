@@ -1,8 +1,8 @@
 package com.azyan.music.ui.library
 
+import android.Manifest
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import android.Manifest
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,18 +15,24 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.ChevronRight
 import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.Folder
 import androidx.compose.material.icons.rounded.MusicOff
 import androidx.compose.material.icons.rounded.Notifications
+import androidx.compose.material.icons.rounded.PlayArrow
+import androidx.compose.material.icons.rounded.QueueMusic
 import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -60,9 +66,15 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.azyan.music.data.LibraryStore
+import com.azyan.music.data.Playlist
 import com.azyan.music.data.Song
+import com.azyan.music.data.toSong
 import com.azyan.music.playback.PlayerController
 import com.azyan.music.playback.PlayerUiState
+import com.azyan.music.ui.library.components.AddToPlaylistDialog
+import com.azyan.music.ui.library.components.CreatePlaylistDialog
+import com.azyan.music.ui.library.components.DeletePlaylistDialog
 import com.azyan.music.ui.library.components.MiniPlayer
 import com.azyan.music.ui.library.components.NowPlayingSheet
 import com.azyan.music.ui.library.components.PermissionScreen
@@ -123,7 +135,27 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     var isSearching by rememberSaveable { mutableStateOf(false) }
     var openFolder by rememberSaveable { mutableStateOf<String?>(null) }
+    var openPlaylistId by rememberSaveable { mutableStateOf<String?>(null) }
     var showNowPlaying by rememberSaveable { mutableStateOf(false) }
+    var showCreatePlaylist by remember { mutableStateOf(false) }
+    var playlistTarget by remember { mutableStateOf<List<Song>?>(null) }
+    var playlistToDelete by remember { mutableStateOf<Playlist?>(null) }
+
+    val store by LibraryStore.data.collectAsStateWithLifecycle()
+    val favoriteIds = remember(store.favorites) { store.favorites.map { it.id }.toSet() }
+    val favoriteSongs = remember(store.favorites) { store.favorites.map { it.toSong() } }
+    val selectedPlaylist = remember(store.playlists, openPlaylistId) {
+        store.playlists.firstOrNull { it.id == openPlaylistId }
+    }
+    val playlistSongs = remember(selectedPlaylist) {
+        selectedPlaylist?.songs?.map { it.toSong() } ?: emptyList()
+    }
+
+    LaunchedEffect(openPlaylistId, store.playlists) {
+        if (openPlaylistId != null && store.playlists.none { it.id == openPlaylistId }) {
+            openPlaylistId = null
+        }
+    }
 
     val filteredSongs = remember(songs, query) {
         val q = query.trim()
@@ -148,6 +180,8 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
         openFolder?.let { folder -> songs.filter { it.folder == folder } } ?: emptyList()
     }
 
+    val isDetail = openFolder != null || selectedPlaylist != null
+
     Scaffold(
         topBar = {
             Column {
@@ -155,11 +189,11 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
                     title = {
                         Column {
                             Text(
-                                text = openFolder ?: "Azyan Music",
+                                text = openFolder ?: selectedPlaylist?.name ?: "Azyan Music",
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis
                             )
-                            if (openFolder == null && !isSearching) {
+                            if (!isDetail && !isSearching) {
                                 Text(
                                     text = "${songs.size} lagu",
                                     style = MaterialTheme.typography.labelMedium,
@@ -169,8 +203,11 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
                         }
                     },
                     navigationIcon = {
-                        if (openFolder != null) {
-                            IconButton(onClick = { openFolder = null }) {
+                        if (isDetail || openFolder != null) {
+                            IconButton(onClick = {
+                                openFolder = null
+                                openPlaylistId = null
+                            }) {
                                 Icon(Icons.Rounded.ArrowBack, contentDescription = "Kembali")
                             }
                         }
@@ -203,7 +240,7 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp)
                     )
-                } else if (openFolder == null) {
+                } else if (!isDetail) {
                     TabRow(selectedTabIndex = selectedTab) {
                         Tab(
                             selected = selectedTab == 0,
@@ -214,6 +251,16 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
                             selected = selectedTab == 1,
                             onClick = { selectedTab = 1 },
                             text = { Text("Folder") }
+                        )
+                        Tab(
+                            selected = selectedTab == 2,
+                            onClick = { selectedTab = 2 },
+                            text = { Text("Playlist") }
+                        )
+                        Tab(
+                            selected = selectedTab == 3,
+                            onClick = { selectedTab = 3 },
+                            text = { Text("Favorit") }
                         )
                     }
                 }
@@ -244,41 +291,262 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
                     query.isNotBlank() -> SongList(
                         songs = filteredSongs,
                         playerState = playerState,
+                        favoriteIds = favoriteIds,
                         emptyText = "Tidak ada lagu yang cocok",
                         onPlay = { index ->
                             requestNotificationPermissionIfNeeded()
                             PlayerController.play(context, filteredSongs, index)
-                        }
+                        },
+                        onToggleFavorite = { LibraryStore.toggleFavorite(it) },
+                        onAddToPlaylist = { playlistTarget = listOf(it) }
                     )
 
                     openFolder != null -> SongList(
                         songs = folderSongs,
                         playerState = playerState,
+                        favoriteIds = favoriteIds,
                         emptyText = "Folder ini kosong",
                         onPlay = { index ->
                             requestNotificationPermissionIfNeeded()
                             PlayerController.play(context, folderSongs, index)
-                        }
+                        },
+                        onToggleFavorite = { LibraryStore.toggleFavorite(it) },
+                        onAddToPlaylist = { playlistTarget = listOf(it) }
                     )
+
+                    selectedPlaylist != null -> Column(modifier = Modifier.fillMaxSize()) {
+                        PlaylistHeader(
+                            songCount = playlistSongs.size,
+                            onPlayAll = {
+                                if (playlistSongs.isNotEmpty()) {
+                                    requestNotificationPermissionIfNeeded()
+                                    PlayerController.play(context, playlistSongs, 0)
+                                }
+                            }
+                        )
+                        SongList(
+                            songs = playlistSongs,
+                            playerState = playerState,
+                            favoriteIds = favoriteIds,
+                            emptyText = "Playlist ini masih kosong",
+                            onPlay = { index ->
+                                requestNotificationPermissionIfNeeded()
+                                PlayerController.play(context, playlistSongs, index)
+                            },
+                            onToggleFavorite = { LibraryStore.toggleFavorite(it) },
+                            onAddToPlaylist = null,
+                            onRemove = { song ->
+                                LibraryStore.removeSongFromPlaylist(selectedPlaylist.id, song.id)
+                            }
+                        )
+                    }
 
                     selectedTab == 0 -> SongList(
                         songs = songs,
                         playerState = playerState,
+                        favoriteIds = favoriteIds,
                         emptyText = "Belum ada lagu di HP ini",
                         onPlay = { index ->
                             requestNotificationPermissionIfNeeded()
                             PlayerController.play(context, songs, index)
-                        }
+                        },
+                        onToggleFavorite = { LibraryStore.toggleFavorite(it) },
+                        onAddToPlaylist = { playlistTarget = listOf(it) }
                     )
 
-                    else -> FolderList(folders = folders, onOpen = { openFolder = it })
+                    selectedTab == 1 -> FolderList(folders = folders, onOpen = { openFolder = it })
+
+                    selectedTab == 2 -> PlaylistList(
+                        playlists = store.playlists,
+                        onCreate = { showCreatePlaylist = true },
+                        onOpen = { openPlaylistId = it },
+                        onDelete = { playlistToDelete = it }
+                    )
+
+                    else -> SongList(
+                        songs = favoriteSongs,
+                        playerState = playerState,
+                        favoriteIds = favoriteIds,
+                        emptyText = "Belum ada lagu favorit.\nTekan menu ⋮ pada lagu lalu pilih \"Tambah ke favorit\".",
+                        onPlay = { index ->
+                            requestNotificationPermissionIfNeeded()
+                            PlayerController.play(context, favoriteSongs, index)
+                        },
+                        onToggleFavorite = { LibraryStore.toggleFavorite(it) },
+                        onAddToPlaylist = { playlistTarget = listOf(it) }
+                    )
                 }
             }
         }
     }
 
-    if (showNowPlaying && playerState.currentSong != null) {
-        NowPlayingSheet(state = playerState, onDismiss = { showNowPlaying = false })
+    playerState.currentSong?.let { current ->
+        if (showNowPlaying) {
+            NowPlayingSheet(
+                state = playerState,
+                isFavorite = current.id in favoriteIds,
+                onToggleFavorite = { LibraryStore.toggleFavorite(current) },
+                onDismiss = { showNowPlaying = false }
+            )
+        }
+    }
+
+    if (showCreatePlaylist) {
+        CreatePlaylistDialog(
+            onDismiss = { showCreatePlaylist = false },
+            onCreate = { name ->
+                val id = LibraryStore.createPlaylist(name)
+                showCreatePlaylist = false
+                selectedTab = 2
+                openPlaylistId = id
+            }
+        )
+    }
+
+    playlistTarget?.let { target ->
+        AddToPlaylistDialog(
+            playlists = store.playlists,
+            onDismiss = { playlistTarget = null },
+            onPick = { playlistId ->
+                LibraryStore.addSongsToPlaylist(playlistId, target)
+                playlistTarget = null
+            },
+            onCreateAndAdd = { name ->
+                val id = LibraryStore.createPlaylist(name)
+                LibraryStore.addSongsToPlaylist(id, target)
+                playlistTarget = null
+            }
+        )
+    }
+
+    playlistToDelete?.let { playlist ->
+        DeletePlaylistDialog(
+            playlistName = playlist.name,
+            onDismiss = { playlistToDelete = null },
+            onConfirm = {
+                LibraryStore.deletePlaylist(playlist.id)
+                playlistToDelete = null
+            }
+        )
+    }
+}
+
+@Composable
+private fun PlaylistHeader(songCount: Int, onPlayAll: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Button(onClick = onPlayAll, enabled = songCount > 0) {
+            Icon(Icons.Rounded.PlayArrow, contentDescription = null)
+            Spacer(Modifier.width(8.dp))
+            Text("Putar semua")
+        }
+        Text(
+            text = "$songCount lagu",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+
+@Composable
+private fun PlaylistList(
+    playlists: List<Playlist>,
+    onCreate: () -> Unit,
+    onOpen: (String) -> Unit,
+    onDelete: (Playlist) -> Unit
+) {
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(vertical = 8.dp)
+    ) {
+        item {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onCreate)
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.Add,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    text = "Buat playlist baru",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+        }
+
+        if (playlists.isEmpty()) {
+            item {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Icon(
+                        imageVector = Icons.Rounded.QueueMusic,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(48.dp)
+                    )
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        text = "Belum ada playlist",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+        }
+
+        items(items = playlists, key = { it.id }) { playlist ->
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onOpen(playlist.id) }
+                    .padding(start = 16.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.QueueMusic,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary
+                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = playlist.name,
+                        style = MaterialTheme.typography.bodyLarge,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = "${playlist.songs.size} lagu",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                IconButton(onClick = { onDelete(playlist) }) {
+                    Icon(
+                        imageVector = Icons.Rounded.DeleteOutline,
+                        contentDescription = "Hapus playlist",
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -316,8 +584,12 @@ private fun NotificationBanner(onAllow: () -> Unit, modifier: Modifier = Modifie
 private fun SongList(
     songs: List<Song>,
     playerState: PlayerUiState,
+    favoriteIds: Set<Long>,
     onPlay: (Int) -> Unit,
-    emptyText: String
+    onToggleFavorite: (Song) -> Unit,
+    emptyText: String,
+    onAddToPlaylist: ((Song) -> Unit)? = null,
+    onRemove: ((Song) -> Unit)? = null
 ) {
     if (songs.isEmpty()) {
         EmptyState(text = emptyText)
@@ -333,7 +605,11 @@ private fun SongList(
                 song = song,
                 isCurrent = playerState.currentSong?.id == song.id,
                 isPlaying = playerState.isPlaying,
-                onClick = { onPlay(index) }
+                isFavorite = song.id in favoriteIds,
+                onClick = { onPlay(index) },
+                onToggleFavorite = { onToggleFavorite(song) },
+                onAddToPlaylist = onAddToPlaylist?.let { add -> { add(song) } },
+                onRemove = onRemove?.let { remove -> { remove(song) } }
             )
         }
     }

@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.Repeat
@@ -45,16 +47,26 @@ import com.azyan.music.ui.util.formatDuration
 @Composable
 fun NowPlayingSheet(
     state: PlayerUiState,
+    isFavorite: Boolean,
+    onToggleFavorite: () -> Unit,
     onDismiss: () -> Unit
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
-        NowPlayingContent(state = state)
+        NowPlayingContent(
+            state = state,
+            isFavorite = isFavorite,
+            onToggleFavorite = onToggleFavorite
+        )
     }
 }
 
 @Composable
-private fun NowPlayingContent(state: PlayerUiState) {
+private fun NowPlayingContent(
+    state: PlayerUiState,
+    isFavorite: Boolean,
+    onToggleFavorite: () -> Unit
+) {
     val song = state.currentSong ?: return
     var dragFraction by remember { mutableStateOf<Float?>(null) }
     val duration = state.durationMs.coerceAtLeast(1L)
@@ -95,7 +107,19 @@ private fun NowPlayingContent(state: PlayerUiState) {
             overflow = TextOverflow.Ellipsis
         )
 
-        Spacer(Modifier.height(16.dp))
+        IconButton(onClick = onToggleFavorite) {
+            Icon(
+                imageVector = if (isFavorite) Icons.Rounded.Favorite else Icons.Rounded.FavoriteBorder,
+                contentDescription = if (isFavorite) "Hapus dari favorit" else "Tambah ke favorit",
+                tint = if (isFavorite) {
+                    MaterialTheme.colorScheme.primary
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                }
+            )
+        }
+
+        Spacer(Modifier.height(4.dp))
 
         Slider(
             value = fraction,
