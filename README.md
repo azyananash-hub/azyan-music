@@ -21,8 +21,8 @@ Yang sudah ada:
 
 Roadmap berikutnya:
 
-- [ ] **Fase 1** — Scan MediaStore, daftar lagu, folder, playback dasar
-- [ ] **Fase 2** — `MediaSessionService`, background playback, kontrol notifikasi & lock screen
+- [x] **Fase 1** — Scan MediaStore, daftar lagu, folder, playback dasar
+- [x] **Fase 2** — `MediaSessionService`, background playback, kontrol notifikasi & lock screen
 - [ ] **Fase 3** — Playlist, favorit, pencarian
 - [ ] **Fase 4** — Equalizer, bass boost, sleep timer
 - [ ] **Fase 5** — Cover art, lirik (.lrc), widget

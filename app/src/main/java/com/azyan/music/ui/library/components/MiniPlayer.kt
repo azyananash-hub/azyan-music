@@ -24,7 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.azyan.music.playback.PlayerManager
+import com.azyan.music.playback.PlayerController
 import com.azyan.music.playback.PlayerUiState
 
 @Composable
@@ -74,13 +74,13 @@ fun MiniPlayer(
                     )
                 }
 
-                IconButton(onClick = { PlayerManager.togglePlayPause() }) {
+                IconButton(onClick = { PlayerController.togglePlayPause() }) {
                     Icon(
                         imageVector = if (state.isPlaying) Icons.Rounded.Pause else Icons.Rounded.PlayArrow,
                         contentDescription = if (state.isPlaying) "Jeda" else "Putar"
                     )
                 }
-                IconButton(onClick = { PlayerManager.next() }, enabled = state.hasNext) {
+                IconButton(onClick = { PlayerController.next() }, enabled = state.hasNext) {
                     Icon(
                         imageVector = Icons.Rounded.SkipNext,
                         contentDescription = "Lagu berikutnya"

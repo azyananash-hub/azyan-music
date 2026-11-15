@@ -24,6 +24,7 @@ import androidx.compose.material.icons.rounded.ChevronRight
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Folder
 import androidx.compose.material.icons.rounded.MusicOff
+import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,12 +33,15 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -56,7 +60,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.azyan.music.data.Song
-import com.azyan.music.playback.PlayerManager
+import com.azyan.music.playback.PlayerController
 import com.azyan.music.playback.PlayerUiState
 import com.azyan.music.ui.library.components.MiniPlayer
 import com.azyan.music.ui.library.components.NowPlayingSheet
@@ -74,7 +78,22 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
     val songs by viewModel.songs.collectAsStateWithLifecycle()
     val query by viewModel.query.collectAsStateWithLifecycle()
     val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
-    val playerState by PlayerManager.state.collectAsStateWithLifecycle()
+    val playerState by PlayerController.state.collectAsStateWithLifecycle()
+
+    var notificationGranted by remember {
+        mutableStateOf(PermissionUtils.hasNotificationPermission(context))
+    }
+    var askedNotification by rememberSaveable { mutableStateOf(false) }
+
+    val notificationLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { granted -> notificationGranted = granted }
+
+    fun requestNotificationPermissionIfNeeded() {
+        if (notificationGranted || askedNotification) return
+        askedNotification = true
+        notificationLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+    }
 
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
@@ -82,10 +101,17 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_RESUME) viewModel.refreshPermission()
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.refreshPermission()
+                notificationGranted = PermissionUtils.hasNotificationPermission(context)
+            }
         }
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
+
+    LaunchedEffect(Unit) {
+        PlayerController.connect(context)
     }
 
     if (!hasPermission) {
@@ -198,42 +224,90 @@ fun MusicHomeScreen(viewModel: LibraryViewModel = viewModel()) {
             }
         }
     ) { innerPadding ->
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            when {
-                isLoading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
-
-                query.isNotBlank() -> SongList(
-                    songs = filteredSongs,
-                    playerState = playerState,
-                    emptyText = "Tidak ada lagu yang cocok",
-                    onPlay = { index -> PlayerManager.play(context, filteredSongs, index) }
+            if (!notificationGranted) {
+                NotificationBanner(
+                    onAllow = { requestNotificationPermissionIfNeeded() },
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                 )
+            }
 
-                openFolder != null -> SongList(
-                    songs = folderSongs,
-                    playerState = playerState,
-                    emptyText = "Folder ini kosong",
-                    onPlay = { index -> PlayerManager.play(context, folderSongs, index) }
-                )
+            Box(modifier = Modifier.weight(1f)) {
+                when {
+                    isLoading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
 
-                selectedTab == 0 -> SongList(
-                    songs = songs,
-                    playerState = playerState,
-                    emptyText = "Belum ada lagu di HP ini",
-                    onPlay = { index -> PlayerManager.play(context, songs, index) }
-                )
+                    query.isNotBlank() -> SongList(
+                        songs = filteredSongs,
+                        playerState = playerState,
+                        emptyText = "Tidak ada lagu yang cocok",
+                        onPlay = { index ->
+                            requestNotificationPermissionIfNeeded()
+                            PlayerController.play(context, filteredSongs, index)
+                        }
+                    )
 
-                else -> FolderList(folders = folders, onOpen = { openFolder = it })
+                    openFolder != null -> SongList(
+                        songs = folderSongs,
+                        playerState = playerState,
+                        emptyText = "Folder ini kosong",
+                        onPlay = { index ->
+                            requestNotificationPermissionIfNeeded()
+                            PlayerController.play(context, folderSongs, index)
+                        }
+                    )
+
+                    selectedTab == 0 -> SongList(
+                        songs = songs,
+                        playerState = playerState,
+                        emptyText = "Belum ada lagu di HP ini",
+                        onPlay = { index ->
+                            requestNotificationPermissionIfNeeded()
+                            PlayerController.play(context, songs, index)
+                        }
+                    )
+
+                    else -> FolderList(folders = folders, onOpen = { openFolder = it })
+                }
             }
         }
     }
 
     if (showNowPlaying && playerState.currentSong != null) {
         NowPlayingSheet(state = playerState, onDismiss = { showNowPlaying = false })
+    }
+}
+
+@Composable
+private fun NotificationBanner(onAllow: () -> Unit, modifier: Modifier = Modifier) {
+    Surface(
+        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        color = MaterialTheme.colorScheme.secondaryContainer
+    ) {
+        Row(
+            modifier = Modifier.padding(start = 16.dp, end = 8.dp, top = 6.dp, bottom = 6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Rounded.Notifications,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSecondaryContainer
+            )
+            Text(
+                text = "Aktifkan notifikasi agar kontrol musik muncul di notifikasi & layar kunci.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+                modifier = Modifier.weight(1f)
+            )
+            TextButton(onClick = onAllow) {
+                Text("Izinkan")
+            }
+        }
     }
 }
 

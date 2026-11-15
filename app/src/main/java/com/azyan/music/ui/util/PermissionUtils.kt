@@ -19,4 +19,13 @@ object PermissionUtils {
     fun hasAudioPermission(context: Context): Boolean =
         ContextCompat.checkSelfPermission(context, audioPermission()) ==
             PackageManager.PERMISSION_GRANTED
+
+    /** POST_NOTIFICATIONS only exists from Android 13; older versions always allow it. */
+    fun hasNotificationPermission(context: Context): Boolean =
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            true
+        } else {
+            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
+                PackageManager.PERMISSION_GRANTED
+        }
 }

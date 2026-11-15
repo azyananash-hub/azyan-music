@@ -37,7 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import com.azyan.music.playback.PlayerManager
+import com.azyan.music.playback.PlayerController
 import com.azyan.music.playback.PlayerUiState
 import com.azyan.music.ui.util.formatDuration
 
@@ -101,7 +101,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
             value = fraction,
             onValueChange = { dragFraction = it },
             onValueChangeFinished = {
-                dragFraction?.let { PlayerManager.seekTo((it * duration).toLong()) }
+                dragFraction?.let { PlayerController.seekTo((it * duration).toLong()) }
                 dragFraction = null
             },
             modifier = Modifier.fillMaxWidth()
@@ -130,7 +130,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(onClick = { PlayerManager.toggleShuffle() }) {
+            IconButton(onClick = { PlayerController.toggleShuffle() }) {
                 Icon(
                     imageVector = Icons.Rounded.Shuffle,
                     contentDescription = "Acak",
@@ -142,7 +142,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
                 )
             }
 
-            IconButton(onClick = { PlayerManager.previous() }) {
+            IconButton(onClick = { PlayerController.previous() }) {
                 Icon(
                     imageVector = Icons.Rounded.SkipPrevious,
                     contentDescription = "Sebelumnya",
@@ -151,7 +151,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
             }
 
             FilledIconButton(
-                onClick = { PlayerManager.togglePlayPause() },
+                onClick = { PlayerController.togglePlayPause() },
                 modifier = Modifier.size(72.dp)
             ) {
                 Icon(
@@ -161,7 +161,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
                 )
             }
 
-            IconButton(onClick = { PlayerManager.next() }, enabled = state.hasNext) {
+            IconButton(onClick = { PlayerController.next() }, enabled = state.hasNext) {
                 Icon(
                     imageVector = Icons.Rounded.SkipNext,
                     contentDescription = "Berikutnya",
@@ -169,7 +169,7 @@ private fun NowPlayingContent(state: PlayerUiState) {
                 )
             }
 
-            IconButton(onClick = { PlayerManager.cycleRepeatMode() }) {
+            IconButton(onClick = { PlayerController.cycleRepeatMode() }) {
                 Icon(
                     imageVector = if (state.repeatMode == Player.REPEAT_MODE_ONE) {
                         Icons.Rounded.RepeatOne
