@@ -35,6 +35,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -128,7 +131,13 @@ private fun NowPlayingContent(
                 dragFraction?.let { PlayerController.seekTo((it * duration).toLong()) }
                 dragFraction = null
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .semantics {
+                    contentDescription = "Posisi lagu"
+                    stateDescription = "${formatDuration((fraction * duration).toLong())} dari " +
+                        formatDuration(state.durationMs)
+                }
         )
 
         Row(
