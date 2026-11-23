@@ -11,7 +11,9 @@ import androidx.compose.ui.platform.LocalContext
 @Composable
 fun AzyanMusicTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    // Default off: palet Azyan dipakai di semua perangkat agar identitas visual konsisten.
+    // Pengguna yang ingin warna wallpaper bisa diaktifkan lewat pengaturan (belum dibuat).
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
