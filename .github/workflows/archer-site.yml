@@ -1,0 +1,35 @@
+name: archer-site
+
+on:
+  push:
+    paths:
+      - "archer-site/**"
+      - ".github/workflows/archer-site.yml"
+  pull_request:
+    paths:
+      - "archer-site/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: archer-site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: archer-site/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archer-site-dist
+          path: archer-site/dist
+          retention-days: 7

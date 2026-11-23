@@ -4,6 +4,15 @@ Static, single-page site. Vite + GSAP ScrollTrigger + Lenis. Fonts are self-host
 
 ## Jalankan
 
+Cara tercepat (pasang dependensi bila perlu, build, lalu serve di port 4173):
+
+```bash
+./archer-site/scripts/run-site.sh          # atau: ./scripts/run-site.sh dari dalam archer-site/
+```
+
+Otomatis di GitHub: workflow `.github/workflows/archer-site.yml` menjalankan `npm run check`
+(build + smoke test) setiap ada perubahan di `archer-site/` dan menyimpan hasil `dist/` sebagai artifact.
+
 ```bash
 cd archer-site
 npm install
