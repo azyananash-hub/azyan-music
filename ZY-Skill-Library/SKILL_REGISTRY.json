@@ -2,125 +2,615 @@
   "registry_version": 1,
   "library": "ZY Skill Library",
   "generated_by": "scripts/build_registry.py",
-  "skill_count": 9,
+  "skill_count": 46,
   "skills": [
+    {
+      "name": "discernment-nudge",
+      "category": "ai-agents",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/ai-agents/discernment-nudge/SKILL.md",
+      "description": "After you give a substantive answer or draft that the user may act on — advice or recommendations, drafted artifacts such as goals, plans, pitches, proposals, or emails, estimates or projections, analysis or interpretation of data, factual claims they may rely on, or a multi-step argument — invoke this skill BEFORE finalizing your reply and then, if it applies, append 2-3 short follow-up questions, each tied to something specific in what you just produced, that help the user check key facts, probe the reasoning or assumptions, and notice missing context. Do this at most once per conversation. Skip it when the user asked a trivial how-to or simple lookup, wants a purely educational explanation, asked you only to format, convert, or assemble a file from content they provided, is writing code they will run, is doing creative writing or casual chat, or already asked you to double-check, cite, or review — the skill file explains these boundaries and the exact output format.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "9191177c4a8ef11a20dace786d708506b22d43e748c71287bb823de0dc812dad",
+      "errors": []
+    },
+    {
+      "name": "modbus-tcp-client",
+      "category": "automation",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/automation/modbus-tcp-client/SKILL.md",
+      "description": "Read and write Modbus TCP holding registers with scaling and signed conversion using pymodbus, with explicit safety rules before any write. Use for PLC, sensor or inverter register access on isolated industrial networks.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/modbus_client.py"
+      ],
+      "sha256_skill_md": "f4a08664d6d38a80fad9e23d0546a7b3835411d81151539b1c293fbe7dab51f6",
+      "errors": []
+    },
     {
       "name": "render-link-builder",
       "category": "clipacanvas",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/clipacanvas/render-link-builder/SKILL.md",
       "description": "Produce a self-contained, lightly minified HTML animation for ClipACanvas and build its direct render link (URL-encoded code, 1920x1080 horizontal by default). Use whenever the user wants an HTML/Canvas/SVG motion graphic that renders through the ClipACanvas render endpoint.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/build_render_link.py"
       ],
-      "sha256_skill_md": "519f4fed071f1c2a5041abdc5021f33aa2c614db075689c7434d718d73257795",
+      "sha256_skill_md": "fbe4591cfe1dd8c26273c779de573800adb5213eee7c3adb1b55faf5669fbd14",
+      "errors": []
+    },
+    {
+      "name": "algorithmic-art",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/creative-production/algorithmic-art/SKILL.md",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef",
+      "errors": []
+    },
+    {
+      "name": "brand-guidelines",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/creative-production/brand-guidelines/SKILL.md",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe",
+      "errors": []
+    },
+    {
+      "name": "canvas-design",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/creative-production/canvas-design/SKILL.md",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+      "errors": []
+    },
+    {
+      "name": "slack-gif-creator",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/creative-production/slack-gif-creator/SKILL.md",
+      "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22",
+      "errors": []
+    },
+    {
+      "name": "theme-factory",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/creative-production/theme-factory/SKILL.md",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
       "errors": []
     },
     {
       "name": "fmea-rpn-prioritizer",
       "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/engineering/fmea-rpn-prioritizer/SKILL.md",
       "description": "Prioritize failure modes from a FMEA worksheet (CSV with severity, occurrence, detection 1-10) by Risk Priority Number and flag high-severity items for review. Use for preventive maintenance, industrial utility reliability reviews, root cause analysis, and DMAIC improvement planning.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/fmea_rpn.py"
       ],
-      "sha256_skill_md": "964c662b5cbcda474ebfda05c732e8f433ce627c42e7d4cf7771187fd6c4bdd1",
+      "sha256_skill_md": "04fe321546becf69e5fe008d5725328d9eb1be5c577e2582489500d36498595c",
+      "errors": []
+    },
+    {
+      "name": "load-flow-pandapower",
+      "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/engineering/load-flow-pandapower/SKILL.md",
+      "description": "Run AC power flow (Newton-Raphson) on small distribution or industrial networks from a JSON description using pandapower, reporting bus voltages, slack power, line losses and a power-balance check. Use for preliminary load flow studies.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/load_flow.py"
+      ],
+      "sha256_skill_md": "514c5c71de32a9cc4c8c447a60cabadce07474909ad1f14a8ce5839af7bb469a",
       "errors": []
     },
     {
       "name": "short-circuit-calculator",
       "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/engineering/short-circuit-calculator/SKILL.md",
       "description": "Estimate symmetrical three-phase short-circuit current (Ik and peak ip) at a bus from utility short-circuit MVA and transformer impedance percent, using IEC 60909-style simplified formulas. Use for electrical power system pre-checks and student/engineering analysis of fault levels.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/short_circuit.py"
       ],
-      "sha256_skill_md": "0180b6b54d455521ecbfd8b5993c8bc3d996e137c8c9aeae7b4df236c39acf6f",
+      "sha256_skill_md": "7fde752d85a9e11128438efbb80b6480d033a20c5aa27d8b04a0cf6ec3f559ac",
+      "errors": []
+    },
+    {
+      "name": "compound-savings-projection",
+      "category": "finance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/finance/compound-savings-projection/SKILL.md",
+      "description": "Project savings growth with monthly contributions and compound interest across several return scenarios, reporting contributions and return-driven growth. Use for personal budgeting and savings planning; not investment advice.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/savings_projection.py"
+      ],
+      "sha256_skill_md": "0155a44a42c4c3f34abceba6deefca90d5f89d8d55584e37c41b7da3e0bb1a06",
+      "errors": []
+    },
+    {
+      "name": "skill-creator",
+      "category": "governance",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/governance/skill-creator/SKILL.md",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
       "errors": []
     },
     {
       "name": "skill-engineering-standard",
       "category": "governance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/governance/skill-engineering-standard/SKILL.md",
       "description": "Author, review, and validate ZY Skill Library skills against the 13-section engineering standard (triggers, scope, workflow, decision rules, error handling, QC, acceptance criteria, tests, sources, license). Use when creating a new skill, editing an existing SKILL.md, or checking that the library passes validation before a commit.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/build_registry.py",
         "scripts/install_skills.py",
         "scripts/validate_library.py"
       ],
-      "sha256_skill_md": "d8362d64e4951b5fd1062010528d81efb7feac045da90ed3312398fc5d25b99c",
+      "sha256_skill_md": "6fb8165af0e694e5cd266c0dead8361ef6fecd0db5c3dcde11b04210557e519a",
       "errors": []
     },
     {
       "name": "third-party-skill-audit",
       "category": "governance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/governance/third-party-skill-audit/SKILL.md",
       "description": "Statically scan a third-party skill, script, or plugin folder for high-risk patterns (remote pipe-to-shell, encoded exec, credential path access, shell profile edits, unpinned installs, binaries, symlinks) before anyone runs or installs it. Use whenever the user wants to adopt a skill or script from an external GitHub repository.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/scan_skill_risk.py"
       ],
-      "sha256_skill_md": "b77f08f42d8f7b57b12ce85e4283442683959f748d3cb529a994f537ae16441c",
+      "sha256_skill_md": "a57e4647514ed869bbc7a5fd263e720636c07658babf40fdd4045b5c5566b757",
+      "errors": []
+    },
+    {
+      "name": "writing-skills",
+      "category": "governance",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/governance/writing-skills/SKILL.md",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "license": "",
+      "scripts": [
+        "scripts/tool.js",
+        "scripts/tool.sh"
+      ],
+      "sha256_skill_md": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+      "errors": []
+    },
+    {
+      "name": "boiler-efficiency-indirect",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/boiler-efficiency-indirect/SKILL.md",
+      "description": "Estimate boiler efficiency with the indirect heat-loss method (Siegert dry flue gas loss plus radiation and other losses). Use for utility boiler performance screening and loss breakdown.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/boiler_efficiency.py"
+      ],
+      "sha256_skill_md": "e4f8860b901edf9090d4441ec1047e03120db57409e7568e1c7e4ab6f8b952ff",
+      "errors": []
+    },
+    {
+      "name": "cooling-tower-performance",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/cooling-tower-performance/SKILL.md",
+      "description": "Compute cooling tower range, approach, effectiveness, heat load and rule-of-thumb evaporation from water temperatures and flow. Use for utility-side performance checks of cooling towers in industrial plants.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/cooling_tower.py"
+      ],
+      "sha256_skill_md": "f85853fd291f396b1bb62a4a8facdfd6c5ed2957f3643d3a68f92b687163a334",
+      "errors": []
+    },
+    {
+      "name": "ro-mass-balance",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/ro-mass-balance/SKILL.md",
+      "description": "Compute ideal reverse osmosis mass balance (recovery, salt rejection, concentrate flow and TDS) from feed and permeate measurements. Use for water treatment plant (WTP/RO) checks and training.",
+      "license": "original-zy",
+      "scripts": [
+        "scripts/ro_mass_balance.py"
+      ],
+      "sha256_skill_md": "e3f7f5779e4085a694f67e00ab551015b85ee35d70fb4eb27d687b728341e6dd",
       "errors": []
     },
     {
       "name": "srs-sm2-scheduler",
       "category": "japanese-education",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/japanese-education/srs-sm2-scheduler/SKILL.md",
       "description": "Schedule spaced-repetition reviews for Japanese vocabulary, kanji, and grammar cards using the SM-2 algorithm (quality 0-5, ease factor, interval days). Use when building or testing review logic for JLPT N5-N1 study tools such as AmiraVerse, or when computing next due dates for flashcards.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/sm2.py"
       ],
-      "sha256_skill_md": "0f1b3856fa6295cec6c3ed09ee87f516b6c5a14e28d419aad709e9a2ef2a3924",
+      "sha256_skill_md": "87d38f1c4e37e5b73010ff71ca48413dcbc7dd3bbc17606be1738b5c7c536f56",
+      "errors": []
+    },
+    {
+      "name": "docx",
+      "category": "office-documents",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/docx/SKILL.md",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [
+        "scripts/accept_changes.py",
+        "scripts/comment.py",
+        "scripts/merge_runs.py",
+        "scripts/office/soffice.py",
+        "scripts/office/validate.py"
+      ],
+      "sha256_skill_md": "895d5aa6c4cd98e4aed4c995d846f056f3549086e79bcd6617afea6014f82288",
+      "errors": []
+    },
+    {
+      "name": "internal-comms",
+      "category": "office-documents",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/office-documents/internal-comms/SKILL.md",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+      "errors": []
+    },
+    {
+      "name": "pdf",
+      "category": "office-documents",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/pdf/SKILL.md",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "d1c7caf5f35eb7d37877dd7fc33a095037be2b34fb5d2f7f4d43bde3165bb4ee",
+      "errors": []
+    },
+    {
+      "name": "pptx",
+      "category": "office-documents",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/pptx/SKILL.md",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [
+        "scripts/add_slide.py",
+        "scripts/apply_theme.js",
+        "scripts/clean.py",
+        "scripts/office/soffice.py",
+        "scripts/office/validate.py",
+        "scripts/slide_text.py",
+        "scripts/thumbnail.py"
+      ],
+      "sha256_skill_md": "598c981d93f2173b251f86a4bc94e9fb4e4f5ddaa314ba2dd4eca24b7a07808e",
+      "errors": []
+    },
+    {
+      "name": "xlsx",
+      "category": "office-documents",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/xlsx/SKILL.md",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \\\"the xlsx in my downloads\\\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [
+        "scripts/office/soffice.py",
+        "scripts/recalc.py"
+      ],
+      "sha256_skill_md": "f32b1c2b5d5d31e02964df110d6489613d9345f86830c118cfe24159d8448ce6",
       "errors": []
     },
     {
       "name": "position-size-calculator",
       "category": "quantitative-trading",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/quantitative-trading/position-size-calculator/SKILL.md",
       "description": "Calculate position size from account equity, fixed-fraction risk percent, entry and stop-loss prices, and contract value per unit (e.g. XAUUSD lot specs). Use for risk management planning before a trade. Provides sizing math only, never trade signals or profit guarantees.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/position_size.py"
       ],
-      "sha256_skill_md": "6b9f5aa81df806d8406ae9d363ed1b779cd515cfc3ec6ab1e84c7ee83fe47d64",
+      "sha256_skill_md": "a75ed703c77d8f13788ac94ec66feec252395342039cf9c1d089d7dbd5a2d89f",
       "errors": []
     },
     {
       "name": "trade-statistics",
       "category": "quantitative-trading",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/quantitative-trading/trade-statistics/SKILL.md",
       "description": "Compute backtest or journal performance statistics from a list of per-trade PnL values - win rate, expectancy, profit factor, and maximum drawdown with sample-size warnings. Use for evaluating a trading strategy's historical results, including XAUUSD ICT/SMC backtests. Never promises future profit.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/trade_stats.py"
       ],
-      "sha256_skill_md": "19caa55ddbaa69e8d8b7e7ff334c272130052f1d36aaf420357ba99aa8e32705",
+      "sha256_skill_md": "39c7e6af53f2a065d8b0ada0844ca0e303649e156add45778e66b8e7f907a953",
+      "errors": []
+    },
+    {
+      "name": "brainstorming",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/brainstorming/SKILL.md",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "2c9ca71f94886f9ca9f4aef055f7cafb3e1a9bdf3aeebf8f4cb547c69405d207",
+      "errors": []
+    },
+    {
+      "name": "claude-api",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/claude-api/SKILL.md",
+      "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "40537cca17c4aa86e4ce83ced39efcbfb1204905e3cf4c4ff98f2eab011e4b7f",
+      "errors": []
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/dispatching-parallel-agents/SKILL.md",
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+      "errors": []
+    },
+    {
+      "name": "executing-plans",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/executing-plans/SKILL.md",
+      "description": "Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5",
+      "errors": []
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/finishing-a-development-branch/SKILL.md",
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65",
+      "errors": []
+    },
+    {
+      "name": "frontend-design",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/frontend-design/SKILL.md",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "errors": []
+    },
+    {
+      "name": "mcp-builder",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/mcp-builder/SKILL.md",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [],
+      "sha256_skill_md": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c",
+      "errors": []
+    },
+    {
+      "name": "receiving-code-review",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/receiving-code-review/SKILL.md",
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+      "errors": []
+    },
+    {
+      "name": "requesting-code-review",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/requesting-code-review/SKILL.md",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
       "errors": []
     },
     {
       "name": "secret-leak-scan",
       "category": "software-development",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
       "path": "skills/software-development/secret-leak-scan/SKILL.md",
       "description": "Scan a project for accidentally committed secrets (Google API keys, AWS access keys, private keys, GitHub/Stripe/OpenAI-style tokens, generic password or token assignments) and report masked previews only. Use before committing or pushing code, especially Flutter/Supabase or AI-API projects.",
       "license": "original-zy",
-      "status": "validated",
       "scripts": [
         "scripts/scan_secrets.py"
       ],
-      "sha256_skill_md": "8bcb98db410ce6333c46dc644b30b80bf9c644785f8d86c6ade7713c786258af",
+      "sha256_skill_md": "5fcdae0c5773eebe5eadfc5ec6bca7bfa50ba2a74efc6c353c422977574e41f8",
+      "errors": []
+    },
+    {
+      "name": "subagent-driven-development",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/subagent-driven-development/SKILL.md",
+      "description": "Use when executing implementation plans with independent tasks in the current session",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+      "errors": []
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/systematic-debugging/SKILL.md",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+      "errors": []
+    },
+    {
+      "name": "test-driven-development",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/test-driven-development/SKILL.md",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+      "errors": []
+    },
+    {
+      "name": "using-git-worktrees",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/using-git-worktrees/SKILL.md",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd",
+      "errors": []
+    },
+    {
+      "name": "using-superpowers",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/using-superpowers/SKILL.md",
+      "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "82c5c8866ad7f5dd4440ce66bd7806ba48a2f13771beae5cf112e53f08fe36ba",
+      "errors": []
+    },
+    {
+      "name": "verification-before-completion",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/verification-before-completion/SKILL.md",
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+      "errors": []
+    },
+    {
+      "name": "web-artifacts-builder",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/web-artifacts-builder/SKILL.md",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [
+        "scripts/bundle-artifact.sh",
+        "scripts/init-artifact.sh"
+      ],
+      "sha256_skill_md": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+      "errors": []
+    },
+    {
+      "name": "webapp-testing",
+      "category": "software-development",
+      "classification": "ADAPTED",
+      "status": "VERIFIED",
+      "path": "skills/software-development/webapp-testing/SKILL.md",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "license": "Complete terms in LICENSE.txt",
+      "scripts": [
+        "scripts/with_server.py"
+      ],
+      "sha256_skill_md": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "errors": []
+    },
+    {
+      "name": "writing-plans",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "IMPORTED",
+      "path": "skills/software-development/writing-plans/SKILL.md",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
       "errors": []
     }
   ]

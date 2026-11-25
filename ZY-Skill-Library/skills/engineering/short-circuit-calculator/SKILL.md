@@ -3,7 +3,7 @@ name: short-circuit-calculator
 description: Estimate symmetrical three-phase short-circuit current (Ik and peak ip) at a bus from utility short-circuit MVA and transformer impedance percent, using IEC 60909-style simplified formulas. Use for electrical power system pre-checks and student/engineering analysis of fault levels.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "engineering", "status": "validated", "owner": "zy"}
+metadata: {"category": "engineering", "status": "verified", "owner": "zy"}
 ---
 
 # Short-Circuit Calculator (3-phase symmetrical, simplified)

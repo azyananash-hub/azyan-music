@@ -3,7 +3,7 @@ name: trade-statistics
 description: Compute backtest or journal performance statistics from a list of per-trade PnL values - win rate, expectancy, profit factor, and maximum drawdown with sample-size warnings. Use for evaluating a trading strategy's historical results, including XAUUSD ICT/SMC backtests. Never promises future profit.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "quantitative-trading", "status": "validated", "owner": "zy"}
+metadata: {"category": "quantitative-trading", "status": "verified", "owner": "zy"}
 ---
 
 # Trade Statistics (Expectancy, Profit Factor, Max Drawdown)

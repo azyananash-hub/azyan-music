@@ -58,3 +58,35 @@ Uji end-to-end CLI (input kecil, hasil dihitung ulang secara manual):
 | Library dapat dikembangkan tanpa membangun ulang | Ya; backlog di `research/PROGRESS.md` |
 
 Catatan jujur: skill discovery di Claude Code belum diuji langsung di sesi yang memuat skill, sehingga bagian ini dinyatakan sebagai "dirancang sesuai dokumentasi" dan perlu verifikasi pengguna.
+
+---
+
+# Pembaruan audit v0.2.0 (2026-11-25)
+
+## Hasil terukur
+- 46 skill di disk: 15 CUSTOM, 31 IMPORTED (6 diuji, 24 belum), 1 ADAPTED. 0 error validasi.
+- 86 test lulus dalam venv `tests/requirements-test.txt`. Test skill upstream memakai alat sungguhan: LibreOffice (xlsx recalc, pptx thumbnail), reportlab/pypdf (pdf), Chromium via Playwright (webapp), dan server pymodbus lokal (Modbus round-trip).
+- Nilai uji dihitung manual dan dicocokkan di docstring test (contoh: Ik 11 kV/100 MVA = 5.2486 kA; cooling tower 10 C range dan efektivitas 76.92 %; RO recovery 50 % dan Cc 1980 mg/L).
+
+## Temuan nyata dari pengujian
+1. **Bug upstream webapp-testing**: `with_server.py` meninggalkan proses server yatim karena cleanup hanya mematikan shell. Diperbaiki sebagai ADAPTED (`ADAPTATION.md`).
+2. **Validator docx upstream** melaporkan `word/settings.xml` (w:zoom tanpa w:percent) pada dokumen yang dibuat python-docx default. Ini perilaku skema, bukan bug skill. Test memverifikasi validator menolak dokumen yang dirusak sengaja.
+3. **pymodbus 3.16**: `ModbusSequentialDataBlock(0, ...)` gagal validasi (SimData address -1). Start di 1 dipakai. API datastore lama memunculkan deprecation warning; migrasi ke SimDevice belum dilakukan.
+4. **Frontmatter upstream**: `claude-api` punya deskripsi 1068 karakter (> 1024). Tidak diubah; dicatat sebagai warning.
+5. **Bug saya sendiri**: generator SKILL.md sempat menulis placeholder `$TRIG` mentah ke lima file (heredoc bertanda kutip). Tertangkap validator dan diperbaiki dengan regenerasi.
+6. **Bug saya sendiri**: `build_registry.py` punya kunci `status` ganda yang menimpa status. Diperbaiki.
+
+## Pemindaian keamanan
+- Setiap folder impor dipindai `third-party-skill-audit` sebelum dieksekusi. HIGH tidak ditemukan pada script yang dijalankan. Temuan MEDIUM berasal dari contoh `pip install`/`npm install` di SKILL.md.
+- `with_server.py` memakai `shell=True` secara disengaja (perintah server berasal dari pemanggil). Diterima dengan catatan.
+- Untuk library: pemindai secret di seluruh repository tidak menemukan secret nyata.
+
+## Keterbatasan dan keputusan jujur
+- **Target 50 skill teruji belum tercapai**: 22 skill teruji. 24 skill impor berbasis instruksi tidak diuji perilakunya dan tidak diklaim teruji.
+- **Adaptasi**: hanya satu (webapp-testing). Adaptasi lain tidak dilakukan karena tidak ada kebutuhan konkret yang terbukti.
+- **Deduplikasi belum dilakukan**: folder `scripts/office/` identik (diverifikasi dengan diff, mengabaikan `__pycache__`) di docx, pptx, dan xlsx. Dibiarkan karena setiap skill harus berdiri sendiri saat dipasang. Tumpang tindih konsep juga ada: `governance/skill-creator` dan `writing-skills` (obra) bersinggungan dengan `skill-engineering-standard` buatan ZY; keduanya dipertahankan karena standar ZY berbeda (validator dan 13 section).
+- **Discovery Codex belum terverifikasi**: pencarian pihak ketiga memberi jalur berbeda (`~/.codex/skills`, `.codex/skills`, `~/.agents/skills`, `.agents/skills`). Dokumentasi resmi `developers.openai.com` tidak bisa di-resolve dari sesi ini. Installer menerima target apa pun, tetapi jalur Codex tidak diklaim benar.
+- **Discovery Claude Code** belum diverifikasi di sesi Claude Code yang memuat skill secara nyata. Installer menyalin struktur `skills/<nama>/SKILL.md` ke `~/.claude/skills` atau `.claude/skills`.
+- **PowerMCP** tidak diimpor: membutuhkan perangkat lunak power system berlisensi (PowerWorld/PSSE) untuk pengujian.
+- **doc-coauthoring** BLOCKED: tidak ada lisensi.
+- **numba** tidak terpasang; pandapower hanya memberi warning kecepatan.

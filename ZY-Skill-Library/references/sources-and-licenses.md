@@ -46,3 +46,14 @@ Aturan: lisensi ditulis hanya jika sudah diverifikasi. Kolom **Status verifikasi
 ## Lisensi skill di library ini
 - Skill buatan ZY: `original-zy`. Kode bersifat milik pemilik repository. Jika repository dipublikasikan, pilih lisensi eksplisit (mis. MIT) setelah keputusan pemilik.
 - Tidak ada kode pihak ketiga yang disalin ke dalam skill (lihat keputusan di atas).
+
+## Provenance impor (diverifikasi dari clone lokal, 2026-11-25)
+
+| Repository | Commit | Lisensi terverifikasi | Catatan |
+|---|---|---|---|
+| anthropics/skills | e4bb5d960d87126ff3b3a8af1a104b7db67560ba (2026-11-16) | Apache-2.0 per skill (`LICENSE.txt` di folder skill). Tidak ada LICENSE di root clone. | `doc-coauthoring` tidak punya file lisensi: BLOCKED, tidak diimpor. |
+| obra/superpowers | 22f0b463e7a5e579904dd6211a520321035526f7 (2026-11-03) | MIT (LICENSE root, Copyright 2025 Jesse Vincent) | Disalin sebagai `LICENSE` ke tiap folder skill. |
+| pymodbus-dev/pymodbus | 3.16.2 (PyPI) | BSD-3-Clause (metadata PyPI) | Dipakai oleh `modbus-tcp-client`. |
+| e2nIEE/pandapower | 3.5.6 (PyPI) | Metadata PyPI kosong; BSD-3-Clause menurut LICENSE repository (pencarian web sebelumnya) | Dipakai oleh `load-flow-pandapower`. |
+
+Dependensi uji (venv `tests/requirements-test.txt`) yang lisensinya belum saya verifikasi satu per satu: pypdf, reportlab, openpyxl, python-pptx, python-docx, pillow, imageio, numpy, defusedxml, lxml, PyYAML, playwright. Ini bukan dependensi runtime skill (kecuali yang disebut di SKILL.md masing-masing).

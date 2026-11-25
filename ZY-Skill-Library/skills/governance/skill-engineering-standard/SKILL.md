@@ -3,7 +3,7 @@ name: skill-engineering-standard
 description: Author, review, and validate ZY Skill Library skills against the 13-section engineering standard (triggers, scope, workflow, decision rules, error handling, QC, acceptance criteria, tests, sources, license). Use when creating a new skill, editing an existing SKILL.md, or checking that the library passes validation before a commit.
 license: original-zy
 compatibility: Python 3.9+ standard library only; expects the ZY Skill Library repository layout
-metadata: {"category": "governance", "status": "validated", "owner": "zy"}
+metadata: {"category": "governance", "status": "verified", "owner": "zy"}
 ---
 
 # Skill Engineering Standard

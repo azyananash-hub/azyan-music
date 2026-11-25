@@ -3,7 +3,7 @@ name: fmea-rpn-prioritizer
 description: Prioritize failure modes from a FMEA worksheet (CSV with severity, occurrence, detection 1-10) by Risk Priority Number and flag high-severity items for review. Use for preventive maintenance, industrial utility reliability reviews, root cause analysis, and DMAIC improvement planning.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "engineering", "status": "validated", "owner": "zy"}
+metadata: {"category": "engineering", "status": "verified", "owner": "zy"}
 ---
 
 # FMEA RPN Prioritizer

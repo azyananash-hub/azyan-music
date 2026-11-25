@@ -58,7 +58,12 @@ class SkillDoc:
 
 
 def parse_frontmatter(text: str) -> tuple[dict, str, list[str]]:
-    """Parser frontmatter sederhana: hanya pasangan `key: value` satu baris."""
+    """Parser frontmatter sederhana yang mendukung:
+      - pasangan `key: value` satu baris
+      - block scalar `key: >` / `key: |` (baris berindent digabung)
+      - key bersarang (baris berindent setelah key kosong) diabaikan, bukan error
+    Tanpa PyYAML agar tetap zero-dependency.
+    """
     errors: list[str] = []
     if not text.startswith("---\n"):
         return {}, text, ["frontmatter YAML wajib di baris pertama (---)"]
@@ -68,20 +73,38 @@ def parse_frontmatter(text: str) -> tuple[dict, str, list[str]]:
     block = text[4:end]
     body = text[end + 4:].lstrip("\n")
     data: dict = {}
-    for lineno, raw in enumerate(block.splitlines(), start=2):
+    lines = block.splitlines()
+    i = 0
+    last_plain = False
+    while i < len(lines):
+        raw = lines[i]
+        i += 1
         if not raw.strip() or raw.lstrip().startswith("#"):
             continue
         if raw.startswith((" ", "\t")):
-            errors.append(f"frontmatter baris {lineno}: nilai multi-baris tidak didukung, tulis satu baris")
-            continue
+            # Continuation dari nilai plain tidak didukung: laporkan, jangan telan diam-diam.
+            if last_plain:
+                errors.append(f"frontmatter baris {i}: continuation nilai plain tidak didukung, gunakan '>' atau '|'")
+                last_plain = False
+            continue  # key bersarang (nilai kosong) diabaikan
         if ":" not in raw:
-            errors.append(f"frontmatter baris {lineno}: format key: value tidak valid")
+            errors.append(f"frontmatter baris {i}: format key: value tidak valid")
             continue
         key, value = raw.split(":", 1)
-        value = value.strip()
+        key, value = key.strip(), value.strip()
+        if value in (">", "|", ">-", "|-"):
+            chunk = []
+            while i < len(lines) and (not lines[i].strip() or lines[i].startswith((" ", "\t"))):
+                chunk.append(lines[i].strip())
+                i += 1
+            sep = " " if value.startswith(">") else "\n"
+            data[key] = sep.join(c for c in chunk if c).strip()
+            last_plain = False
+            continue
         if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
             value = value[1:-1]
-        data[key.strip()] = value
+        data[key] = value
+        last_plain = value != ""
     return data, body, errors
 
 
@@ -118,8 +141,33 @@ def script_references(body: str) -> list[str]:
     return sorted(set(_SCRIPT_REF_RE.findall(body)))
 
 
+def is_imported(doc: SkillDoc) -> bool:
+    """Skill hasil impor dari upstream punya SOURCE.md; standar 13-section tidak berlaku untuknya."""
+    return os.path.isfile(os.path.join(os.path.dirname(doc.path), "SOURCE.md"))
+
+
+def validate_imported(doc: SkillDoc) -> SkillDoc:
+    """Validasi minimal untuk skill IMPORTED: tidak diubah, jadi hanya cek kontrak discovery dan provenance."""
+    fm = doc.frontmatter
+    folder = os.path.dirname(doc.path)
+    if not fm.get("name"):
+        doc.errors.append("frontmatter 'name' wajib")
+    elif fm["name"] != doc.folder:
+        doc.errors.append(f"name '{fm['name']}' harus sama dengan nama folder '{doc.folder}'")
+    if not fm.get("description"):
+        doc.errors.append("frontmatter 'description' wajib")
+    elif len(fm["description"]) > MAX_DESCRIPTION_LEN:
+        # Skill upstream tidak diubah; panjang berlebih hanya dicatat sebagai warning.
+        doc.warnings.append(f"description {len(fm['description'])} karakter melebihi {MAX_DESCRIPTION_LEN} (upstream, tidak diubah)")
+    if not any(os.path.isfile(os.path.join(folder, n)) for n in ("LICENSE", "LICENSE.txt", "LICENSE.md")):
+        doc.errors.append("file lisensi (LICENSE/LICENSE.txt) wajib untuk skill impor")
+    return doc
+
+
 def validate_skill(doc: SkillDoc) -> SkillDoc:
     """Isi doc.errors dan doc.warnings sesuai standar. Mengembalikan doc yang sama."""
+    if is_imported(doc):
+        return validate_imported(doc)
     fm = doc.frontmatter
     if not fm.get("name"):
         doc.errors.append("frontmatter 'name' wajib")

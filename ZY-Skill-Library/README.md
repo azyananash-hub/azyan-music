@@ -4,19 +4,19 @@ Kumpulan skill AI yang modular, dapat diuji, dan dapat dipasang ke Claude Code (
 
 Library ini **bukan** kumpulan prompt. Setiap skill yang berstatus `validated` memiliki script, test, dan batasan cakupan yang dapat diverifikasi.
 
-## Status singkat
+## Status singkat (v0.2.0)
 
-| Kategori | Skill validated | Catatan |
+46 skill di disk, 0 error validasi, 86 test lulus. Daftar lengkap ada di `SKILL_REGISTRY.json`.
+
+| Klasifikasi | Status | Jumlah |
 |---|---|---|
-| engineering | 2 | Short circuit 3-fasa (IEC 60909 disederhanakan), FMEA RPN |
-| quantitative-trading | 2 | Trade statistics, position sizing (tanpa data pasar, tanpa janji profit) |
-| japanese-education | 1 | Penjadwal SM-2 |
-| clipacanvas | 1 | Builder render link + minifier konservatif |
-| governance | 2 | Standar skill, audit risiko skill pihak ketiga |
-| software-development | 1 | Pemindai kebocoran secret |
-| industrial-utility, automation, ai-agents, flutter, creative-production, motion-graphics, academic-research, finance | 0 | Belum dibuat; lihat `research/PROGRESS.md` |
+| CUSTOM | VERIFIED | 15 |
+| IMPORTED | VERIFIED (diuji) | 6 |
+| ADAPTED | VERIFIED | 1 (`webapp-testing`) |
+| IMPORTED | belum diuji | 24 |
+| BLOCKED | tidak diimpor | 1 (`doc-coauthoring`: tanpa lisensi) |
 
-Daftar lengkap ada di `SKILL_REGISTRY.json`.
+Sumber impor: `anthropics/skills` (Apache-2.0, per skill) dan `obra/superpowers` (MIT). Detail commit dan lisensi: `research/import-manifest.json` dan `references/sources-and-licenses.md`.
 
 ## Struktur
 
@@ -54,7 +54,7 @@ Pemasangan per proyek: ganti target menjadi `<proyek>/.claude/skills`. Detail: `
 ```bash
 python scripts/validate_library.py
 python scripts/build_registry.py --check
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -t tests -v   # gunakan venv: pip install -r tests/requirements-test.txt
 ```
 
 Contoh penggunaan script skill:
@@ -70,6 +70,8 @@ python skills/software-development/secret-leak-scan/scripts/scan_secrets.py <fol
 ```
 
 ## Keterbatasan yang harus diketahui
+- **Target 50 skill teruji belum tercapai** (22 teruji). Skill impor berbasis instruksi belum diuji perilakunya.
+- **Discovery Codex belum terverifikasi** (dokumentasi resmi tidak terjangkau dari sesi ini).
 - **Perhitungan teknik** (short circuit, FMEA) adalah estimasi/alat bantu. Bukan pengganti studi lengkap, SOP, atau keputusan engineer berkompetensi.
 - **Trading**: skill hanya perhitungan matematis dan statistik historis. Tidak ada data pasar, tidak ada sinyal, tidak ada jaminan profit.
 - **Riset repository eksternal**: sebagian lisensi sudah diverifikasi; sebagian belum. Status per repository ada di `references/sources-and-licenses.md`.

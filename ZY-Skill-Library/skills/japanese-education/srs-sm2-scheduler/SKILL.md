@@ -3,7 +3,7 @@ name: srs-sm2-scheduler
 description: Schedule spaced-repetition reviews for Japanese vocabulary, kanji, and grammar cards using the SM-2 algorithm (quality 0-5, ease factor, interval days). Use when building or testing review logic for JLPT N5-N1 study tools such as AmiraVerse, or when computing next due dates for flashcards.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "japanese-education", "status": "validated", "owner": "zy"}
+metadata: {"category": "japanese-education", "status": "verified", "owner": "zy"}
 ---
 
 # SRS SM-2 Scheduler (Japanese Flashcards)

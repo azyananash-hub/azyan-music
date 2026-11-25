@@ -3,7 +3,7 @@ name: third-party-skill-audit
 description: Statically scan a third-party skill, script, or plugin folder for high-risk patterns (remote pipe-to-shell, encoded exec, credential path access, shell profile edits, unpinned installs, binaries, symlinks) before anyone runs or installs it. Use whenever the user wants to adopt a skill or script from an external GitHub repository.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "governance", "status": "validated", "owner": "zy"}
+metadata: {"category": "governance", "status": "verified", "owner": "zy"}
 ---
 
 # Third-Party Skill Audit

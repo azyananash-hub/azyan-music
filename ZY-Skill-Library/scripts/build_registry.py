@@ -13,9 +13,38 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 
-from zy_lib import LIBRARY_ROOT, discover_skills, file_sha256, script_references, validate_skill
+from zy_lib import LIBRARY_ROOT, discover_skills, file_sha256, is_imported, script_references, validate_skill
+
+MANIFEST = os.path.join(LIBRARY_ROOT, 'research', 'import-manifest.json')
+
+
+def _manifest_entry(doc):
+    with open(MANIFEST, encoding='utf-8') as fh:
+        for e in json.load(fh)['entries']:
+            if e['name'] == doc.folder:
+                return e
+    return {}
+
+
+def _classification_for(doc, imported):
+    if not imported:
+        return "CUSTOM"
+    return _manifest_entry(doc).get('classification', 'IMPORTED')
+
+
+def _status_for(doc, imported):
+    if imported:
+        with open(MANIFEST, encoding='utf-8') as fh:
+            for e in json.load(fh)['entries']:
+                if e['name'] == doc.folder:
+                    return e.get('status', 'IMPORTED')
+        return 'IMPORTED'
+    m = re.search(r'"status": "([a-z]+)"', doc.frontmatter.get('metadata', ''))
+    return m.group(1).upper() if m else 'CUSTOM'
+
 
 REGISTRY_PATH = os.path.join(LIBRARY_ROOT, "SKILL_REGISTRY.json")
 REGISTRY_VERSION = 1
@@ -26,13 +55,15 @@ def build_entries() -> list[dict]:
     for doc in discover_skills():
         validate_skill(doc)
         rel = os.path.relpath(doc.path, LIBRARY_ROOT).replace(os.sep, "/")
+        imported = is_imported(doc)
         entries.append({
             "name": doc.name or doc.folder,
             "category": doc.category,
+            "classification": _classification_for(doc, imported),
+            "status": _status_for(doc, imported) if not doc.errors else "INVALID",
             "path": rel,
             "description": doc.description,
             "license": doc.frontmatter.get("license", ""),
-            "status": "validated" if not doc.errors else "invalid",
             "scripts": script_references(doc.body),
             "sha256_skill_md": file_sha256(doc.path),
             "errors": doc.errors,

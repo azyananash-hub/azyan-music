@@ -3,7 +3,7 @@ name: secret-leak-scan
 description: Scan a project for accidentally committed secrets (Google API keys, AWS access keys, private keys, GitHub/Stripe/OpenAI-style tokens, generic password or token assignments) and report masked previews only. Use before committing or pushing code, especially Flutter/Supabase or AI-API projects.
 license: original-zy
 compatibility: Python 3.9+ standard library only
-metadata: {"category": "software-development", "status": "validated", "owner": "zy"}
+metadata: {"category": "software-development", "status": "verified", "owner": "zy"}
 ---
 
 # Secret Leak Scan
