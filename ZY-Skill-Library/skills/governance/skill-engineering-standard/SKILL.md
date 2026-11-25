@@ -1,7 +1,7 @@
 ---
 name: skill-engineering-standard
 description: Author, review, and validate ZY Skill Library skills against the 13-section engineering standard (triggers, scope, workflow, decision rules, error handling, QC, acceptance criteria, tests, sources, license). Use when creating a new skill, editing an existing SKILL.md, or checking that the library passes validation before a commit.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only; expects the ZY Skill Library repository layout
 metadata: {"category": "governance", "status": "verified", "owner": "zy"}
 ---
@@ -32,7 +32,7 @@ Frontmatter wajib (satu baris per key):
 ---
 name: nama-folder-sama-persis        # kebab-case, <= 64 karakter
 description: Kalimat yang menjelaskan apa dan kapan dipakai.   # <= 1024 karakter, satu baris
-license: MIT | Apache-2.0 | original-zy | ...
+license: MIT | Apache-2.0 | MIT | ...
 ---
 ```
 
@@ -98,4 +98,4 @@ Lihat `tests/test_validate_library.py` (validator menolak nama tidak cocok, sect
 - Ide struktur progressive disclosure dan konvensi SKILL.md terinspirasi dari repo anthropics/skills (lisensi per-skill, periksa LICENSE.txt tiap skill sebelum menyalin apa pun). Tidak ada file dari repo itu yang disalin.
 
 ## Informasi Lisensi
-- Standar dan validator: `original-zy`.
+- Standar dan validator: `MIT`.

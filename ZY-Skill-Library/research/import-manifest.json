@@ -11,7 +11,7 @@
       "library_path": "skills/creative-production/algorithmic-art",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "brainstorming",
@@ -24,7 +24,7 @@
       "library_path": "skills/software-development/brainstorming",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "brand-guidelines",
@@ -37,7 +37,7 @@
       "library_path": "skills/creative-production/brand-guidelines",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "canvas-design",
@@ -50,7 +50,7 @@
       "library_path": "skills/creative-production/canvas-design",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "claude-api",
@@ -63,7 +63,7 @@
       "library_path": "skills/software-development/claude-api",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "discernment-nudge",
@@ -76,7 +76,7 @@
       "library_path": "skills/ai-agents/discernment-nudge",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "dispatching-parallel-agents",
@@ -89,7 +89,7 @@
       "library_path": "skills/software-development/dispatching-parallel-agents",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "doc-coauthoring",
@@ -126,7 +126,7 @@
       "library_path": "skills/software-development/executing-plans",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "finishing-a-development-branch",
@@ -139,7 +139,7 @@
       "library_path": "skills/software-development/finishing-a-development-branch",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "frontend-design",
@@ -152,7 +152,7 @@
       "library_path": "skills/software-development/frontend-design",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "internal-comms",
@@ -165,7 +165,7 @@
       "library_path": "skills/office-documents/internal-comms",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "mcp-builder",
@@ -178,7 +178,7 @@
       "library_path": "skills/software-development/mcp-builder",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji. evaluation.py membutuhkan Anthropic API (berbayar): tidak dijalankan. Panduan lain belum diuji."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. Belum diuji. evaluation.py membutuhkan Anthropic API (berbayar): tidak dijalankan. Panduan lain belum diuji."
     },
     {
       "name": "pdf",
@@ -217,7 +217,7 @@
       "library_path": "skills/software-development/receiving-code-review",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "requesting-code-review",
@@ -230,7 +230,7 @@
       "library_path": "skills/software-development/requesting-code-review",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "skill-creator",
@@ -269,7 +269,7 @@
       "library_path": "skills/software-development/subagent-driven-development",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "systematic-debugging",
@@ -282,7 +282,7 @@
       "library_path": "skills/software-development/systematic-debugging",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "test-driven-development",
@@ -295,7 +295,7 @@
       "library_path": "skills/software-development/test-driven-development",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "theme-factory",
@@ -308,7 +308,7 @@
       "library_path": "skills/creative-production/theme-factory",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "using-git-worktrees",
@@ -321,7 +321,7 @@
       "library_path": "skills/software-development/using-git-worktrees",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "using-superpowers",
@@ -334,7 +334,7 @@
       "library_path": "skills/software-development/using-superpowers",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "verification-before-completion",
@@ -347,7 +347,7 @@
       "library_path": "skills/software-development/verification-before-completion",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "web-artifacts-builder",
@@ -360,7 +360,7 @@
       "library_path": "skills/software-development/web-artifacts-builder",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "webapp-testing",
@@ -386,7 +386,7 @@
       "library_path": "skills/software-development/writing-plans",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "writing-skills",
@@ -399,7 +399,7 @@
       "library_path": "skills/governance/writing-skills",
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
-      "test_evidence": "Belum diuji: instruksi saja, tidak ada script yang dieksekusi."
+      "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
       "name": "xlsx",

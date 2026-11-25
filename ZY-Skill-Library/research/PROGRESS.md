@@ -40,3 +40,12 @@ Target awal 50 skill teruji belum tercapai: 22 skill teruji. Tidak ada skill kos
 - 2026-11-25: Impor disalin utuh dengan SOURCE.md; adaptasi hanya lewat folder ADAPTATION.md.
 - 2026-11-25: Test memakai venv `tests/requirements-test.txt`, bukan Python sistem.
 - 2026-11-25: Skill impor tidak wajib 13 section ZY; validasinya minimal (name, description, lisensi).
+
+## Checkpoint v0.3.0 (2026-11-25)
+- Hasil: 50 skill di disk, 26 VERIFIED (19 CUSTOM, 6 IMPORTED, 1 ADAPTED), 24 IMPORTED belum diuji perilakunya (smoke sintaks lulus), 0 error validasi, 96 test lulus.
+- Baru: steam-water-properties (CoolProp, MIT), portfolio-metrics-quantstats (quantstats, Apache-2.0), fsrs-scheduler (fsrs, MIT), markitdown-converter (markitdown, MIT). Dicek dari metadata PyPI; quantstats Apache-2.0 dari LICENSE repository (pencarian sebelumnya).
+- Lisensi: semua skill buatan ZY kini MIT (`LICENSE-ZY.md`). Skill upstream tetap lisensi aslinya.
+- Router: `scripts/route_skill.py` (kata kunci, tanpa dependensi). Uji 8 kueri buatan sendiri: 8/8 top-1. Ini uji kewarasan, bukan benchmark.
+- Windows: `scripts/install_windows.ps1` dibuat, TIDAK DIUJI (sandbox tanpa Windows/pwsh).
+- Codex: `developers.openai.com` tetap tidak bisa dijangkau (DNS gagal, curl kode 000). Discovery Codex BELUM TERVERIFIKASI; tidak ada jalur Codex yang diklaim.
+- Tidak dilakukan: deduplikasi office (sesuai keputusan), instalasi global, pengujian ulang 24 skill instruksi.

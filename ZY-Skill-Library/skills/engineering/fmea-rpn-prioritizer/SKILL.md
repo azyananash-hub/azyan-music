@@ -1,7 +1,7 @@
 ---
 name: fmea-rpn-prioritizer
 description: Prioritize failure modes from a FMEA worksheet (CSV with severity, occurrence, detection 1-10) by Risk Priority Number and flag high-severity items for review. Use for preventive maintenance, industrial utility reliability reviews, root cause analysis, and DMAIC improvement planning.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "engineering", "status": "verified", "owner": "zy"}
 ---
@@ -83,4 +83,4 @@ Lihat `tests/test_fmea_rpn.py`:
 - Lihat `references/fmea-scales-example.md` untuk contoh tabel skala.
 
 ## Informasi Lisensi
-- Kode dan dokumentasi: `original-zy`. Metode FMEA adalah metode publik; skill tidak menyalin teks standar AIAG-VDA.
+- Kode dan dokumentasi: `MIT`. Metode FMEA adalah metode publik; skill tidak menyalin teks standar AIAG-VDA.

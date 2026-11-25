@@ -1,7 +1,7 @@
 ---
 name: boiler-efficiency-indirect
 description: Estimate boiler efficiency with the indirect heat-loss method (Siegert dry flue gas loss plus radiation and other losses). Use for utility boiler performance screening and loss breakdown.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library
 metadata: {"category": "industrial-utility", "status": "verified", "owner": "zy"}
 ---
@@ -54,4 +54,4 @@ python scripts/boiler_efficiency.py --t-flue 180 --t-ambient 30 --co2 10 --fuel 
 - ASME PTC 4 / BS EN 12952 sebagai rujukan uji formal (belum diakses).
 
 ## Informasi Lisensi
-- Skill: original-zy.
+- Skill: MIT.

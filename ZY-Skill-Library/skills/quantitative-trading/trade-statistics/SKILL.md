@@ -1,7 +1,7 @@
 ---
 name: trade-statistics
 description: Compute backtest or journal performance statistics from a list of per-trade PnL values - win rate, expectancy, profit factor, and maximum drawdown with sample-size warnings. Use for evaluating a trading strategy's historical results, including XAUUSD ICT/SMC backtests. Never promises future profit.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "quantitative-trading", "status": "verified", "owner": "zy"}
 ---
@@ -79,5 +79,5 @@ Lihat `tests/test_trade_stats.py`:
 - Pembanding library: ranaroussi/quantstats (Apache-2.0) untuk tearsheet; kernc/backtesting.py (AGPL-3.0) untuk backtest. Lisensi AGPL memengaruhi penggunaan jaringan; baca sebelum memakai.
 
 ## Informasi Lisensi
-- Kode dan dokumentasi: `original-zy`. Tidak menyalin kode dari library pihak ketiga.
+- Kode dan dokumentasi: `MIT`. Tidak menyalin kode dari library pihak ketiga.
 - Skill ini tidak memberikan nasihat keuangan atau investasi.

@@ -1,7 +1,7 @@
 ---
 name: third-party-skill-audit
 description: Statically scan a third-party skill, script, or plugin folder for high-risk patterns (remote pipe-to-shell, encoded exec, credential path access, shell profile edits, unpinned installs, binaries, symlinks) before anyone runs or installs it. Use whenever the user wants to adopt a skill or script from an external GitHub repository.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "governance", "status": "verified", "owner": "zy"}
 ---
@@ -79,4 +79,4 @@ Lihat `tests/test_scan_skill_risk.py`:
 - Lihat `references/audit-checklist.md`.
 
 ## Informasi Lisensi
-- Scanner dan dokumen: `original-zy`. Tidak menyalin aturan dari alat pihak ketiga.
+- Scanner dan dokumen: `MIT`. Tidak menyalin aturan dari alat pihak ketiga.

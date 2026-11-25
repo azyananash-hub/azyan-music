@@ -1,7 +1,7 @@
 ---
 name: position-size-calculator
 description: Calculate position size from account equity, fixed-fraction risk percent, entry and stop-loss prices, and contract value per unit (e.g. XAUUSD lot specs). Use for risk management planning before a trade. Provides sizing math only, never trade signals or profit guarantees.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "quantitative-trading", "status": "verified", "owner": "zy"}
 ---
@@ -71,5 +71,5 @@ Lihat `tests/test_position_size.py`: perhitungan dasar, short vs long, cap, vali
 - Lihat `references/xauusd-contract-checklist.md` untuk daftar verifikasi kontrak.
 
 ## Informasi Lisensi
-- Kode dan dokumentasi: `original-zy`.
+- Kode dan dokumentasi: `MIT`.
 - Skill ini tidak memberikan nasihat keuangan.

@@ -1,7 +1,7 @@
 ---
 name: render-link-builder
 description: Produce a self-contained, lightly minified HTML animation for ClipACanvas and build its direct render link (URL-encoded code, 1920x1080 horizontal by default). Use whenever the user wants an HTML/Canvas/SVG motion graphic that renders through the ClipACanvas render endpoint.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "clipacanvas", "status": "verified", "owner": "zy"}
 ---
@@ -79,4 +79,4 @@ Lihat `tests/test_render_link.py`:
 - Lihat `references/minifier-limitations.md`.
 
 ## Informasi Lisensi
-- Kode dan dokumentasi: `original-zy`. Tidak ada kode pihak ketiga yang disalin.
+- Kode dan dokumentasi: `MIT`. Tidak ada kode pihak ketiga yang disalin.

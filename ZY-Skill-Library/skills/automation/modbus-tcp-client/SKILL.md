@@ -1,7 +1,7 @@
 ---
 name: modbus-tcp-client
 description: Read and write Modbus TCP holding registers with scaling and signed conversion using pymodbus, with explicit safety rules before any write. Use for PLC, sensor or inverter register access on isolated industrial networks.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+; pymodbus (BSD-3-Clause)
 metadata: {"category": "automation", "status": "verified", "owner": "zy"}
 ---
@@ -54,4 +54,4 @@ python scripts/modbus_client.py read --host 192.168.1.20 --unit 1 --address 0 --
 - Datastore lama memicu deprecation warning pymodbus; migrasi ke SimDevice belum dilakukan.
 
 ## Informasi Lisensi
-- Skill: original-zy. Dependensi pymodbus: BSD-3-Clause.
+- Skill: MIT. Dependensi pymodbus: BSD-3-Clause.

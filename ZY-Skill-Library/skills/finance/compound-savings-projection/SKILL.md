@@ -1,7 +1,7 @@
 ---
 name: compound-savings-projection
 description: Project savings growth with monthly contributions and compound interest across several return scenarios, reporting contributions and return-driven growth. Use for personal budgeting and savings planning; not investment advice.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library
 metadata: {"category": "finance", "status": "verified", "owner": "zy"}
 ---
@@ -52,4 +52,4 @@ python scripts/savings_projection.py --monthly 100 --annual-rate 12 --years 1
 - Rumus bunga majemuk dan anuitas standar (dirumuskan ulang).
 
 ## Informasi Lisensi
-- Skill: original-zy. Bukan nasihat keuangan.
+- Skill: MIT. Bukan nasihat keuangan.

@@ -1,7 +1,7 @@
 ---
 name: cooling-tower-performance
 description: Compute cooling tower range, approach, effectiveness, heat load and rule-of-thumb evaporation from water temperatures and flow. Use for utility-side performance checks of cooling towers in industrial plants.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library
 metadata: {"category": "industrial-utility", "status": "verified", "owner": "zy"}
 ---
@@ -53,4 +53,4 @@ python scripts/cooling_tower.py --t-hot-in 35 --t-cold-out 25 --t-wetbulb 22 --f
 - Aturan 1 % per 6 C range untuk evaporasi adalah aturan praktis; belum diverifikasi terhadap sumber primer.
 
 ## Informasi Lisensi
-- Skill: original-zy.
+- Skill: MIT.

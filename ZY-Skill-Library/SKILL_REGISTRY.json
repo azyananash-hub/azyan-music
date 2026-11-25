@@ -2,7 +2,7 @@
   "registry_version": 1,
   "library": "ZY Skill Library",
   "generated_by": "scripts/build_registry.py",
-  "skill_count": 46,
+  "skill_count": 50,
   "skills": [
     {
       "name": "discernment-nudge",
@@ -23,11 +23,11 @@
       "status": "VERIFIED",
       "path": "skills/automation/modbus-tcp-client/SKILL.md",
       "description": "Read and write Modbus TCP holding registers with scaling and signed conversion using pymodbus, with explicit safety rules before any write. Use for PLC, sensor or inverter register access on isolated industrial networks.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/modbus_client.py"
       ],
-      "sha256_skill_md": "f4a08664d6d38a80fad9e23d0546a7b3835411d81151539b1c293fbe7dab51f6",
+      "sha256_skill_md": "9a532f2ccecd76ba31fe784b319ee5601669e3d785a7d267983dc49256ae143d",
       "errors": []
     },
     {
@@ -37,11 +37,11 @@
       "status": "VERIFIED",
       "path": "skills/clipacanvas/render-link-builder/SKILL.md",
       "description": "Produce a self-contained, lightly minified HTML animation for ClipACanvas and build its direct render link (URL-encoded code, 1920x1080 horizontal by default). Use whenever the user wants an HTML/Canvas/SVG motion graphic that renders through the ClipACanvas render endpoint.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/build_render_link.py"
       ],
-      "sha256_skill_md": "fbe4591cfe1dd8c26273c779de573800adb5213eee7c3adb1b55faf5669fbd14",
+      "sha256_skill_md": "f1a90c805c6b2060ed2f9be7dbbb7eabd4c647d9a792bb8b9be9168bf56c7c26",
       "errors": []
     },
     {
@@ -111,11 +111,11 @@
       "status": "VERIFIED",
       "path": "skills/engineering/fmea-rpn-prioritizer/SKILL.md",
       "description": "Prioritize failure modes from a FMEA worksheet (CSV with severity, occurrence, detection 1-10) by Risk Priority Number and flag high-severity items for review. Use for preventive maintenance, industrial utility reliability reviews, root cause analysis, and DMAIC improvement planning.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/fmea_rpn.py"
       ],
-      "sha256_skill_md": "04fe321546becf69e5fe008d5725328d9eb1be5c577e2582489500d36498595c",
+      "sha256_skill_md": "5f3cf1647884fd121b4ddc864a5f4fd0107c8e51337804b2ff875795d5b324da",
       "errors": []
     },
     {
@@ -125,11 +125,11 @@
       "status": "VERIFIED",
       "path": "skills/engineering/load-flow-pandapower/SKILL.md",
       "description": "Run AC power flow (Newton-Raphson) on small distribution or industrial networks from a JSON description using pandapower, reporting bus voltages, slack power, line losses and a power-balance check. Use for preliminary load flow studies.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/load_flow.py"
       ],
-      "sha256_skill_md": "514c5c71de32a9cc4c8c447a60cabadce07474909ad1f14a8ce5839af7bb469a",
+      "sha256_skill_md": "322830cbbec7706a0e101e122e91dd35454edf506c0ea6c40742cb72247cdb55",
       "errors": []
     },
     {
@@ -139,11 +139,11 @@
       "status": "VERIFIED",
       "path": "skills/engineering/short-circuit-calculator/SKILL.md",
       "description": "Estimate symmetrical three-phase short-circuit current (Ik and peak ip) at a bus from utility short-circuit MVA and transformer impedance percent, using IEC 60909-style simplified formulas. Use for electrical power system pre-checks and student/engineering analysis of fault levels.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/short_circuit.py"
       ],
-      "sha256_skill_md": "7fde752d85a9e11128438efbb80b6480d033a20c5aa27d8b04a0cf6ec3f559ac",
+      "sha256_skill_md": "84f864f20db58a8b754db74a5b4c428168f5005479199c40e3e3982e6460e89b",
       "errors": []
     },
     {
@@ -153,11 +153,25 @@
       "status": "VERIFIED",
       "path": "skills/finance/compound-savings-projection/SKILL.md",
       "description": "Project savings growth with monthly contributions and compound interest across several return scenarios, reporting contributions and return-driven growth. Use for personal budgeting and savings planning; not investment advice.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/savings_projection.py"
       ],
-      "sha256_skill_md": "0155a44a42c4c3f34abceba6deefca90d5f89d8d55584e37c41b7da3e0bb1a06",
+      "sha256_skill_md": "af68304f73a61b2f69e4c4ef530a0fb0a89292ba7c526cf95af71e97437d5b9f",
+      "errors": []
+    },
+    {
+      "name": "portfolio-metrics-quantstats",
+      "category": "finance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/finance/portfolio-metrics-quantstats/SKILL.md",
+      "description": "Compute historical portfolio metrics (cumulative return, Sharpe ratio, maximum drawdown, annualized volatility) from a daily returns CSV using quantstats. Use for evaluating past performance; never a profit guarantee.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/portfolio_metrics.py"
+      ],
+      "sha256_skill_md": "403a6519fe6b6138b6e8339a01db6b429441fba03d4faec795504ecb14258fc0",
       "errors": []
     },
     {
@@ -179,13 +193,13 @@
       "status": "VERIFIED",
       "path": "skills/governance/skill-engineering-standard/SKILL.md",
       "description": "Author, review, and validate ZY Skill Library skills against the 13-section engineering standard (triggers, scope, workflow, decision rules, error handling, QC, acceptance criteria, tests, sources, license). Use when creating a new skill, editing an existing SKILL.md, or checking that the library passes validation before a commit.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/build_registry.py",
         "scripts/install_skills.py",
         "scripts/validate_library.py"
       ],
-      "sha256_skill_md": "6fb8165af0e694e5cd266c0dead8361ef6fecd0db5c3dcde11b04210557e519a",
+      "sha256_skill_md": "c221e71bfbff76e4b063bf08350ce45c17d97ad7b2b9b0abcab7e4d99d3bb79c",
       "errors": []
     },
     {
@@ -195,11 +209,11 @@
       "status": "VERIFIED",
       "path": "skills/governance/third-party-skill-audit/SKILL.md",
       "description": "Statically scan a third-party skill, script, or plugin folder for high-risk patterns (remote pipe-to-shell, encoded exec, credential path access, shell profile edits, unpinned installs, binaries, symlinks) before anyone runs or installs it. Use whenever the user wants to adopt a skill or script from an external GitHub repository.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/scan_skill_risk.py"
       ],
-      "sha256_skill_md": "a57e4647514ed869bbc7a5fd263e720636c07658babf40fdd4045b5c5566b757",
+      "sha256_skill_md": "249a1555d4bdf9b597f1ec37577b429ef05429fc4c029729d6fbccc42762b3de",
       "errors": []
     },
     {
@@ -224,11 +238,11 @@
       "status": "VERIFIED",
       "path": "skills/industrial-utility/boiler-efficiency-indirect/SKILL.md",
       "description": "Estimate boiler efficiency with the indirect heat-loss method (Siegert dry flue gas loss plus radiation and other losses). Use for utility boiler performance screening and loss breakdown.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/boiler_efficiency.py"
       ],
-      "sha256_skill_md": "e4f8860b901edf9090d4441ec1047e03120db57409e7568e1c7e4ab6f8b952ff",
+      "sha256_skill_md": "d03fac92fcf0f91cac4323168c086ce174bf2e16ff4906f879631431a95f3171",
       "errors": []
     },
     {
@@ -238,11 +252,11 @@
       "status": "VERIFIED",
       "path": "skills/industrial-utility/cooling-tower-performance/SKILL.md",
       "description": "Compute cooling tower range, approach, effectiveness, heat load and rule-of-thumb evaporation from water temperatures and flow. Use for utility-side performance checks of cooling towers in industrial plants.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/cooling_tower.py"
       ],
-      "sha256_skill_md": "f85853fd291f396b1bb62a4a8facdfd6c5ed2957f3643d3a68f92b687163a334",
+      "sha256_skill_md": "b99924d16477eda6cfb0c41937fb4dda50ed158215ebb2486f22358b38a99c8d",
       "errors": []
     },
     {
@@ -252,11 +266,39 @@
       "status": "VERIFIED",
       "path": "skills/industrial-utility/ro-mass-balance/SKILL.md",
       "description": "Compute ideal reverse osmosis mass balance (recovery, salt rejection, concentrate flow and TDS) from feed and permeate measurements. Use for water treatment plant (WTP/RO) checks and training.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/ro_mass_balance.py"
       ],
-      "sha256_skill_md": "e3f7f5779e4085a694f67e00ab551015b85ee35d70fb4eb27d687b728341e6dd",
+      "sha256_skill_md": "dcc429d7db2b866866ae4e2864d2a1ae6cfce68e90d112dead94f82f2b401668",
+      "errors": []
+    },
+    {
+      "name": "steam-water-properties",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/steam-water-properties/SKILL.md",
+      "description": "Look up saturation temperature, saturated liquid and vapour enthalpy of water at a given pressure using CoolProp. Use for steam system and boiler property checks in industrial utility work.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/steam_props.py"
+      ],
+      "sha256_skill_md": "d249b3017d9c21ccdcbceeaecfbcac2e4904c2001fc77b83760d53835949598c",
+      "errors": []
+    },
+    {
+      "name": "fsrs-scheduler",
+      "category": "japanese-education",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/japanese-education/fsrs-scheduler/SKILL.md",
+      "description": "Schedule Japanese vocabulary and kanji reviews with the FSRS algorithm (Again/Hard/Good/Easy ratings) via the fsrs Python package. Use as a more accurate alternative to SM-2 for JLPT study tools such as AmiraVerse.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/fsrs_review.py"
+      ],
+      "sha256_skill_md": "2cb80f337e1c6c25cf329a621f8dba48ffa18ce586ec4be58b80c42770d01881",
       "errors": []
     },
     {
@@ -266,11 +308,11 @@
       "status": "VERIFIED",
       "path": "skills/japanese-education/srs-sm2-scheduler/SKILL.md",
       "description": "Schedule spaced-repetition reviews for Japanese vocabulary, kanji, and grammar cards using the SM-2 algorithm (quality 0-5, ease factor, interval days). Use when building or testing review logic for JLPT N5-N1 study tools such as AmiraVerse, or when computing next due dates for flashcards.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/sm2.py"
       ],
-      "sha256_skill_md": "87d38f1c4e37e5b73010ff71ca48413dcbc7dd3bbc17606be1738b5c7c536f56",
+      "sha256_skill_md": "d312b65d2230ebc21e53c62927026537e5703e1de673fc51750f367fe939dae3",
       "errors": []
     },
     {
@@ -301,6 +343,20 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+      "errors": []
+    },
+    {
+      "name": "markitdown-converter",
+      "category": "office-documents",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/markitdown-converter/SKILL.md",
+      "description": "Convert office documents (docx, pptx, xlsx, pdf, html) to Markdown text with markitdown for reading, summarizing, or feeding content into other skills. Use when a document must be read as plain text.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/to_markdown.py"
+      ],
+      "sha256_skill_md": "03ff374310408b6bf45ef1babaf5955e05046a36bb4ce8438ceee80cf6796d2a",
       "errors": []
     },
     {
@@ -357,11 +413,11 @@
       "status": "VERIFIED",
       "path": "skills/quantitative-trading/position-size-calculator/SKILL.md",
       "description": "Calculate position size from account equity, fixed-fraction risk percent, entry and stop-loss prices, and contract value per unit (e.g. XAUUSD lot specs). Use for risk management planning before a trade. Provides sizing math only, never trade signals or profit guarantees.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/position_size.py"
       ],
-      "sha256_skill_md": "a75ed703c77d8f13788ac94ec66feec252395342039cf9c1d089d7dbd5a2d89f",
+      "sha256_skill_md": "1c0de1aec3a29fd15df5e71176046be435575256111ced24356ebfeac8b4aeda",
       "errors": []
     },
     {
@@ -371,11 +427,11 @@
       "status": "VERIFIED",
       "path": "skills/quantitative-trading/trade-statistics/SKILL.md",
       "description": "Compute backtest or journal performance statistics from a list of per-trade PnL values - win rate, expectancy, profit factor, and maximum drawdown with sample-size warnings. Use for evaluating a trading strategy's historical results, including XAUUSD ICT/SMC backtests. Never promises future profit.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/trade_stats.py"
       ],
-      "sha256_skill_md": "39c7e6af53f2a065d8b0ada0844ca0e303649e156add45778e66b8e7f907a953",
+      "sha256_skill_md": "66bc69d732424379f7f00c0ab06287c7a45b29a1e7e183a16fcd8e746a42c760",
       "errors": []
     },
     {
@@ -493,11 +549,11 @@
       "status": "VERIFIED",
       "path": "skills/software-development/secret-leak-scan/SKILL.md",
       "description": "Scan a project for accidentally committed secrets (Google API keys, AWS access keys, private keys, GitHub/Stripe/OpenAI-style tokens, generic password or token assignments) and report masked previews only. Use before committing or pushing code, especially Flutter/Supabase or AI-API projects.",
-      "license": "original-zy",
+      "license": "MIT",
       "scripts": [
         "scripts/scan_secrets.py"
       ],
-      "sha256_skill_md": "5fcdae0c5773eebe5eadfc5ec6bca7bfa50ba2a74efc6c353c422977574e41f8",
+      "sha256_skill_md": "0c4510749b46caa14da1645f7df07d52bf28cce4779e724e341d18f78328f101",
       "errors": []
     },
     {

@@ -1,7 +1,7 @@
 ---
 name: ro-mass-balance
 description: Compute ideal reverse osmosis mass balance (recovery, salt rejection, concentrate flow and TDS) from feed and permeate measurements. Use for water treatment plant (WTP/RO) checks and training.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library
 metadata: {"category": "industrial-utility", "status": "verified", "owner": "zy"}
 ---
@@ -52,4 +52,4 @@ python scripts/ro_mass_balance.py --q-feed 10 --c-feed 1000 --q-perm 5 --c-perm 
 - Neraca massa standar pada proses membran (dirumuskan ulang).
 
 ## Informasi Lisensi
-- Skill: original-zy.
+- Skill: MIT.

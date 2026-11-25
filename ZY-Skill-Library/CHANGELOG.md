@@ -39,3 +39,14 @@
 - Folder `scripts/office/` identik di tiga skill (belum dideduplikasi).
 - Discovery Codex belum terverifikasi (dokumentasi resmi tidak terjangkau).
 - `doc-coauthoring` BLOCKED karena tidak ada lisensi.
+
+## [0.3.0] - 2026-11-25
+### Ditambahkan
+- Skill custom: steam-water-properties, portfolio-metrics-quantstats, fsrs-scheduler, markitdown-converter (diuji).
+- `scripts/route_skill.py` (router kata kunci), `scripts/install_windows.ps1` (tidak diuji di Windows).
+- `LICENSE-ZY.md` (MIT) untuk skill buatan ZY.
+### Diubah
+- Lisensi skill buatan ZY: original-zy -> MIT.
+### Diketahui
+- 24 skill impor hanya lolos smoke sintaks; perilakunya belum diuji.
+- Discovery Codex belum terverifikasi (dokumentasi tidak terjangkau).

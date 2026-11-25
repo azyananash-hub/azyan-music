@@ -1,7 +1,7 @@
 ---
 name: load-flow-pandapower
 description: Run AC power flow (Newton-Raphson) on small distribution or industrial networks from a JSON description using pandapower, reporting bus voltages, slack power, line losses and a power-balance check. Use for preliminary load flow studies.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+; pandapower (BSD-3-Clause)
 metadata: {"category": "engineering", "status": "verified", "owner": "zy"}
 ---
@@ -59,4 +59,4 @@ python scripts/load_flow.py examples/two_bus.json
 - pandapower: https://github.com/e2nIEE/pandapower (BSD-3-Clause, terverifikasi lewat pencarian web; lihat references/sources-and-licenses.md).
 
 ## Informasi Lisensi
-- Skill: original-zy. Dependensi pandapower: BSD-3-Clause.
+- Skill: MIT. Dependensi pandapower: BSD-3-Clause.

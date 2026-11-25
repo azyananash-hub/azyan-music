@@ -1,7 +1,7 @@
 ---
 name: short-circuit-calculator
 description: Estimate symmetrical three-phase short-circuit current (Ik and peak ip) at a bus from utility short-circuit MVA and transformer impedance percent, using IEC 60909-style simplified formulas. Use for electrical power system pre-checks and student/engineering analysis of fault levels.
-license: original-zy
+license: MIT
 compatibility: Python 3.9+ standard library only
 metadata: {"category": "engineering", "status": "verified", "owner": "zy"}
 ---
@@ -88,5 +88,5 @@ Lihat `tests/test_short_circuit.py` di root library. Kasus utama:
 - Pembanding studi jaringan: pandapower (BSD-3-Clause, lihat `references/sources-and-licenses.md`).
 
 ## Informasi Lisensi
-- Kode dan dokumentasi skill ini: `original-zy` (dibuat untuk ZY Skill Library).
+- Kode dan dokumentasi skill ini: `MIT` (dibuat untuk ZY Skill Library).
 - Standar IEC 60909 adalah dokumen berhak cipta IEC; skill hanya merujuk rumusnya, bukan menyalin teksnya.
