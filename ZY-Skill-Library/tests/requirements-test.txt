@@ -1,14 +1,23 @@
+# Dependensi untuk menjalankan test suite (versi dari venv uji yang dipakai pada v0.4-v0.7).
+# Belum diverifikasi pada instalasi bersih; lihat research/BACKLOG-V0.8.md.
+CoolProp==8.1.0
 defusedxml==0.7.1
+fsrs==6.3.3
 ImageIO==2.38.2
 lxml==6.1.3
+markitdown[docx]==0.1.9
 numpy==2.4.6
 openpyxl==3.1.5
 pandapower==3.5.6
+pandas==2.3.3
 pillow==13.0.0
 playwright==1.65.2
+pocketsphinx==5.1.1
 pymodbus==3.16.2
 pypdf==7.1.1
 python-docx==1.2.0
 python-pptx==1.0.2
 PyYAML==6.0.4
+quantstats==0.0.86
 reportlab==5.1.1
+smartmoneyconcepts==0.0.27
