@@ -83,3 +83,13 @@ Tidak diimpor: remotion-dev/skills (tanpa LICENSE), full-stack-skills/threejs-sk
 | KalarisLabs/research-agent-skills | a74b0db | citation-verification |
 Tidak diimpor (tanpa file LICENSE): Zacklinkk/svg-foundry-skill, RandyHaylor/audio-and-vocal-mastering.
 Rujukan konstanta custom (belum diverifikasi ke dokumen primer): IEC 60255-151 (kurva inverse-time), IEC 60751 (Callendar-Van Dusen), NAMUR NE43 (batas fault 4-20 mA).
+
+## Provenance v0.7
+| Sumber | Commit / versi | Lisensi (dibaca dari berkas) | Dipakai di |
+|---|---|---|---|
+| evanclan/OpenJLPT | 0d1d341 | CC BY-SA 4.0 (LICENSE, NOTICE.md) | jlpt-curriculum/references/openjlpt |
+| github/spec-kit | 3df7575 | MIT (LICENSE) | prd-engineering/references/spec-kit |
+| joshyattridge/smartmoneyconcepts | 1b62fd6 (PyPI 0.0.27) | MIT (LICENSE, Copyright 2020 NeuralNine) | xauusd-smc-analysis (dependensi) |
+| cmusphinx/pocketsphinx | f20ff1b (PyPI 5.1.1) | BSD (classifier PyPI; LICENSE sumber) | narration-subtitle-sync (dependensi dan fixture goforward) |
+| ElevenLabs free tier | paket free, 10.000 karakter/bulan | layanan berbayar dengan kuota gratis | elevenlabs-narration |
+Lisensi skill buatan ZY tetap MIT (LICENSE-ZY.md). Turunan data OpenJLPT wajib CC BY-SA 4.0.

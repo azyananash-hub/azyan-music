@@ -13,10 +13,10 @@ metadata: {"category": "creative-production", "status": "verified", "owner": "zy
 
 ## Scope dan Batas Kemampuan
 - Dicakup: parsing SRT, penyesuaian linier ke durasi audio, validasi overlap dan kecepatan baca (parameter), pengukuran loudness.
-- TIDAK dicakup: TTS (tidak diunduh), alignment per kata, dan mastering penuh.
+- Word alignment (v0.7): forced alignment lokal dengan pocketsphinx (BSD) hanya bahasa Inggris, model ikut di paket pip; bahasa Jepang BLOCKED karena model Jepang tidak terjangkau. Timing dari sumber eksternal (JSON) didukung. TIDAK dicakup: TTS (tidak diunduh) dan mastering penuh.
 
 ## Required Tools
-- Python 3.9+; ffmpeg/ffprobe (opsional untuk audio). `scripts/subtitle_sync.py`
+- Python 3.9+; ffmpeg/ffprobe (opsional untuk audio). `scripts/subtitle_sync.py`, `scripts/word_align.py` (opsional: pocketsphinx untuk alignment bahasa Inggris)
 
 ## Input dan Output Specification
 Input: file SRT, file audio (opsional), max-cps (default 17, parameter Anda). Output: JSON isu dan loudness; SRT tersinkron dengan --out.

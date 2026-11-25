@@ -30,6 +30,10 @@ def _manifest_entry(doc):
 
 
 def _classification_for(doc, imported):
+    # Skill yang ditulis sendiri atas template upstream dapat menyatakan klasifikasi di metadata.
+    m = re.search(r'"classification": "([A-Z]+)"', doc.frontmatter.get('metadata', ''))
+    if m:
+        return m.group(1)
     if not imported:
         return "CUSTOM"
     return _manifest_entry(doc).get('classification', 'IMPORTED')

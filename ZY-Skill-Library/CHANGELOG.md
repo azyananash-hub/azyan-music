@@ -72,3 +72,16 @@
 - `benchmarks/run_benchmark.py`, `benchmarks/router_labels.json`, `benchmarks/RESULTS.md`: benchmark dengan label sintetis yang dihitung manual; A/B dan kualitas AI NOT TESTED.
 ### Diubah
 - `scripts/route_skill.py`: bobot IDF, bonus nama skill yang disebut eksplisit, dan ambang relevansi (skor 0 tidak pernah diaktifkan). Ketepatan pada 21 kueri berlabel: 21/21 (kueri buatan sendiri, bukan generalisasi).
+
+## [0.7.0] - 2026-11-25
+### Ditambahkan
+- Router: konteks proyek (`references/project-profiles.json`), metadata batasan skill (`references/skill-constraints.json`), override kontekstual dan catatan konflik tanpa mengubah upstream, glosarium Indonesia-Inggris, metrik ukuran SKILL.md dan jumlah script/referensi.
+- Skill custom baru: technology-selection, quality-gate, cinematic-storyboarding, manhwa-production, game-mechanics, multi-agent-orchestration, industrial-digital-twin, scada-tag-engineering, electrical-troubleshooting, jlpt-curriculum (data OpenJLPT CC BY-SA 4.0), xauusd-smc-analysis (library MIT), strategy-backtesting, documentary-production, novel-typesetting, cinematic-3d-camera, elevenlabs-narration (VALIDATED; generasi live BLOCKED sementara).
+- Skill ADAPTED: prd-engineering (template spec-kit MIT).
+- Word alignment bahasa Inggris (pocketsphinx BSD, forced alignment teruji pada fixture) di narration-subtitle-sync; bahasa Jepang BLOCKED.
+- Set uji router v0.7 dibekukan sebelum implementasi (`benchmarks/router_labels_v07.json`, 23 kasus).
+### Diubah
+- `scripts/build_registry.py`: klasifikasi boleh dinyatakan di metadata frontmatter.
+### Diketahui
+- Set uji v0.7: 20/23 top-1 benar pada eksekusi pertama dan tetap 20/23 setelah SKILL.md yang hilang ditambahkan. Tiga kegagalan (technology, quality-gate, posisi) disebabkan oleh bonus nama untuk kata generik dan glosarium yang belum lengkap. Tidak disetel ulang.
+- ElevenLabs generasi live: layanan sibuk pada sesi; kuota gratis tersedia (297/10.000 karakter terpakai).

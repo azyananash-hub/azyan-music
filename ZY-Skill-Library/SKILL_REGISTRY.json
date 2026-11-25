@@ -2,7 +2,7 @@
   "registry_version": 1,
   "library": "ZY Skill Library",
   "generated_by": "scripts/build_registry.py",
-  "skill_count": 98,
+  "skill_count": 115,
   "skills": [
     {
       "name": "citation-management",
@@ -37,6 +37,20 @@
         "scripts/verify_citations.py"
       ],
       "sha256_skill_md": "e029dcb02f733fc56418943bf74318049fd879acb2e9d1ed1383d34a11b7724f",
+      "errors": []
+    },
+    {
+      "name": "documentary-production",
+      "category": "academic-research",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/academic-research/documentary-production/SKILL.md",
+      "description": "Keep a documentary claim ledger: every narrated claim must reference a source, every source must be complete, claims marked verified need a primary source, and unused sources are flagged. Use when writing or auditing the narration of a documentary or factual video.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/claim_ledger.py"
+      ],
+      "sha256_skill_md": "1b3bee6a2481186d24d9a881e2e994ef30b6e48579b90e917661bc6945843251",
       "errors": []
     },
     {
@@ -92,6 +106,20 @@
       "license": "",
       "scripts": [],
       "sha256_skill_md": "963a1c01901ccf6125e71ce0717503782823b2b14f7bb0e5c8c9173f1c9eb146",
+      "errors": []
+    },
+    {
+      "name": "scada-tag-engineering",
+      "category": "automation",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/automation/scada-tag-engineering/SKILL.md",
+      "description": "Validate SCADA/HMI tag lists: unique names, naming pattern, analog and digital type rules, engineering ranges, ordered alarm limits within range, and unique device addresses. Use before commissioning or migrating a tag database.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/tag_check.py"
+      ],
+      "sha256_skill_md": "4c6311bd63d0f116648b2b5843ac8f1c1f4b2a2ff49d9b718ac76ec56e0016f3",
       "errors": []
     },
     {
@@ -174,6 +202,20 @@
       "errors": []
     },
     {
+      "name": "cinematic-storyboarding",
+      "category": "creative-production",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/creative-production/cinematic-storyboarding/SKILL.md",
+      "description": "Lint a cinematic storyboard: shot integrity, durations against a target runtime, allowed camera moves, and character continuity via a registry that requires costume and palette for every character. Use when planning a short film or cinematic sequence where characters must stay visually consistent across shots.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/storyboard_lint.py"
+      ],
+      "sha256_skill_md": "c038e0cc0a082553c92be480c1cee55f097bd54eb4230c06fbe97cbbedbb1819",
+      "errors": []
+    },
+    {
       "name": "creating-canvas-video-animations",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -183,6 +225,20 @@
       "license": "MIT",
       "scripts": [],
       "sha256_skill_md": "f43837a4b1843209e7febb1003a87187b301715b42eb89d088db3bd7bc0ff043",
+      "errors": []
+    },
+    {
+      "name": "elevenlabs-narration",
+      "category": "creative-production",
+      "classification": "CUSTOM",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/elevenlabs-narration/SKILL.md",
+      "description": "Plan an ElevenLabs narration from a script: split into segments, estimate characters and credits (one credit per character per generation), check the free monthly quota before any generation, and hand a checked plan to the ElevenLabs tools. Use when producing narration with ElevenLabs without buying credits.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/narration_plan.py"
+      ],
+      "sha256_skill_md": "9fc8c916f52458b52bddade98ee1fac2c61a8b6fb369adb62195fc75a0e36b95",
       "errors": []
     },
     {
@@ -199,6 +255,20 @@
         "scripts/build_plugin_skill.py"
       ],
       "sha256_skill_md": "d98a43fc15d010bff543fd5f1382cceb055fdce12f3988538d38d1a917e3fce9",
+      "errors": []
+    },
+    {
+      "name": "manhwa-production",
+      "category": "creative-production",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/creative-production/manhwa-production/SKILL.md",
+      "description": "Check manhwa page layout: panels inside margins, no overlaps, minimum panel size, and reading order computed right-to-left for Japanese manga or left-to-right otherwise. Use when laying out comic pages before lettering or export.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/panel_check.py"
+      ],
+      "sha256_skill_md": "a57032e52efa7274e9942ae95b64f2873c98f4ec674fbb72953468eac590ee2a",
       "errors": []
     },
     {
@@ -242,9 +312,10 @@
       "description": "Align SRT subtitles to a narration audio duration, validate cue timing and overlaps, and measure integrated loudness and true peak with ffmpeg. Use for human or external narration; no TTS model is downloaded.",
       "license": "MIT",
       "scripts": [
-        "scripts/subtitle_sync.py"
+        "scripts/subtitle_sync.py",
+        "scripts/word_align.py"
       ],
-      "sha256_skill_md": "999cbdac350b6b83af65d879a4c011d41269a06aab9d15c1d4f2cbb3ab4a739c",
+      "sha256_skill_md": "d82f81fd4e99d0a617d150cfd284d62df320226164a7ceed5dcfd738bed019ef",
       "errors": []
     },
     {
@@ -305,6 +376,20 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+      "errors": []
+    },
+    {
+      "name": "electrical-troubleshooting",
+      "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/engineering/electrical-troubleshooting/SKILL.md",
+      "description": "Walk a fault-finding decision tree over measured values: each node tests one measurement against a threshold from the user's own procedure, and missing measurements stop the walk instead of guessing. Use for electrical fault diagnosis when measurements and SOP limits are available.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/fault_tree.py"
+      ],
+      "sha256_skill_md": "3f833f34222601432da519dd3f838673afe50e79ee1fcd3302499e2c94730b1a",
       "errors": []
     },
     {
@@ -531,6 +616,34 @@
       "errors": []
     },
     {
+      "name": "prd-engineering",
+      "category": "governance",
+      "classification": "ADAPTED",
+      "status": "VERIFIED",
+      "path": "skills/governance/prd-engineering/SKILL.md",
+      "description": "Turn a product requirements draft into a checked spec: lint for leftover template placeholders, required sections, prioritized user stories, measurable success criteria, and FR requirement IDs, then emit one handoff task per requirement for AI coding agents. Use when preparing a PRD before implementation.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/prd_lint.py"
+      ],
+      "sha256_skill_md": "4095c7153098c0e364307f8e650a427cc37370bd4056ddc1c40790d25bb01a27",
+      "errors": []
+    },
+    {
+      "name": "quality-gate",
+      "category": "governance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/governance/quality-gate/SKILL.md",
+      "description": "Run a two-layer quality gate on a rendered video: automated technical QC with ffprobe (resolution, frame rate, duration, audio presence) and a separate artistic QC rubric that stays PENDING_REVIEW until a named reviewer approves every criterion. Use before publishing a video, so that passing technical checks is never mistaken for artistic approval.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/qc_gate.py"
+      ],
+      "sha256_skill_md": "5249dcd72b3a820964c3628c7ebf6f915aeb73b3cc08df9df817cf6e0778084e",
+      "errors": []
+    },
+    {
       "name": "skill-creator",
       "category": "governance",
       "classification": "IMPORTED",
@@ -568,6 +681,20 @@
       "license": "",
       "scripts": [],
       "sha256_skill_md": "63c005220903d0ffdaae7e92d65f6693c5408930e1a833e89d7c87c4deac555b",
+      "errors": []
+    },
+    {
+      "name": "technology-selection",
+      "category": "governance",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/governance/technology-selection/SKILL.md",
+      "description": "Choose a production technology (Remotion, Three.js, HTML canvas, SVG, or clipacanvas render) from stated needs such as 2D or 3D, text-heavy, vertical format, determinism, and quality target, with a deterministic ranking that reports unmet needs and quality shortfalls. Use when deciding how to produce a motion graphic or video before building it.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/select_tech.py"
+      ],
+      "sha256_skill_md": "14a13941b677123fecc564ae0d53614dd7cdcc07c29a336221f763fc395128b2",
       "errors": []
     },
     {
@@ -625,6 +752,20 @@
         "scripts/cooling_tower.py"
       ],
       "sha256_skill_md": "b99924d16477eda6cfb0c41937fb4dda50ed158215ebb2486f22358b38a99c8d",
+      "errors": []
+    },
+    {
+      "name": "industrial-digital-twin",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/industrial-digital-twin/SKILL.md",
+      "description": "Build a first-order thermal digital twin (C dT/dt = P - (T - Tamb)/R) with an analytic solution, steady state, time constant, and a stability-checked Euler simulation for comparing measured and modeled temperatures. Use for equipment thermal behavior studies and twin prototyping.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/twin_rc.py"
+      ],
+      "sha256_skill_md": "d307207318b234f9509b69e2a289a85c3ca1b8814632920184072d553d423166",
       "errors": []
     },
     {
@@ -712,6 +853,20 @@
       "errors": []
     },
     {
+      "name": "jlpt-curriculum",
+      "category": "japanese-education",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/japanese-education/jlpt-curriculum/SKILL.md",
+      "description": "Lint JLPT N5-N1 vocabulary datasets: required fields, level-to-file consistency, kana-only readings, duplicate word and reading pairs, and script mix per level. Ships the OpenJLPT CC BY-SA 4.0 vocabulary CSVs for curriculum counts. Use when building or validating Japanese curriculum data.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/jlpt_lint.py"
+      ],
+      "sha256_skill_md": "327e0132dcb955a940257e9b5143ea17e7f7280ba0553f469dee1bcba32ea104",
+      "errors": []
+    },
+    {
       "name": "srs-sm2-scheduler",
       "category": "japanese-education",
       "classification": "CUSTOM",
@@ -735,6 +890,20 @@
       "license": "",
       "scripts": [],
       "sha256_skill_md": "5fbac00b48283e20d58063687d5b7b9ddf8f2a6d5c49164e1957e4a3db20f579",
+      "errors": []
+    },
+    {
+      "name": "cinematic-3d-camera",
+      "category": "motion-graphics",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/motion-graphics/cinematic-3d-camera/SKILL.md",
+      "description": "Generate smooth 3D camera paths from keyframes with Catmull-Rom interpolation that passes exactly through each keyframe and keeps velocity continuous, sampled at a fixed frame rate. Use to drive the camera of Three.js, Remotion, or other 3D scenes in cinematic shots.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/camera_path.py"
+      ],
+      "sha256_skill_md": "4f7002ca74c8f2653af215652a40950507e5f7b35184d3d33f85db822861c51c",
       "errors": []
     },
     {
@@ -986,6 +1155,20 @@
       "errors": []
     },
     {
+      "name": "novel-typesetting",
+      "category": "office-documents",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/office-documents/novel-typesetting/SKILL.md",
+      "description": "Check a novel manuscript for chapter headings in order, empty chapters, and word or character counts per chapter, then export a DOCX with one Heading 1 per chapter. Use when preparing a manuscript draft for review or typesetting handoff.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/manuscript_check.py"
+      ],
+      "sha256_skill_md": "e4122f67a66eb8b23dfd7a3f6d244ff3f1be81ada37e803fb92468d6a06d2fcb",
+      "errors": []
+    },
+    {
       "name": "pdf",
       "category": "office-documents",
       "classification": "IMPORTED",
@@ -1047,6 +1230,20 @@
       "errors": []
     },
     {
+      "name": "strategy-backtesting",
+      "category": "quantitative-trading",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/quantitative-trading/strategy-backtesting/SKILL.md",
+      "description": "Backtest a moving-average crossover on OHLC bars with strict no-lookahead execution: signals use closes up to bar t and fill at the open of bar t+1, with per-side fees and compounded returns. Use to test a rule's historical behavior before any live decision; never a profit guarantee.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/backtest.py"
+      ],
+      "sha256_skill_md": "912c35e98f7a4629c3e5d3f63bbf53010afe9828d56e1c9f299e3ce63907e33a",
+      "errors": []
+    },
+    {
       "name": "trade-statistics",
       "category": "quantitative-trading",
       "classification": "CUSTOM",
@@ -1058,6 +1255,20 @@
         "scripts/trade_stats.py"
       ],
       "sha256_skill_md": "66bc69d732424379f7f00c0ab06287c7a45b29a1e7e183a16fcd8e746a42c760",
+      "errors": []
+    },
+    {
+      "name": "xauusd-smc-analysis",
+      "category": "quantitative-trading",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/quantitative-trading/xauusd-smc-analysis/SKILL.md",
+      "description": "Detect Smart Money Concept structures on supplied OHLC data for XAUUSD or any instrument: fair value gaps (bullish and bearish) and swing highs and lows, using the MIT smartmoneyconcepts library. Use for concept detection on historical or synthetic candles; it is not a trading signal generator.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/smc_scan.py"
+      ],
+      "sha256_skill_md": "5276a7483f7a05bd9970d785b0b8898e2b4517b16b20927e0d261f862860d06c",
       "errors": []
     },
     {
@@ -1133,6 +1344,20 @@
       "errors": []
     },
     {
+      "name": "game-mechanics",
+      "category": "software-development",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/software-development/game-mechanics/SKILL.md",
+      "description": "Compute game progression mechanics: XP per answer with streak multipliers and caps, level thresholds, and linear survival resource decay such as hunger or stamina. Use for gamifying learning apps or survival game balance checks, with explicit tunable parameters.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/mechanics.py"
+      ],
+      "sha256_skill_md": "66df3f32e459c34908380070ee1c192cd4195c6fd1740acd720b9e957ad5ac82",
+      "errors": []
+    },
+    {
       "name": "mcp-builder",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -1142,6 +1367,20 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c",
+      "errors": []
+    },
+    {
+      "name": "multi-agent-orchestration",
+      "category": "software-development",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/software-development/multi-agent-orchestration/SKILL.md",
+      "description": "Plan work for multiple AI agents: validate task dependencies, reject cycles and missing dependencies, and schedule tasks into parallel waves so that no two tasks in a wave write the same file. Use before dispatching several agents to avoid dependency and write conflicts.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/task_graph.py"
+      ],
+      "sha256_skill_md": "b17f438b237b16769bd3237305a3b6eb74d21b974aeb1eee80829c72e5dd10b9",
       "errors": []
     },
     {

@@ -1,0 +1,28 @@
+{
+  "note": "Set uji v0.7 dibekukan SEBELUM skill v0.7 dibangun. Label manual. 'project' opsional. 'expected' null = tidak ada skill yang diaktifkan. Set ini tidak boleh disetel ulang untuk membuat hasil lebih baik.",
+  "cases": [
+    {"query": "storyboard shot list dengan kontinuitas karakter untuk film pendek", "expected": "cinematic-storyboarding"},
+    {"query": "alignment kata per kata dari audio narasi", "expected": "narration-subtitle-sync"},
+    {"query": "panel halaman manhwa dengan urutan baca kanan ke kiri", "expected": "manhwa-production"},
+    {"query": "kurikulum JLPT N4 kosakata dan validasi kanji", "expected": "jlpt-curriculum"},
+    {"query": "XP level dan streak untuk aplikasi belajar", "expected": "game-mechanics"},
+    {"query": "rencanakan agen paralel dengan dependensi antar tugas", "expected": "multi-agent-orchestration"},
+    {"query": "model digital twin tangki panas dengan suhu tiap menit", "expected": "industrial-digital-twin"},
+    {"query": "validasi tag SCADA dan batas alarm HI LO", "expected": "scada-tag-engineering"},
+    {"query": "pohon keputusan untuk gejala gangguan kelistrikan", "expected": "electrical-troubleshooting"},
+    {"query": "PRD dengan kriteria penerimaan untuk diserahkan ke AI coding", "expected": "prd-engineering"},
+    {"query": "fair value gap dan order block pada XAUUSD", "expected": "xauusd-smc-analysis"},
+    {"query": "backtest strategi crossover tanpa lookahead bias", "expected": "strategy-backtesting"},
+    {"query": "setiap klaim narasi dokumenter harus punya sumber", "expected": "documentary-production"},
+    {"query": "format naskah novel dengan bab dan jumlah kata per bab", "expected": "novel-typesetting"},
+    {"query": "jalur kamera 3D halus melewati keyframe catmull-rom", "expected": "cinematic-3d-camera"},
+    {"query": "narasi ElevenLabs dari naskah dengan estimasi kredit", "expected": "elevenlabs-narration"},
+    {"query": "pilih teknologi untuk video vertikal motion graphics kualitas tinggi", "expected": "technology-selection"},
+    {"query": "cek fps dan resolusi video sebelum rilis", "expected": "quality-gate"},
+    {"query": "ukuran posisi trading risiko per trade", "expected": "position-size-calculator"},
+    {"query": "kamera sinematik untuk adegan neon malam hari", "project": "earthstop", "expected": "cinematic-camera", "expect_override": true},
+    {"query": "halaman manhwa tiga panel untuk Silent Neon Tokyo", "project": "silent-neon-tokyo-manhwa", "expected": "manhwa-production"},
+    {"query": "resep kue cokelat tanpa telur", "expected": null},
+    {"query": "prakiraan cuaca besok di Bandung", "expected": null}
+  ]
+}

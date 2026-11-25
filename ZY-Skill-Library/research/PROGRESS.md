@@ -78,3 +78,9 @@ Target awal 50 skill teruji belum tercapai: 22 skill teruji. Tidak ada skill kos
 - Importer pribadi: `scripts/import_personal.py`, 7 test lulus di library sementara.
 - Benchmark: 14/14 perhitungan dan 21/21 router. A/B dengan vs tanpa skill, kualitas AI, file yang dibaca, dan token: NOT TESTED karena runtime tidak mendukung kontrol ini.
 - Platform: Claude Chat, Codex, dan Android cloud NOT VERIFIED.
+
+## Checkpoint v0.7.0 (2026-11-25)
+- Hasil: 115 skill, 0 error validasi. Set uji router beku: 20/23 (lihat CHANGELOG).
+- Coverage matriks: 39 MISSING -> 25 PARTIAL, 2 BLOCKED, 12 MISSING. Lihat PROJECT_COVERAGE_MATRIX.md bagian "Hasil implementasi v0.7".
+- Blocker: ElevenLabs generasi live (layanan sibuk); game mobile (tanpa Flutter SDK); word alignment bahasa Jepang (model tidak terjangkau).
+- Belum dikerjakan: data pasar berlisensi, standar PUIL, deduplikasi office, glosarium router untuk "ukuran", "posisi", "teknologi", "resolusi" (perlu set uji baru).

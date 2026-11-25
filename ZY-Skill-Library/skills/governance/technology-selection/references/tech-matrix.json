@@ -1,0 +1,11 @@
+{
+  "note": "Penilaian kualitatif dari dokumentasi skill yang ada di library. BUKAN hasil benchmark. Setiap nilai 'supports' adalah klaim kemampuan yang harus diverifikasi ulang di proyek nyata sebelum dijadikan keputusan final.",
+  "options": {
+    "remotion": {"supports": ["2d", "text-heavy", "deterministic", "vertical", "horizontal", "offline"], "quality_max": "broadcast", "requires": ["node"], "skill": "motion-graphics/remotion-motion-graphics", "skill_status": "VALIDATED"},
+    "threejs": {"supports": ["3d", "interactive", "vertical", "horizontal"], "quality_max": "cinematic", "requires": ["node", "browser"], "skill": "motion-graphics/threejs-core", "skill_status": "VALIDATED"},
+    "html-canvas": {"supports": ["2d", "deterministic", "vertical", "horizontal", "offline"], "quality_max": "broadcast", "requires": ["browser"], "skill": "creative-production/creating-canvas-video-animations", "skill_status": "VALIDATED"},
+    "svg-animation": {"supports": ["2d", "deterministic", "vertical", "horizontal", "offline"], "quality_max": "draft", "requires": ["browser"], "skill": "creative-production/svg-animation", "skill_status": "VALIDATED"},
+    "clipacanvas-render": {"supports": ["2d", "deterministic", "vertical", "horizontal", "offline"], "quality_max": "broadcast", "requires": ["browser"], "skill": "clipacanvas/render-link-builder", "skill_status": "VERIFIED"}
+  },
+  "quality_rank": {"draft": 1, "broadcast": 2, "cinematic": 3}
+}

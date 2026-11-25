@@ -1,0 +1,23 @@
+{
+  "note": "Profil proyek untuk routing kontekstual. 'preferred_categories' menaikkan skor skill di kategori itu. 'overrides' = skill yang batasannya boleh dikesampingkan untuk proyek ini, beserta alasannya.",
+  "earthstop": {
+    "name": "EarthStop",
+    "preferred_categories": ["motion-graphics", "creative-production"],
+    "overrides": {
+      "cinematic-camera": "Brief EarthStop menetapkan palet dan efek visualnya sendiri. Larangan palet upstream dikesampingkan untuk proyek ini; intake, referensi, dan QA kamera tetap berlaku."
+    }
+  },
+  "silent-neon-tokyo-manhwa": {"name": "Silent Neon Tokyo — Manhwa", "preferred_categories": ["creative-production"], "overrides": {}},
+  "silent-neon-tokyo-game": {"name": "Silent Neon Tokyo — Game", "preferred_categories": ["creative-production", "software-development"], "overrides": {}},
+  "sisi-gelap-tokoh": {"name": "SISI GELAP TOKOH", "preferred_categories": ["creative-production", "academic-research"], "overrides": {}},
+  "amiraverse": {"name": "AmiraVerse", "preferred_categories": ["flutter", "japanese-education"], "overrides": {}},
+  "zii": {"name": "ZII Industrial Intelligence", "preferred_categories": ["engineering", "industrial-utility", "automation"], "overrides": {}},
+  "deamira": {"name": "DEAMIRA", "preferred_categories": ["software-development", "governance"], "overrides": {}},
+  "clipacanvas": {"name": "ClipACanvas", "preferred_categories": ["clipacanvas", "creative-production"], "overrides": {}},
+  "money-app": {"name": "Money App", "preferred_categories": ["finance"], "overrides": {}},
+  "film-sinematik": {"name": "Produksi film sinematik", "preferred_categories": ["creative-production", "motion-graphics"], "overrides": {}},
+  "novel": {"name": "Penulisan novel", "preferred_categories": ["office-documents", "creative-production"], "overrides": {}},
+  "xauusd": {"name": "XAUUSD ICT/SMC", "preferred_categories": ["quantitative-trading", "finance"], "overrides": {}},
+  "teknik-elektro": {"name": "Teknik Elektro dan Industrial Utility", "preferred_categories": ["engineering", "industrial-utility"], "overrides": {}},
+  "jlpt": {"name": "Pembelajaran JLPT N5–N1", "preferred_categories": ["japanese-education"], "overrides": {}}
+}

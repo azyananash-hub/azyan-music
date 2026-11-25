@@ -1,0 +1,15 @@
+{
+  "note": "Metadata batasan per skill. Tidak mengubah isi SKILL.md upstream. Router memakai ini untuk mendeteksi konflik dengan brief.",
+  "cinematic-camera": {
+    "forbids": ["neon", "glow", "bloom", "gradient", "glassmorphism", "cyberpunk", "luminous"],
+    "source": "skills/motion-graphics/cinematic-camera/SKILL.md: 'This skill never introduces neon, glow, bloom, ...'"
+  },
+  "terminal-inserts": {
+    "forbids": ["neon", "glow"],
+    "source": "skills/motion-graphics/terminal-inserts/SKILL.md: 'zero neon or glow'"
+  },
+  "article-highlights": {
+    "forbids": ["neon", "glow"],
+    "source": "skills/motion-graphics/article-highlights/SKILL.md: 'zero neon/glow'"
+  }
+}
