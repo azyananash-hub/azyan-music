@@ -2,8 +2,60 @@
   "registry_version": 1,
   "library": "ZY Skill Library",
   "generated_by": "scripts/build_registry.py",
-  "skill_count": 80,
+  "skill_count": 98,
   "skills": [
+    {
+      "name": "citation-management",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/academic-research/citation-management/SKILL.md",
+      "description": "Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.",
+      "license": "MIT License",
+      "scripts": [
+        "scripts/_common.py",
+        "scripts/doi_to_bibtex.py",
+        "scripts/extract_metadata.py",
+        "scripts/format_bibtex.py",
+        "scripts/search_google_scholar.py",
+        "scripts/search_openalex.py",
+        "scripts/search_pubmed.py",
+        "scripts/validate_citations.py"
+      ],
+      "sha256_skill_md": "dc79fe1e8438dcf598040615d5323360c6a7ed0b868fc3ffc82512c871a1e3ff",
+      "errors": []
+    },
+    {
+      "name": "citation-verification",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/academic-research/citation-verification/SKILL.md",
+      "description": "Verify that every reference in a manuscript really exists and matches its metadata, catching hallucinated, corrupted, mismatched or retracted citations before submission. Use when checking a .bib file or reference list, after an AI assistant drafted citations, when a DOI may point to the wrong paper, when a paper may have been retracted, when a dataset or software DOI (Zenodo, DataCite) will not resolve, when adding missing DOIs, marking unverifiable references, checking whether one DOI is real, or before camera-ready. Queries Crossref, DataCite, OpenAlex and arXiv and flags Retraction Watch notices; zero dependencies.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/verify_citations.py"
+      ],
+      "sha256_skill_md": "e029dcb02f733fc56418943bf74318049fd879acb2e9d1ed1383d34a11b7724f",
+      "errors": []
+    },
+    {
+      "name": "literature-review",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/academic-research/literature-review/SKILL.md",
+      "description": "Conducts systematic, scoping, and narrative literature reviews using PubMed, arXiv, bioRxiv, Semantic Scholar, and other appropriate sources. Use for research synthesis, reproducible literature searches, screening, citation checking, or preparing Markdown and PDF reviews. Tracks search coverage, records versus studies, and evidence limitations; supports meta-analysis planning but does not supply a meta-analysis engine.",
+      "license": "MIT license",
+      "scripts": [
+        "scripts/generate_pdf.py",
+        "scripts/generate_schematic.py",
+        "scripts/search_databases.py",
+        "scripts/verify_citations.py"
+      ],
+      "sha256_skill_md": "16a9e85bcdcb9bb859e1646bf836e51b22900445ba2e367d8d75be05b5a5cba8",
+      "errors": []
+    },
     {
       "name": "discernment-nudge",
       "category": "ai-agents",
@@ -57,6 +109,21 @@
       "errors": []
     },
     {
+      "name": "accessible-animation",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/accessible-animation/SKILL.md",
+      "description": "This skill should be used when the user asks to \"respect prefers-reduced-motion\", \"honor reduced motion\", \"make my animations accessible\", \"fix vestibular / motion-sickness issues\", \"add a useReducedMotion hook\", \"gate GSAP / Framer Motion / Lenis for reduced motion\", or \"meet WCAG 2.3.3 / C39\". Provides tiered (not all-or-nothing) reduced-motion patterns in CSS and JS.",
+      "license": "",
+      "scripts": [
+        "scripts/contact-sheet.sh",
+        "scripts/seek-shot.sh"
+      ],
+      "sha256_skill_md": "29d5fec1be9fa5e978738c313678974f61c06443e02ffce1bdc20434dfb0a767",
+      "errors": []
+    },
+    {
       "name": "algorithmic-art",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -66,6 +133,20 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef",
+      "errors": []
+    },
+    {
+      "name": "audio-mixing-mastering",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/audio-mixing-mastering/SKILL.md",
+      "description": "Provider-independent audio mixing and mastering direction for AI agents finishing generated videos, ads, trailers, explainers, podcasts, recuts, avatar clips, music videos, documentaries, and social content. Use when planning, mixing, repairing, mastering, QCing, or delivering dialogue, music, ambience, and sound effects, including loudness/true-peak targets, intelligibility, accessibility, stems, stereo/immersive decisions, platform/client specs, and final audio QA.",
+      "license": "",
+      "scripts": [
+        "scripts/measure_loudness.py"
+      ],
+      "sha256_skill_md": "19e8d97bef7c2f0035022e6f2d4f1aee6d2ab6656c2510d3845d043e1120102b",
       "errors": []
     },
     {
@@ -93,6 +174,18 @@
       "errors": []
     },
     {
+      "name": "creating-canvas-video-animations",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/creating-canvas-video-animations/SKILL.md",
+      "description": "Creates animated video content using HTML5 Canvas and JavaScript. Generates self-contained HTML files with canvas-based animations that can be previewed in a browser and exported to MP4 using Puppeteer and FFmpeg. Use when the user wants to create animated videos, motion graphics, promotional clips, tutorial animations, or any visual content rendered frame-by-frame on canvas.",
+      "license": "MIT",
+      "scripts": [],
+      "sha256_skill_md": "f43837a4b1843209e7febb1003a87187b301715b42eb89d088db3bd7bc0ff043",
+      "errors": []
+    },
+    {
       "name": "ffmpeg-skill",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -109,6 +202,73 @@
       "errors": []
     },
     {
+      "name": "micro-interaction",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/micro-interaction/SKILL.md",
+      "description": "This skill should be used when the user asks to \"add a hover/press effect\", \"animate a toggle or switch\", \"build an animated like button\", \"make a toast/snackbar slide in\", \"animate a drawer or modal\", \"animate list reordering or add/remove\", \"do a shared-element layout transition\", or \"polish UI feedback\". Covers UI motion with Framer Motion (motion/react) and modern CSS.",
+      "license": "",
+      "scripts": [
+        "scripts/contact-sheet.sh",
+        "scripts/seek-shot.sh"
+      ],
+      "sha256_skill_md": "f8ae0fc6137448bce51f689a13513a0a8742b1cbffa1b9f32ac723b46309e6e0",
+      "errors": []
+    },
+    {
+      "name": "motion-graphics",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/motion-graphics/SKILL.md",
+      "description": "Build frame-exact motion graphics — animated logos, kinetic typography, brand videos, animated titles and social clips — as a single HTML file driven by a paused Web Animations timeline, then export them to MP4 in 1:1, 4:5 and 9:16. Use this whenever someone wants to animate a wordmark or logo, make a video from text, build a title sequence or lower third, produce a clip for LinkedIn / Instagram / Reels / TikTok, \"turn this design into a video\", animate a landing-page hero, or export a web animation to a video file — and also when an existing animation of this kind needs fixing, retiming, restyling or re-exporting. Reach for it even if the person only says \"animate our logo\", \"make this move\", or \"I need a short video for the launch\", without naming any of the above.",
+      "license": "",
+      "scripts": [
+        "scripts/export.js",
+        "scripts/physics.js",
+        "scripts/timeline.js",
+        "scripts/verify.js"
+      ],
+      "sha256_skill_md": "bd4bdccbfbae22bd3c37205f0ec040b121f799cbe96d4bdc4ddbda51bd2e523a",
+      "errors": []
+    },
+    {
+      "name": "narration-subtitle-sync",
+      "category": "creative-production",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/creative-production/narration-subtitle-sync/SKILL.md",
+      "description": "Align SRT subtitles to a narration audio duration, validate cue timing and overlaps, and measure integrated loudness and true peak with ffmpeg. Use for human or external narration; no TTS model is downloaded.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/subtitle_sync.py"
+      ],
+      "sha256_skill_md": "999cbdac350b6b83af65d879a4c011d41269a06aab9d15c1d4f2cbb3ab4a739c",
+      "errors": []
+    },
+    {
+      "name": "procedural-sfx",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/procedural-sfx/SKILL.md",
+      "description": "Synthesize sound effects from code (numpy/scipy, no sample libraries), check them by numbers, and mix them frame-accurately under a video or animation with voice ducking and masking checks, then master it with a single linear gain to a loudness target for audio-only or video delivery. Use whenever someone needs sound effects or foley for a code-rendered video, animation, explainer, motion graphic or game prototype; wants to generate a specific sound from code (枪声, 爆炸, 脚步, 音效, 拟音, a laser, a door slam); needs SFX with no third-party sample licences; or needs audio synced to animation events, even if they never say \"procedural\". Not for composing music or finding recorded samples.",
+      "license": "",
+      "scripts": [
+        "scripts/analyze.py",
+        "scripts/check_env.py",
+        "scripts/master.sh",
+        "scripts/mix.py",
+        "scripts/mux.sh",
+        "scripts/recipes.py",
+        "scripts/render_sfx.py",
+        "scripts/sfxkit.py"
+      ],
+      "sha256_skill_md": "d6f23fa49e809d7e731fa62df267d8f2de845c38409aaaa1940f185cab910eed",
+      "errors": []
+    },
+    {
       "name": "slack-gif-creator",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -118,6 +278,21 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22",
+      "errors": []
+    },
+    {
+      "name": "svg-animation",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/creative-production/svg-animation/SKILL.md",
+      "description": "This skill should be used when the user asks to \"animate an SVG\", \"make a line draw itself on\", \"do a stroke draw-on / signature animation\", \"morph one shape into another\", \"move an element along a path\", \"animate an icon/logo\", or \"animate an SVG gradient or filter\". Covers stroke-dashoffset draw-on, path morphing, motion-along-path, and animated icons/gradients/filters via CSS, SMIL, and GSAP.",
+      "license": "",
+      "scripts": [
+        "scripts/contact-sheet.sh",
+        "scripts/seek-shot.sh"
+      ],
+      "sha256_skill_md": "90e37f8f3d8c662515952de7a50c9130f5695d1a0cae1501115bd5d253c712c4",
       "errors": []
     },
     {
@@ -161,6 +336,34 @@
       "errors": []
     },
     {
+      "name": "motor-starting-sizing",
+      "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/engineering/motor-starting-sizing/SKILL.md",
+      "description": "Compute three-phase motor full-load current and starting current for direct-on-line and star-delta starting from nameplate power, voltage, PF, efficiency and LRC ratio. Use for motor control and starter selection checks.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/motor_calc.py"
+      ],
+      "sha256_skill_md": "40db336e1803716021282dd71df28749c10e5a6a38749a556db69136a06eafdd",
+      "errors": []
+    },
+    {
+      "name": "overcurrent-relay-curves",
+      "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/engineering/overcurrent-relay-curves/SKILL.md",
+      "description": "Compute inverse-time overcurrent relay operating times (IEC 60255 NI, VI, EI, LTI curve shapes) for protection coordination studies from TMS and I/Is multiple. Use for electrical protection screening, not final relay settings.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/relay_curve.py"
+      ],
+      "sha256_skill_md": "5b36e832aaaf01b2ae064575492e000052291530a795ed27e5b4624a49da76a0",
+      "errors": []
+    },
+    {
       "name": "short-circuit-calculator",
       "category": "engineering",
       "classification": "CUSTOM",
@@ -172,6 +375,20 @@
         "scripts/short_circuit.py"
       ],
       "sha256_skill_md": "84f864f20db58a8b754db74a5b4c428168f5005479199c40e3e3982e6460e89b",
+      "errors": []
+    },
+    {
+      "name": "transformer-rating-regulation",
+      "category": "engineering",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/engineering/transformer-rating-regulation/SKILL.md",
+      "description": "Compute transformer rated current and approximate voltage regulation from kVA, line voltage, impedance percent, X/R and power factor. Use for transformer sizing checks and load studies.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/transformer_calc.py"
+      ],
+      "sha256_skill_md": "253feac4625eabe88c284beec8d32a4ffa2081ca732c5a1bd9b53aafe8e3691a",
       "errors": []
     },
     {
@@ -342,6 +559,18 @@
       "errors": []
     },
     {
+      "name": "structured-root-cause-research",
+      "category": "governance",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/governance/structured-root-cause-research/SKILL.md",
+      "description": "Evidence-based root-cause research for complex debugging, architecture reviews, security reviews, incidents, and high-stakes technical decisions. Use when the user asks to think carefully, find root cause, avoid patch fixes, test competing explanations, run 5 Whys, compare against best practices, map data/control/error/trust flows, assess evidence, or produce a verifiable recommendation.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "63c005220903d0ffdaae7e92d65f6693c5408930e1a833e89d7c87c4deac555b",
+      "errors": []
+    },
+    {
       "name": "third-party-skill-audit",
       "category": "governance",
       "classification": "CUSTOM",
@@ -396,6 +625,48 @@
         "scripts/cooling_tower.py"
       ],
       "sha256_skill_md": "b99924d16477eda6cfb0c41937fb4dda50ed158215ebb2486f22358b38a99c8d",
+      "errors": []
+    },
+    {
+      "name": "industrial-energy-metrics",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/industrial-energy-metrics/SKILL.md",
+      "description": "Compute power factor correction capacitor size in kvar and energy intensity in kWh per output unit for industrial energy management reviews.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/energy_metrics.py"
+      ],
+      "sha256_skill_md": "9ad1428d7d13e638e803d0806c75dcd1b4d13c56215df26be1f3b7ad3a32fe88",
+      "errors": []
+    },
+    {
+      "name": "instrument-loop-calc",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/instrument-loop-calc/SKILL.md",
+      "description": "Convert 4-20 mA transmitter signals to engineering values with NAMUR NE43 fault detection, and convert Pt100 resistance to temperature using Callendar-Van Dusen. Use for instrumentation loop checks and calibration.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/loop_calc.py"
+      ],
+      "sha256_skill_md": "634bef0d5e1d471f6a9e1dca2c95b0a40ec29df376703e8e0086838ea3373b32",
+      "errors": []
+    },
+    {
+      "name": "reliability-pm-metrics",
+      "category": "industrial-utility",
+      "classification": "CUSTOM",
+      "status": "VERIFIED",
+      "path": "skills/industrial-utility/reliability-pm-metrics/SKILL.md",
+      "description": "Compute inherent availability from MTBF and MTTR, and Weibull reliability at a given time from fitted scale and shape parameters. Use for preventive maintenance planning and asset reliability reviews.",
+      "license": "MIT",
+      "scripts": [
+        "scripts/reliability.py"
+      ],
+      "sha256_skill_md": "413b69c6453ded6fcaaa56d8db87c2301503738d43ea91ee4212a1e7bcfe32d2",
       "errors": []
     },
     {

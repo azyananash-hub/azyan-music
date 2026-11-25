@@ -69,3 +69,17 @@ Dependensi uji (venv `tests/requirements-test.txt`) yang lisensinya belum saya v
 | zakariaf/Flutter-Skills | e073e5e | 8 skill Flutter |
 | supabase/agent-skills | c9be0e9 | supabase, supabase-postgres-best-practices |
 Tidak diimpor: remotion-dev/skills (tanpa LICENSE), full-stack-skills/threejs-skills dan flutter-skills (Apache-2.0, tidak dipilih), Liamrjohnston `motion-graphics` (tumpang tindih).
+
+## Provenance v0.5 (lisensi MIT dari file LICENSE clone)
+| Repository | Commit | Skill |
+|---|---|---|
+| siegerts/skill-canvas-video | 6419a14 | creating-canvas-video-animations |
+| acelera-agency/html-animation | 8b88879 | motion-graphics (nama frontmatter upstream) |
+| iart-ai/web-animation-skills | ed3a045 | svg-animation, accessible-animation, micro-interaction |
+| calesthio/generative-media-skills | 8c85352 | audio-mixing-mastering |
+| bianbianzhu/procedural-sfx | 5eff10f | procedural-sfx |
+| meiiie/structured-root-cause-research-skill | bf2b7ef | structured-root-cause-research |
+| K-Dense-AI/scientific-agent-skills | c21d13b | literature-review, citation-management (lisensi per-skill MIT pada metadata) |
+| KalarisLabs/research-agent-skills | a74b0db | citation-verification |
+Tidak diimpor (tanpa file LICENSE): Zacklinkk/svg-foundry-skill, RandyHaylor/audio-and-vocal-mastering.
+Rujukan konstanta custom (belum diverifikasi ke dokumen primer): IEC 60255-151 (kurva inverse-time), IEC 60751 (Callendar-Van Dusen), NAMUR NE43 (batas fault 4-20 mA).

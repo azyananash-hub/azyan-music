@@ -1,0 +1,4 @@
+interface:
+  display_name: "Structured Root-Cause Research"
+  short_description: "Evidence-based causal investigation"
+  default_prompt: "Use $structured-root-cause-research to analyze this problem, establish expected vs observed behavior, test competing explanations, identify the causal boundary, and propose the smallest verifiable durable change."

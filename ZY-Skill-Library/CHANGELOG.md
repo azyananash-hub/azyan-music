@@ -57,3 +57,10 @@
 - Test `tests/skills/test_v04_skills.py`.
 ### Diubah
 - `scripts/import_upstream.py`: opsi `--commit`.
+
+## [0.5.0] - 2026-11-25
+### Ditambahkan
+- 11 skill upstream MIT (VALIDATED): canvas, HTML/motion, SVG, accessible/micro-interaction animation, audio mixing, procedural SFX, RCA, literature review, citation management, citation verification.
+- 7 skill custom MIT (VERIFIED): overcurrent relay curves, transformer rating/regulation, motor starting, 4-20 mA and Pt100 loop calculations, reliability/PM metrics, energy metrics, narration/subtitle sync.
+### Diketahui
+- Visual composition, neural TTS narration, electrical troubleshooting, XAUUSD ICT: BLOCKED atau belum dicari (lihat research/PROGRESS.md).

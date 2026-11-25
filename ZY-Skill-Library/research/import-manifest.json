@@ -14,6 +14,19 @@
       "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
+      "name": "accessible-animation",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/iart-ai/web-animation-skills",
+      "source_commit": "ed3a04519267",
+      "source_path": "skills/accessible-animation",
+      "license": "MIT",
+      "library_path": "skills/creative-production/accessible-animation",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
       "name": "algorithmic-art",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -51,6 +64,19 @@
       "imported_on": "2026-11-25",
       "status": "VALIDATED",
       "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "audio-mixing-mastering",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/calesthio/generative-media-skills",
+      "source_commit": "8c85352d5d75",
+      "source_path": "skills/audio-mixing-mastering",
+      "license": "MIT",
+      "library_path": "skills/creative-production/audio-mixing-mastering",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
     },
     {
       "name": "brainstorming",
@@ -105,6 +131,32 @@
       "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
+      "name": "citation-management",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "source_commit": "c21d13b3cc28",
+      "source_path": "skills/citation-management",
+      "license": "MIT",
+      "library_path": "skills/academic-research/citation-management",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
+      "name": "citation-verification",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/KalarisLabs/research-agent-skills",
+      "source_commit": "a74b0dbe5fa8",
+      "source_path": "skills/citation-verification",
+      "license": "MIT",
+      "library_path": "skills/academic-research/citation-verification",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
       "name": "claude-api",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -116,6 +168,19 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "creating-canvas-video-animations",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/siegerts/skill-canvas-video",
+      "source_commit": "6419a14d9fdd",
+      "source_path": "skills/creating-canvas-video-animations",
+      "license": "MIT",
+      "library_path": "skills/creative-production/creating-canvas-video-animations",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
     },
     {
       "name": "discernment-nudge",
@@ -259,6 +324,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
+      "name": "literature-review",
+      "category": "academic-research",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "source_commit": "c21d13b3cc28",
+      "source_path": "skills/literature-review",
+      "license": "MIT",
+      "library_path": "skills/academic-research/literature-review",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
       "name": "mcp-builder",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -270,6 +348,32 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. Belum diuji. evaluation.py membutuhkan Anthropic API (berbayar): tidak dijalankan. Panduan lain belum diuji."
+    },
+    {
+      "name": "micro-interaction",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/iart-ai/web-animation-skills",
+      "source_commit": "ed3a04519267",
+      "source_path": "skills/micro-interaction",
+      "license": "MIT",
+      "library_path": "skills/creative-production/micro-interaction",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
+      "name": "motion-graphics",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/acelera-agency/html-animation",
+      "source_commit": "8b888794bbda",
+      "source_path": "skills/motion-graphics",
+      "license": "MIT",
+      "library_path": "skills/creative-production/motion-graphics",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
     },
     {
       "name": "navigation-and-routing",
@@ -335,6 +439,19 @@
       "imported_on": "2026-11-25",
       "status": "VERIFIED",
       "test_evidence": "tests/skills/test_office_documents.py: thumbnail.py produces grid jpg from generated deck (PASS)"
+    },
+    {
+      "name": "procedural-sfx",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/bianbianzhu/procedural-sfx",
+      "source_commit": "5eff10fa85ce",
+      "source_path": "skills/procedural-sfx",
+      "license": "MIT",
+      "library_path": "skills/creative-production/procedural-sfx",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
     },
     {
       "name": "receiving-code-review",
@@ -415,6 +532,19 @@
       "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
+      "name": "structured-root-cause-research",
+      "category": "governance",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/meiiie/structured-root-cause-research-skill",
+      "source_commit": "bf2b7ef2277d",
+      "source_path": "skills/structured-root-cause-research",
+      "license": "MIT",
+      "library_path": "skills/governance/structured-root-cause-research",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
+    },
+    {
       "name": "subagent-driven-development",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -452,6 +582,19 @@
       "imported_on": "2026-11-25",
       "status": "VALIDATED",
       "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "svg-animation",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/iart-ai/web-animation-skills",
+      "source_commit": "ed3a04519267",
+      "source_path": "skills/svg-animation",
+      "license": "MIT",
+      "library_path": "skills/creative-production/svg-animation",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi MIT dari file LICENSE repository, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji; dependensi tidak dipasang (lazy)."
     },
     {
       "name": "systematic-debugging",

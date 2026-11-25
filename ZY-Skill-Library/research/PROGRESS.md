@@ -58,3 +58,16 @@ Target awal 50 skill teruji belum tercapai: 22 skill teruji. Tidak ada skill kos
 - Lazy installation: tidak ada npm/pip upstream yang dipasang.
 - Belum tercakup (P0/P1/P2): HTML Canvas/SVG animation, sound design, human-like narration (butuh TTS besar, ditunda), electrical protection, motor control, instrumentation, troubleshooting, academic research, dan XAUUSD sumber MIT yang layak.
 - Importer: ditambah opsi `--commit` agar folder staging (bukan git) tetap punya provenance.
+
+## Checkpoint v0.5.0 (2026-11-25)
+- Hasil: 98 skill, 0 error validasi. Status: VERIFIED 34, VALIDATED 40, IMPORTED 24 (smoke sintaks).
+- Upstream baru (MIT, LICENSE dibaca dari clone): siegerts/skill-canvas-video (creating-canvas-video-animations), acelera-agency/html-animation (motion-graphics; nama frontmatter upstream), iart-ai/web-animation-skills (svg-animation, accessible-animation, micro-interaction), calesthio/generative-media-skills (audio-mixing-mastering), bianbianzhu/procedural-sfx, meiiie/structured-root-cause-research (governance), K-Dense-AI/scientific-agent-skills (literature-review, citation-management), KalarisLabs/research-agent-skills (citation-verification).
+- Custom (MIT, diuji dengan nilai acuan terhitung manual): overcurrent-relay-curves, transformer-rating-regulation, motor-starting-sizing, instrument-loop-calc, reliability-pm-metrics, industrial-energy-metrics, narration-subtitle-sync (ffmpeg loudnorm nyata).
+- ClipACanvas: render-link-builder (v0.1) sudah memenuhi protokol (1920x1080 horizontal, 1080x1920 vertical, 60 fps, durasi default 4 s, auto=true, minified, URL-encoded). Tidak diubah.
+- BLOCKED / tidak tercakup:
+  - Visual composition: tidak ditemukan sumber MIT/Apache yang layak dalam pencarian ini; belum dicari lebih lanjut.
+  - Human-like narration berbasis neural TTS: butuh unduhan model besar; TTS tidak terpasang. Didukung lewat audio eksternal atau rekaman pengguna (narration-subtitle-sync).
+  - Electrical troubleshooting: tidak ditemukan sumber yang layak; PLC troubleshooting sebagian dari plc-skill.
+  - Electrical protection (koordinasi antar-relai, setting): hanya kurva bentuk IEC 60255; konstanta belum diverifikasi ke dokumen standar.
+  - Engineering report writing dan XAUUSD ICT analysis: belum dicari spesifik; tidak ada sumber yang diverifikasi. Trading risk management dan backtesting tercakup skill yang sudah ada.
+  - VERIFIED sumber tanpa LICENSE, tidak diimpor: Zacklinkk/svg-foundry-skill, RandyHaylor/audio-and-vocal-mastering.
