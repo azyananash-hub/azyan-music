@@ -1,0 +1,26 @@
+{
+  "note": "Label dibuat manual oleh pengembang library. Bukan dataset publik. 'expected' null = tidak ada skill yang seharusnya diaktifkan.",
+  "cases": [
+    {"query": "hitung arus hubung singkat bus 11 kV dari MVA sumber", "expected": "short-circuit-calculator"},
+    {"query": "load flow tegangan bus dan rugi daya saluran", "expected": "load-flow-pandapower"},
+    {"query": "baca register holding Modbus TCP dari PLC", "expected": "modbus-tcp-client"},
+    {"query": "range dan approach cooling tower", "expected": "cooling-tower-performance"},
+    {"query": "efisiensi boiler metode gas buang Siegert", "expected": "boiler-efficiency-indirect"},
+    {"query": "recovery dan rejection membran RO neraca massa", "expected": "ro-mass-balance"},
+    {"query": "Sharpe ratio dan max drawdown portofolio dari return harian", "expected": "portfolio-metrics-quantstats"},
+    {"query": "jadwal review kartu kosakata JLPT dengan FSRS", "expected": "fsrs-scheduler"},
+    {"query": "potong video dan ubah ke format vertikal 9:16 dengan ffmpeg", "expected": "ffmpeg-skill"},
+    {"query": "animasi canvas HTML5 untuk video", "expected": "creating-canvas-video-animations"},
+    {"query": "animasi SVG path dengan SMIL atau CSS", "expected": "svg-animation"},
+    {"query": "mixing dan mastering loudness audio narasi", "expected": "audio-mixing-mastering"},
+    {"query": "PLC structured text IEC 61131-3", "expected": "plc-skill"},
+    {"query": "state management riverpod Flutter", "expected": "state-management-riverpod"},
+    {"query": "row level security Supabase policy", "expected": "supabase"},
+    {"query": "cek daftar pustaka dan verifikasi sitasi DOI", "expected": "citation-verification"},
+    {"query": "kapasitor perbaikan faktor daya kvar", "expected": "industrial-energy-metrics"},
+    {"query": "waktu operasi relai arus lebih inverse time TMS", "expected": "overcurrent-relay-curves"},
+    {"query": "resep kue cokelat tanpa telur", "expected": null},
+    {"query": "tulis puisi tentang laut malam hari", "expected": null},
+    {"query": "cuaca besok di Jakarta", "expected": null}
+  ]
+}

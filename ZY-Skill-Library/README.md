@@ -4,6 +4,8 @@ Kumpulan skill AI yang modular, dapat diuji, dan dapat dipasang ke Claude Code (
 
 Library ini **bukan** kumpulan prompt. Setiap skill yang berstatus `validated` memiliki script, test, dan batasan cakupan yang dapat diverifikasi.
 
+Mulai cepat: lihat [QUICKSTART.md](QUICKSTART.md).
+
 ## Status singkat (v0.2.0)
 
 46 skill di disk, 0 error validasi, 86 test lulus. Daftar lengkap ada di `SKILL_REGISTRY.json`.

@@ -71,3 +71,10 @@ Target awal 50 skill teruji belum tercapai: 22 skill teruji. Tidak ada skill kos
   - Electrical protection (koordinasi antar-relai, setting): hanya kurva bentuk IEC 60255; konstanta belum diverifikasi ke dokumen standar.
   - Engineering report writing dan XAUUSD ICT analysis: belum dicari spesifik; tidak ada sumber yang diverifikasi. Trading risk management dan backtesting tercakup skill yang sudah ada.
   - VERIFIED sumber tanpa LICENSE, tidak diimpor: Zacklinkk/svg-foundry-skill, RandyHaylor/audio-and-vocal-mastering.
+
+## Checkpoint v0.6.0 (2026-11-25)
+- Baseline 98 skill tidak berubah (34 VERIFIED, 40 VALIDATED, 24 IMPORTED). Tidak ada skill baru.
+- Router: IDF + bonus nama + ambang; 21/21 pada label buatan sendiri. Perlu diuji pada kueri dari pengguna sungguhan.
+- Importer pribadi: `scripts/import_personal.py`, 7 test lulus di library sementara.
+- Benchmark: 14/14 perhitungan dan 21/21 router. A/B dengan vs tanpa skill, kualitas AI, file yang dibaca, dan token: NOT TESTED karena runtime tidak mendukung kontrol ini.
+- Platform: Claude Chat, Codex, dan Android cloud NOT VERIFIED.

@@ -64,3 +64,11 @@
 - 7 skill custom MIT (VERIFIED): overcurrent relay curves, transformer rating/regulation, motor starting, 4-20 mA and Pt100 loop calculations, reliability/PM metrics, energy metrics, narration/subtitle sync.
 ### Diketahui
 - Visual composition, neural TTS narration, electrical troubleshooting, XAUUSD ICT: BLOCKED atau belum dicari (lihat research/PROGRESS.md).
+
+## [0.6.0] - 2026-11-25
+### Ditambahkan
+- `QUICKSTART.md`: aktivasi, penggunaan, impor skill pribadi, pembaruan, dan penonaktifan.
+- `scripts/import_personal.py`: impor SKILL.md, folder, ZIP, atau URL GitHub publik dengan lisensi wajib, pemindaian risiko, deteksi duplikasi/konflik, arsip versi, dan pembaruan registry. Diuji di library sementara (7 test).
+- `benchmarks/run_benchmark.py`, `benchmarks/router_labels.json`, `benchmarks/RESULTS.md`: benchmark dengan label sintetis yang dihitung manual; A/B dan kualitas AI NOT TESTED.
+### Diubah
+- `scripts/route_skill.py`: bobot IDF, bonus nama skill yang disebut eksplisit, dan ambang relevansi (skor 0 tidak pernah diaktifkan). Ketepatan pada 21 kueri berlabel: 21/21 (kueri buatan sendiri, bukan generalisasi).

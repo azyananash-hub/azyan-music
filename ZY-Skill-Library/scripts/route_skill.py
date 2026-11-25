@@ -27,10 +27,25 @@ def tokens(text: str) -> set[str]:
     return {t for t in re.findall(r"[a-z0-9]+", text.lower()) if t not in STOPWORDS and len(t) > 1}
 
 
-def route(query: str, registry: list[dict], top: int = 3) -> list[dict]:
+NAME_BONUS = 2.0       # kata kunci yang menyebut nama skill langsung (mis. "ffmpeg") diutamakan
+MIN_SCORE = 0.1        # di bawah ini dianggap tidak relevan; mencegah aktivasi skill yang salah
+
+
+def _idf(registry: list[dict]) -> dict[str, float]:
+    """Bobot kata = log(N / df): kata yang muncul di banyak skill (mis. "video") tidak spesifik."""
+    df: dict[str, int] = {}
+    for s in registry:
+        for t in tokens(s["name"].replace("-", " ") + " " + s.get("description", "")):
+            df[t] = df.get(t, 0) + 1
+    n = len(registry)
+    return {t: math.log(1 + n / c) for t, c in df.items()}
+
+
+def route(query: str, registry: list[dict], top: int = 3, min_score: float = MIN_SCORE) -> list[dict]:
     q = tokens(query)
     if not q:
         raise ValueError("query kosong setelah stopword dibuang")
+    idf = _idf(registry)
     scored = []
     for s in registry:
         fields = {
@@ -39,9 +54,11 @@ def route(query: str, registry: list[dict], top: int = 3) -> list[dict]:
             "description": tokens(s.get("description", "")),
         }
         size = sum(len(v) for v in fields.values()) or 1
-        raw = sum(WEIGHTS[k] for k, v in fields.items() for t in q if t in v)
+        raw = sum(WEIGHTS[k] * idf.get(t, 1.0) for k, v in fields.items() for t in q if t in v)
+        if q & fields["name"]:
+            raw += NAME_BONUS * max(idf.get(t, 1.0) for t in q & fields["name"])
         score = raw / math.sqrt(size)
-        if score > 0:
+        if score > 0 and score >= min_score:
             scored.append({"name": s["name"], "category": s["category"], "score": round(score, 4),
                            "classification": s.get("classification"), "status": s.get("status"),
                            "path": s.get("path")})
