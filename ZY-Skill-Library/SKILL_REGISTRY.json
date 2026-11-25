@@ -1,0 +1,127 @@
+{
+  "registry_version": 1,
+  "library": "ZY Skill Library",
+  "generated_by": "scripts/build_registry.py",
+  "skill_count": 9,
+  "skills": [
+    {
+      "name": "render-link-builder",
+      "category": "clipacanvas",
+      "path": "skills/clipacanvas/render-link-builder/SKILL.md",
+      "description": "Produce a self-contained, lightly minified HTML animation for ClipACanvas and build its direct render link (URL-encoded code, 1920x1080 horizontal by default). Use whenever the user wants an HTML/Canvas/SVG motion graphic that renders through the ClipACanvas render endpoint.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/build_render_link.py"
+      ],
+      "sha256_skill_md": "519f4fed071f1c2a5041abdc5021f33aa2c614db075689c7434d718d73257795",
+      "errors": []
+    },
+    {
+      "name": "fmea-rpn-prioritizer",
+      "category": "engineering",
+      "path": "skills/engineering/fmea-rpn-prioritizer/SKILL.md",
+      "description": "Prioritize failure modes from a FMEA worksheet (CSV with severity, occurrence, detection 1-10) by Risk Priority Number and flag high-severity items for review. Use for preventive maintenance, industrial utility reliability reviews, root cause analysis, and DMAIC improvement planning.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/fmea_rpn.py"
+      ],
+      "sha256_skill_md": "964c662b5cbcda474ebfda05c732e8f433ce627c42e7d4cf7771187fd6c4bdd1",
+      "errors": []
+    },
+    {
+      "name": "short-circuit-calculator",
+      "category": "engineering",
+      "path": "skills/engineering/short-circuit-calculator/SKILL.md",
+      "description": "Estimate symmetrical three-phase short-circuit current (Ik and peak ip) at a bus from utility short-circuit MVA and transformer impedance percent, using IEC 60909-style simplified formulas. Use for electrical power system pre-checks and student/engineering analysis of fault levels.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/short_circuit.py"
+      ],
+      "sha256_skill_md": "0180b6b54d455521ecbfd8b5993c8bc3d996e137c8c9aeae7b4df236c39acf6f",
+      "errors": []
+    },
+    {
+      "name": "skill-engineering-standard",
+      "category": "governance",
+      "path": "skills/governance/skill-engineering-standard/SKILL.md",
+      "description": "Author, review, and validate ZY Skill Library skills against the 13-section engineering standard (triggers, scope, workflow, decision rules, error handling, QC, acceptance criteria, tests, sources, license). Use when creating a new skill, editing an existing SKILL.md, or checking that the library passes validation before a commit.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/build_registry.py",
+        "scripts/install_skills.py",
+        "scripts/validate_library.py"
+      ],
+      "sha256_skill_md": "d8362d64e4951b5fd1062010528d81efb7feac045da90ed3312398fc5d25b99c",
+      "errors": []
+    },
+    {
+      "name": "third-party-skill-audit",
+      "category": "governance",
+      "path": "skills/governance/third-party-skill-audit/SKILL.md",
+      "description": "Statically scan a third-party skill, script, or plugin folder for high-risk patterns (remote pipe-to-shell, encoded exec, credential path access, shell profile edits, unpinned installs, binaries, symlinks) before anyone runs or installs it. Use whenever the user wants to adopt a skill or script from an external GitHub repository.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/scan_skill_risk.py"
+      ],
+      "sha256_skill_md": "b77f08f42d8f7b57b12ce85e4283442683959f748d3cb529a994f537ae16441c",
+      "errors": []
+    },
+    {
+      "name": "srs-sm2-scheduler",
+      "category": "japanese-education",
+      "path": "skills/japanese-education/srs-sm2-scheduler/SKILL.md",
+      "description": "Schedule spaced-repetition reviews for Japanese vocabulary, kanji, and grammar cards using the SM-2 algorithm (quality 0-5, ease factor, interval days). Use when building or testing review logic for JLPT N5-N1 study tools such as AmiraVerse, or when computing next due dates for flashcards.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/sm2.py"
+      ],
+      "sha256_skill_md": "0f1b3856fa6295cec6c3ed09ee87f516b6c5a14e28d419aad709e9a2ef2a3924",
+      "errors": []
+    },
+    {
+      "name": "position-size-calculator",
+      "category": "quantitative-trading",
+      "path": "skills/quantitative-trading/position-size-calculator/SKILL.md",
+      "description": "Calculate position size from account equity, fixed-fraction risk percent, entry and stop-loss prices, and contract value per unit (e.g. XAUUSD lot specs). Use for risk management planning before a trade. Provides sizing math only, never trade signals or profit guarantees.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/position_size.py"
+      ],
+      "sha256_skill_md": "6b9f5aa81df806d8406ae9d363ed1b779cd515cfc3ec6ab1e84c7ee83fe47d64",
+      "errors": []
+    },
+    {
+      "name": "trade-statistics",
+      "category": "quantitative-trading",
+      "path": "skills/quantitative-trading/trade-statistics/SKILL.md",
+      "description": "Compute backtest or journal performance statistics from a list of per-trade PnL values - win rate, expectancy, profit factor, and maximum drawdown with sample-size warnings. Use for evaluating a trading strategy's historical results, including XAUUSD ICT/SMC backtests. Never promises future profit.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/trade_stats.py"
+      ],
+      "sha256_skill_md": "19caa55ddbaa69e8d8b7e7ff334c272130052f1d36aaf420357ba99aa8e32705",
+      "errors": []
+    },
+    {
+      "name": "secret-leak-scan",
+      "category": "software-development",
+      "path": "skills/software-development/secret-leak-scan/SKILL.md",
+      "description": "Scan a project for accidentally committed secrets (Google API keys, AWS access keys, private keys, GitHub/Stripe/OpenAI-style tokens, generic password or token assignments) and report masked previews only. Use before committing or pushing code, especially Flutter/Supabase or AI-API projects.",
+      "license": "original-zy",
+      "status": "validated",
+      "scripts": [
+        "scripts/scan_secrets.py"
+      ],
+      "sha256_skill_md": "8bcb98db410ce6333c46dc644b30b80bf9c644785f8d86c6ade7713c786258af",
+      "errors": []
+    }
+  ]
+}
