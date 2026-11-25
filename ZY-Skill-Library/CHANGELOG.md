@@ -50,3 +50,10 @@
 ### Diketahui
 - 24 skill impor hanya lolos smoke sintaks; perilakunya belum diuji.
 - Discovery Codex belum terverifikasi (dokumentasi tidak terjangkau).
+
+## [0.4.0] - 2026-11-25
+### Ditambahkan
+- 30 skill impor MIT (VALIDATED, kecuali ffmpeg-skill VERIFIED recipe-level): Remotion, Liamrjohnston cinematic/terminal/article, FFmpeg, Three.js (14), PLC (plc-skill), Flutter (8), Supabase (2). Commit upstream dan LICENSE di tiap folder.
+- Test `tests/skills/test_v04_skills.py`.
+### Diubah
+- `scripts/import_upstream.py`: opsi `--commit`.

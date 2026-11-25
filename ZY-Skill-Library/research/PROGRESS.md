@@ -49,3 +49,12 @@ Target awal 50 skill teruji belum tercapai: 22 skill teruji. Tidak ada skill kos
 - Windows: `scripts/install_windows.ps1` dibuat, TIDAK DIUJI (sandbox tanpa Windows/pwsh).
 - Codex: `developers.openai.com` tetap tidak bisa dijangkau (DNS gagal, curl kode 000). Discovery Codex BELUM TERVERIFIKASI; tidak ada jalur Codex yang diklaim.
 - Tidak dilakukan: deduplikasi office (sesuai keputusan), instalasi global, pengujian ulang 24 skill instruksi.
+
+## Checkpoint v0.4.0 (2026-11-25)
+- Hasil: 80 skill di disk, 0 error validasi. Status: VERIFIED 27 (19 CUSTOM, 6 IMPORTED, 1 ADAPTED, 1 ffmpeg-skill dengan cakupan resep), VALIDATED 29 (impor baru), IMPORTED 24 (smoke sintaks saja).
+- Impor baru 30 skill dari 7 repository MIT (LICENSE dibaca langsung dari clone): haidrrrry/claude-remotion-skill (1), Liamrjohnston/remotion-motion-graphics-skill (3), kajisho5/ffmpeg-skill (1), alton47/threejs-skills (14), MIGO-OvO/plc-skill (1), zakariaf/Flutter-Skills (8 dari 40), supabase/agent-skills (2).
+- Dedupe: Liam `motion-graphics` tidak diimpor karena tumpang tindih dengan remotion-motion-graphics.
+- Pemindaian risiko: tidak ada HIGH. MEDIUM hanya contoh `npm install` di dokumentasi dan satu false positive `.env`. Tidak ada script upstream yang dijalankan.
+- Lazy installation: tidak ada npm/pip upstream yang dipasang.
+- Belum tercakup (P0/P1/P2): HTML Canvas/SVG animation, sound design, human-like narration (butuh TTS besar, ditunda), electrical protection, motor control, instrumentation, troubleshooting, academic research, dan XAUUSD sumber MIT yang layak.
+- Importer: ditambah opsi `--commit` agar folder staging (bukan git) tetap punya provenance.

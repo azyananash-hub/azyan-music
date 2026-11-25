@@ -57,3 +57,15 @@ Aturan: lisensi ditulis hanya jika sudah diverifikasi. Kolom **Status verifikasi
 | e2nIEE/pandapower | 3.5.6 (PyPI) | Metadata PyPI kosong; BSD-3-Clause menurut LICENSE repository (pencarian web sebelumnya) | Dipakai oleh `load-flow-pandapower`. |
 
 Dependensi uji (venv `tests/requirements-test.txt`) yang lisensinya belum saya verifikasi satu per satu: pypdf, reportlab, openpyxl, python-pptx, python-docx, pillow, imageio, numpy, defusedxml, lxml, PyYAML, playwright. Ini bukan dependensi runtime skill (kecuali yang disebut di SKILL.md masing-masing).
+
+## Provenance v0.4 (lisensi dibaca dari file LICENSE clone, MIT pada ketujuhnya)
+| Repository | Commit | Skill diimpor |
+|---|---|---|
+| haidrrrry/claude-remotion-skill | 1dcbe5e | remotion-motion-graphics |
+| Liamrjohnston/remotion-motion-graphics-skill | b860c79 | cinematic-camera, terminal-inserts, article-highlights |
+| kajisho5/ffmpeg-skill | 73436cb | ffmpeg-skill |
+| alton47/threejs-skills | 7b8e256 | 14 skill threejs-* |
+| MIGO-OvO/plc-skill | 82e5419 | plc-skill |
+| zakariaf/Flutter-Skills | e073e5e | 8 skill Flutter |
+| supabase/agent-skills | c9be0e9 | supabase, supabase-postgres-best-practices |
+Tidak diimpor: remotion-dev/skills (tanpa LICENSE), full-stack-skills/threejs-skills dan flutter-skills (Apache-2.0, tidak dipilih), Liamrjohnston `motion-graphics` (tumpang tindih).

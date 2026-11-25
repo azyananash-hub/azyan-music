@@ -2,7 +2,7 @@
   "registry_version": 1,
   "library": "ZY Skill Library",
   "generated_by": "scripts/build_registry.py",
-  "skill_count": 50,
+  "skill_count": 80,
   "skills": [
     {
       "name": "discernment-nudge",
@@ -28,6 +28,18 @@
         "scripts/modbus_client.py"
       ],
       "sha256_skill_md": "9a532f2ccecd76ba31fe784b319ee5601669e3d785a7d267983dc49256ae143d",
+      "errors": []
+    },
+    {
+      "name": "plc-skill",
+      "category": "automation",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/automation/plc-skill/SKILL.md",
+      "description": "Vendor-aware PLC engineering skill for IEC 61131-3 logic design, review, debugging, refactoring, and documentation routing.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "963a1c01901ccf6125e71ce0717503782823b2b14f7bb0e5c8c9173f1c9eb146",
       "errors": []
     },
     {
@@ -78,6 +90,22 @@
       "license": "Complete terms in LICENSE.txt",
       "scripts": [],
       "sha256_skill_md": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+      "errors": []
+    },
+    {
+      "name": "ffmpeg-skill",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "status": "VERIFIED",
+      "path": "skills/creative-production/ffmpeg-skill/SKILL.md",
+      "description": "Edit video and audio with local FFmpeg: cut, join, reframe, speed, captions, overlays, silence removal, sync, loudness, HDR to SDR, platform exports and checks. Use whenever the user mentions a video or audio file (mp4, mov, wav, m4a), footage, captions, a reel or short, YouTube/TikTok delivery, LUFS or ffmpeg, even without saying \"edit\". Needs FFmpeg 6.1+ and Python 3.10+; stdlib only, no cloud.",
+      "license": "",
+      "scripts": [
+        "scripts/_contract.py",
+        "scripts/_review.py",
+        "scripts/build_plugin_skill.py"
+      ],
+      "sha256_skill_md": "d98a43fc15d010bff543fd5f1382cceb055fdce12f3988538d38d1a917e3fce9",
       "errors": []
     },
     {
@@ -172,6 +200,117 @@
         "scripts/portfolio_metrics.py"
       ],
       "sha256_skill_md": "403a6519fe6b6138b6e8339a01db6b429441fba03d4faec795504ecb14258fc0",
+      "errors": []
+    },
+    {
+      "name": "accessibility-as-code",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/accessibility-as-code/SKILL.md",
+      "description": "Enforces accessibility as a correctness property authored into each widget — Semantics(button/label) or ExcludeSemantics on every node, a11y state read from MediaQuery not app state, never MediaQuery.withClampedTextScaling / textScaleFactor / FittedBox / TextOverflow.ellipsis to fit a label, non-color redundant channels (icon+label+shape+text) for every state, contrast against composited backgrounds (4.5:1 body / 3:1 large), 44px single-tap targets, OrdinalSortKey traversal, and honoring boldText / reduce-motion. Use when adding a GestureDetector/InkWell or any tap target, adding an Icon or Image, reaching for withClampedTextScaling/FittedBox/ellipsis/textScaleFactor to make text fit, encoding state via color, sizing type, ordering focus traversal, or reviewing any View for screen-reader/switch/low-vision support.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "121fc6ac78eb24c03c8d92a25fb0eeecc3ed8a89ebd358d9613e7c37ec50e496",
+      "errors": []
+    },
+    {
+      "name": "async-safety",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/async-safety/SKILL.md",
+      "description": "Enforces no-silent-failure async discipline in Flutter/Dart — the arrow-callback Future-drop hole no lint catches (`onTap: () => vm.save(x)`), void-returning event handlers, a mounted/ref.mounted guard after EVERY await before touching BuildContext, capturing Navigator/ScaffoldMessenger before the gap, honest `unawaited()` that always ends in catchError, no empty/bare catches, `rethrow` over `throw e`, and disposing every StreamSubscription/StreamController/Timer/sink. Use when writing or reviewing async/await, wiring onTap/onPressed/onSubmitted or any VoidCallback, touching BuildContext after an await, writing initState/dispose/addPostFrameCallback, adding a Timer or Future.delayed, writing a try/catch, or seeing use_build_context_synchronously, cancel_subscriptions, close_sinks, unawaited_futures, or discarded_futures.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "019e75754449027ec5b9306da3c4ec430513f872dcc5e3926e178b9ed7552977",
+      "errors": []
+    },
+    {
+      "name": "flutter-architecture",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/flutter-architecture/SKILL.md",
+      "description": "Enforces a right-sized feature-first layered MVVM Flutter architecture — features are folders and cross-cutting foundations become packages only when a compile wall earns it, a strict downward-only dependency DAG, dumb Views over one Notifier/AsyncNotifier ViewModel per feature, repositories as the single source of truth and single write path returning immutable domain values, abstractions only where something genuinely can't run in a test, and Riverpod 3.x as the one context-free DI+state mechanism (no get_it/injectable/package:provider container). Use when creating a Flutter feature or file, deciding folder-vs-package or where a class belongs, naming a Screen/Notifier/Repository/Service, wiring providers or a composition-root/bootstrap.dart, adding a use-case/domain layer, resisting over-engineering on a small app, or reviewing whether a change respects the layer boundaries.",
+      "license": "",
+      "scripts": [
+        "scripts/check_architecture.sh"
+      ],
+      "sha256_skill_md": "0da4b8a86f39ae83d8943d66eb682e8a0d4bc1c815d5e17474fadaad9ba788a9",
+      "errors": []
+    },
+    {
+      "name": "i18n-rtl-l10n",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/i18n-rtl-l10n/SKILL.md",
+      "description": "Enforces the gen-l10n/ARB localization contract: every string through AppLocalizations from a template app_en.arb, key + placeholder parity, nullable-getter:false so a missing key is a compile error, ICU plural/select over concatenation, Directional-only geometry (EdgeInsetsDirectional, AlignmentDirectional, TextAlign.start, Icons.adaptive), FSI/PDI isolation for mixed-script runs, per-locale NumberFormat with a pinned numbering system, canonical UTC-epoch + ASCII storage projected only at render, normalize-to-ASCII before any parse, and three vendored LocalizationsDelegates ahead of the Global* ones for a locale flutter_localizations lacks. Use when adding or translating an ARB key, building an RTL screen, formatting or parsing dates/numbers/numerals, wiring l10n.yaml, AppLocalizations, or MaterialApp localizationsDelegates, supporting a locale Flutter lacks (ckb), fixing a locale that crashes on Tooltip or renders LTR, checking bundled-font glyph coverage, isolating technical IDs, or touching app_*.arb.",
+      "license": "",
+      "scripts": [
+        "scripts/check_arb_parity.sh",
+        "scripts/check_i18n_bans.sh"
+      ],
+      "sha256_skill_md": "3281449560aad55821d46581e0cb9776eb48b3fd513232d55e648a2de24250fd",
+      "errors": []
+    },
+    {
+      "name": "navigation-and-routing",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/navigation-and-routing/SKILL.md",
+      "description": "Enforces one app-wide GoRouter in lib/routing/ wired via MaterialApp.router, deep-linkable identity in path params never state.extra, context.go-vs-context.push discipline, redirect guards as pure functions driven by a Riverpod refreshListenable, StatefulShellRoute.indexedStack for branch-state-preserving BottomNavigationBar/NavigationRail shells, CustomTransitionPage transitions that respect reduced motion, PopScope (canPop/onPopInvokedWithResult) for unsaved-changes interception, and an errorBuilder 404 route. Use when adding routes, GoRoute, redirect, auth/onboarding gates, deep links, ShellRoute or nested navigation, bottom-nav/rail tab shells, page transitions, back-button/unsaved-changes handling, notification-payload-to-location mapping, typed routes, go_router_builder, or wiring go_router into app.dart.",
+      "license": "",
+      "scripts": [
+        "scripts/check_routing.sh"
+      ],
+      "sha256_skill_md": "9cc763e3c1f87dddbaa75eeb64d40e3b86911f2d6681cb28a0e674aa0509dd4c",
+      "errors": []
+    },
+    {
+      "name": "persistence-drift",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/persistence-drift/SKILL.md",
+      "description": "Governs the on-device Drift/SQLite data layer: package:drift and package:sqlite3 confined to lib/data/ behind DAOs that map rows to immutable value objects (no Drift symbol leaks past the repository), invariants pushed into the schema (STRICT tables, CHECK/FK/partial-UNIQUE indexes), foreign_keys/WAL pragmas re-asserted idempotently in beforeOpen, one db.transaction per mutation, persist-before-publish, every query awaited, canonical integer storage, derived state recomputed-on-read never stored, scoped .watch streams, keyset (seek) pagination not OFFSET, and WAL-safe backups (checkpoint + VACUUM INTO, verify-by-reopen, never File.copy a live WAL DB). Use when defining or altering a Drift Table, Companion, DAO, index, or CHECK; writing a repository transaction or scoped watch provider; wiring the connection/beforeOpen pragmas; adding SQLCipher; building or verifying a backup; or reviewing a data-layer diff. Migrations and their tests live in run-migration.",
+      "license": "",
+      "scripts": [
+        "scripts/check-drift-confinement.sh",
+        "scripts/check-persistence-bans.sh"
+      ],
+      "sha256_skill_md": "fbc122997aa7f5c3e1c3003e268475adebc9fe69810636b79fbc16e6a30ab886",
+      "errors": []
+    },
+    {
+      "name": "state-management-riverpod",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/state-management-riverpod/SKILL.md",
+      "description": "Enforces feature state as one Notifier/AsyncNotifier/StreamNotifier ViewModel over an immutable state value with value equality, private mutable state mutated only through intent methods, derive-don't-store, a single write path through a repository, and unidirectional data flow; Riverpod 3.x is DI (providers-as-collaborators, ProviderScope overrides per flavor, throwing seams), reads split ref.watch/.select for display vs ref.read(p.notifier) in callbacks vs ref.listen for side effects, async modeled as AsyncValue, per-entity state family-keyed + autoDispose, and stale-closure captures / legacy StateProvider-StateNotifierProvider-ChangeNotifierProvider / get_it / package:provider are banned. Use when adding state to a screen, writing a feature controller/ViewModel, wiring providers or DI, deriving a read model from a stream, or reviewing rebuild/state-leak/disposal/write-path issues.",
+      "license": "",
+      "scripts": [
+        "scripts/ban-legacy-providers.sh"
+      ],
+      "sha256_skill_md": "f67d707f52700d9ae2542cfc06d0c84990036ebf575a3c9160f37a2f655cea57",
+      "errors": []
+    },
+    {
+      "name": "testing-strategy",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/flutter/testing-strategy/SKILL.md",
+      "description": "Enforces test doctrine where shape follows code not the pyramid: pushes logic into Flutter-free packages tested with pure package:test and an injected Clock; asserts invariants with seeded fuzz tests against an independent oracle plus round-trip and rounding goldens; prefers bare-implements fakes over mocktail for code you own; tests the data layer against a real NativeDatabase.memory Drift engine, never a mocked DAO; drives Notifiers headlessly with ProviderContainer overrides; guards one end-to-end acceptance gate and a runtime invariant tripwire; floors coverage on unrecoverable-bug files not a global percentage; and fixes the coverage-lies-upward gap. Use when writing tests under test/ or integration_test/, choosing unit vs widget vs integration, adding a fuzz or round-trip property, wiring a fake or ProviderContainer test, gating coverage, or triaging a flaky-suite failure.",
+      "license": "",
+      "scripts": [
+        "scripts/check_test_hygiene.sh",
+        "scripts/run_tests.sh"
+      ],
+      "sha256_skill_md": "2e54ec75d7356dfacbd0ef63608d466f11dbe37bfad32dd5d100cb5c6b5f88ac",
       "errors": []
     },
     {
@@ -313,6 +452,222 @@
         "scripts/sm2.py"
       ],
       "sha256_skill_md": "d312b65d2230ebc21e53c62927026537e5703e1de673fc51750f367fe939dae3",
+      "errors": []
+    },
+    {
+      "name": "article-highlights",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/article-highlights/SKILL.md",
+      "description": "Editorial Remotion article inserts with mandatory format/background intake, layered highlights, zero neon/glow, and mobile QA.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "5fbac00b48283e20d58063687d5b7b9ddf8f2a6d5c49164e1957e4a3db20f579",
+      "errors": []
+    },
+    {
+      "name": "cinematic-camera",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/cinematic-camera/SKILL.md",
+      "description": "Continuous-scene Remotion camera system with mandatory intake, approved-reference review, anti-neon rules, and first-pass QA.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "cc970c456a4d77ca0e623585eff55055588fe2cfc96e9949e242a70fa1180c9c",
+      "errors": []
+    },
+    {
+      "name": "remotion-motion-graphics",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/remotion-motion-graphics/SKILL.md",
+      "description": "Create and edit professional motion graphics videos with Remotion (React-based video). Use this skill EVERY time the user wants to create a video, edit a video, animate something, build an intro/outro/logo animation, make a Reel/Short/promo/launch video, add text animations or captions to footage, composite images and B-roll into a video, or mentions Remotion, motion graphics, video rendering, or \"make this video look better/less generic\". Also trigger when editing an existing Remotion project or when the user complains their video looks basic, generic, or amateur — this skill contains the exact fixes. Always read this skill BEFORE writing any Remotion code.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "7bc57dcc03c9812feb94b32785bb2fb26ab9740f523f7def580a1b372b3b6336",
+      "errors": []
+    },
+    {
+      "name": "terminal-inserts",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/terminal-inserts/SKILL.md",
+      "description": "Authentic, restrained Remotion terminal inserts with mandatory format/background intake and zero neon or glow.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "55b24ce680543eac0c8874477e0459bd7e5f483314f923cfd5020ec125a7bd6a",
+      "errors": []
+    },
+    {
+      "name": "threejs-animation",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-animation/SKILL.md",
+      "description": "Animates Three.js objects using AnimationMixer, AnimationClip, keyframe tracks, morph targets, skeletal animation, and GSAP integration. Use when the user asks about animations, AnimationMixer, play/pause animations, keyframes, GLTF animations, morph targets, bones, or GSAP with Three.js. Trigger keywords: animation, AnimationMixer, AnimationClip, keyframe, morph target, skeleton, bones, GSAP, tween, play animation.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "dc216f81050a62921540c9286b77e072e48a2cf5e7d7b04ae14c7f658bb2fa0e",
+      "errors": []
+    },
+    {
+      "name": "threejs-audio",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-audio/SKILL.md",
+      "description": "Adds spatial and non-spatial audio to Three.js scenes using AudioListener, Audio, PositionalAudio, AudioAnalyser, and AudioLoader. Use when the user asks about 3D audio, spatial sound, positional audio, audio visualization, background music, or Web Audio API integration. Trigger keywords: audio, sound, PositionalAudio, AudioListener, AudioAnalyser, spatial audio, 3D sound, music visualization.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "a78877ac937896527c719e9c902ffb3dcc2386c4472d5d4bdc18cd80ed9a4334",
+      "errors": []
+    },
+    {
+      "name": "threejs-camera",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-camera/SKILL.md",
+      "description": "Configures Three.js cameras and controls — PerspectiveCamera, OrthographicCamera, OrbitControls, FlyControls, PointerLockControls, and first-person setup. Use when the user asks about cameras, controls, orbit, fly, first-person, camera movement, or viewport setup. Trigger keywords: camera, OrbitControls, FlyControls, PointerLockControls, perspective, orthographic, first person, viewport, FOV.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "89d49a3ebcd762fe10cc85398e93fe447bc7520378b88679087b885ccdc22456",
+      "errors": []
+    },
+    {
+      "name": "threejs-core",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-core/SKILL.md",
+      "description": "Sets up Three.js renderer, scene, WebGL context, animation loop, and resize handling. Use when the user asks to create a 3D scene, set up Three.js from scratch, initialize WebGL, create a render loop, or configure a renderer. Trigger keywords: three.js, threejs, WebGL, 3D scene, renderer, requestAnimationFrame.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "b537768f6de5157743cd84a3711764b77211d9edf5f90d8a1bd0c9da815c1cab",
+      "errors": []
+    },
+    {
+      "name": "threejs-geometry",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-geometry/SKILL.md",
+      "description": "Creates and manipulates Three.js geometry — built-in primitives, BufferGeometry, custom geometry with attributes, normals, UVs, indexed and non-indexed meshes. Use when the user asks about geometry, shapes, BufferGeometry, custom vertices, normals, UVs, or mesh topology. Trigger keywords: geometry, BufferGeometry, vertices, normals, UVs, mesh topology, custom shape.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "67c36d06fe7361b0fb142145c3685e7c255b82e6cc0ad04e59d537aa8822406a",
+      "errors": []
+    },
+    {
+      "name": "threejs-lighting",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-lighting/SKILL.md",
+      "description": "Configures Three.js lights — AmbientLight, DirectionalLight, PointLight, SpotLight, RectAreaLight, shadows, HDR environment lighting, and light probes. Use when the user asks about lighting, shadows, light setup, HDR, environment maps for lighting, or realistic rendering. Trigger keywords: light, lighting, shadow, DirectionalLight, PointLight, SpotLight, ambient, HDRI, environment.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "c94b90a8823cec9e1094a2f06def2e84ce097b00b0995439a9ac0e97935b6be7",
+      "errors": []
+    },
+    {
+      "name": "threejs-loaders",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-loaders/SKILL.md",
+      "description": "Loads 3D assets in Three.js — GLTFLoader, DRACOLoader, KTX2Loader, TextureLoader, FontLoader, AudioLoader, LoadingManager, and async/await loading patterns. Use when the user asks about loading 3D models, GLTF, GLB, OBJ, textures, fonts, audio, or asset management. Trigger keywords: GLTFLoader, load model, GLTF, GLB, DRACOLoader, TextureLoader, LoadingManager, async load, asset.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "537b8e0bd718bf4751aecbba521409afe0d31d867ab14d4cd0662865c560c286",
+      "errors": []
+    },
+    {
+      "name": "threejs-materials",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-materials/SKILL.md",
+      "description": "Configures Three.js materials — MeshStandardMaterial, MeshPhysicalMaterial, PBR pipeline, texture maps (color, normal, roughness, metalness, AO, emissive, environment). Use when the user asks about materials, textures, PBR, shading, opacity, transparency, or material properties. Trigger keywords: material, texture, PBR, roughness, metalness, normal map, emissive, transparent, MeshStandardMaterial.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "b132c6e4bd678eff9877e9b3032ef320d2bc70784ca7339ab825cb39337a4c96",
+      "errors": []
+    },
+    {
+      "name": "threejs-performance",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-performance/SKILL.md",
+      "description": "Optimizes Three.js performance — instancing, draw call reduction, LOD, frustum culling, geometry merging, texture compression, Stats.js profiling, and GPU debugging. Use when the user asks about performance, FPS, draw calls, instancing, optimization, lag, stuttering, or profiling a Three.js scene. Trigger keywords: performance, fps, draw calls, instancing, InstancedMesh, LOD, profiling, optimization, Stats.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "9ec37cbf2a237f75eb90175b57d4118170640ade96de8622a207a1e3c22f974d",
+      "errors": []
+    },
+    {
+      "name": "threejs-physics",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-physics/SKILL.md",
+      "description": "Integrates physics engines with Three.js — cannon-es, Rapier (WASM), and Ammo.js. Covers rigid bodies, constraints, collision detection, character controllers, and physics-visual sync. Use when the user asks about physics, collisions, rigid bodies, gravity, constraints, joints, or physics simulation. Trigger keywords: physics, cannon-es, rapier, ammo.js, rigid body, collision, gravity, constraint, character controller.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "2c1125e9b5e8fcb957191d4ff585883399108b5b7eea734922f3b3cca2f45cf4",
+      "errors": []
+    },
+    {
+      "name": "threejs-postprocessing",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-postprocessing/SKILL.md",
+      "description": "Adds post-processing effects to Three.js scenes using EffectComposer — bloom, SSAO, SMAA, depth of field, motion blur, and custom passes. Also covers pmndrs/postprocessing for React Three Fiber. Use when the user asks about post-processing, bloom, glow, SSAO, depth of field, vignette, chromatic aberration, or visual effects pipeline. Trigger keywords: post-processing, bloom, glow, EffectComposer, SSAO, depth of field, vignette, chromatic aberration, UnrealBloom.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "46a7eebee8e0040903ded17f96cf26d5c841959322fd056d0ab42579f98d1f2e",
+      "errors": []
+    },
+    {
+      "name": "threejs-react",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-react/SKILL.md",
+      "description": "Integrates Three.js in React using React Three Fiber (R3F), @react-three/drei, and @react-three/postprocessing. Use when the user asks about Three.js in React, React Three Fiber, R3F, @react-three/drei, useFrame, useThree, Canvas setup, or 3D in React components. Trigger keywords: React Three Fiber, R3F, drei, useFrame, useThree, Canvas, 3D React, @react-three.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "81fd66726988a92eecd6cf30509909705525c1e6e5d737dfe5b0d38145dca9f8",
+      "errors": []
+    },
+    {
+      "name": "threejs-shaders",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-shaders/SKILL.md",
+      "description": "Writes custom GLSL shaders in Three.js using ShaderMaterial and RawShaderMaterial — uniforms, varyings, vertex displacement, fragment effects, noise, fresnel, dissolve, and shader chunk injection. Use when the user asks about custom shaders, GLSL, ShaderMaterial, uniforms, vertex shaders, fragment shaders, noise effects, or GPU-based effects. Trigger keywords: shader, GLSL, ShaderMaterial, uniform, vertex shader, fragment shader, noise, fresnel, dissolve, GPU effect.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "ef7acc0a483a32c98421ccc8254675d3594a90fa6e2bb97fdec29848f83a3848",
+      "errors": []
+    },
+    {
+      "name": "threejs-xr",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/motion-graphics/threejs-xr/SKILL.md",
+      "description": "Sets up WebXR in Three.js — VRButton, ARButton, XRSession, controllers, hand tracking, hit testing, and immersive experiences. Use when the user asks about VR, AR, WebXR, immersive experiences, XR controllers, hand tracking, or augmented reality. Trigger keywords: WebXR, VR, AR, VRButton, ARButton, XRSession, controller, hand tracking, immersive, augmented reality, virtual reality.",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "30200497f2644b4311e37a18eaf88b299de55c0be07695ee74864fcfa1572440",
       "errors": []
     },
     {
@@ -566,6 +921,30 @@
       "license": "",
       "scripts": [],
       "sha256_skill_md": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+      "errors": []
+    },
+    {
+      "name": "supabase",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/software-development/supabase/SKILL.md",
+      "description": "Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libraries and SSR integrations (supabase-js, @supabase/ssr) in Next.js, React, SvelteKit, Astro, Remix; auth issues (login, logout, sessions, JWT, cookies, getSession, getUser, getClaims, RLS); Supabase CLI or MCP server; schema changes, migrations, declarative schemas, security audits, Postgres extensions (pg_graphql, pg_cron, pg_vector); debugging and troubleshooting errors or unexpected behavior on Supabase projects (HTTP errors, Postgres errors, RLS surprises, permission denied, schema cache issues, timeouts, Edge Function crashes, Realtime drops, Storage failures) and reading or querying logs (Logs Explorer, ClickHouse).",
+      "license": "",
+      "scripts": [],
+      "sha256_skill_md": "697e0e949f97621c6fc1784169eb3ccbf673747d6bb8299a52962d3d84d93dc6",
+      "errors": []
+    },
+    {
+      "name": "supabase-postgres-best-practices",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "status": "VALIDATED",
+      "path": "skills/software-development/supabase-postgres-best-practices/SKILL.md",
+      "description": "Postgres best practices maintained by Supabase, for Postgres running anywhere. Load this skill BEFORE writing or changing anything that lives in a Postgres database: creating or altering tables and columns (including choosing column types), schema design, migrations and declarative schema files, RLS policies and the tests that verify them, indexes, triggers, database functions, queues and scheduled jobs (pg_cron, pgmq), vector/semantic search (pgvector), and restoring dumps (pg_restore) or importing data. Also load it when diagnosing slow queries, high CPU, timeouts, EXPLAIN plans, connection exhaustion, locking, bloat, or rows visible to the wrong user or tenant. This is not just a performance guide — schema, migration, security, and SQL authoring tasks need these rules too, even for a one-column change or a single query.",
+      "license": "MIT",
+      "scripts": [],
+      "sha256_skill_md": "ad65e776f45e761bafc609d3f506c77c1032225aa65e0c4c02f241b8071e5855",
       "errors": []
     },
     {

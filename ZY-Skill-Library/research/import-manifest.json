@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "name": "accessibility-as-code",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/accessibility-as-code",
+      "license": "MIT",
+      "library_path": "skills/flutter/accessibility-as-code",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "algorithmic-art",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -12,6 +25,32 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "article-highlights",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/Liamrjohnston/remotion-motion-graphics-skill",
+      "source_commit": "b860c7921f2220b9e2a84e815ba0ae7b10858f08",
+      "source_path": "skills/article-highlights",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/article-highlights",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "async-safety",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/async-safety",
+      "license": "MIT",
+      "library_path": "skills/flutter/async-safety",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "brainstorming",
@@ -51,6 +90,19 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "cinematic-camera",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/Liamrjohnston/remotion-motion-graphics-skill",
+      "source_commit": "b860c7921f2220b9e2a84e815ba0ae7b10858f08",
+      "source_path": "skills/cinematic-camera",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/cinematic-camera",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "claude-api",
@@ -129,6 +181,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
+      "name": "ffmpeg-skill",
+      "category": "creative-production",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/kajisho5/ffmpeg-skill",
+      "source_commit": "73436cbac203bc3478cfbf0c95459d6b328f43bb",
+      "source_path": "skills/ffmpeg-skill",
+      "license": "MIT",
+      "library_path": "skills/creative-production/ffmpeg-skill",
+      "imported_on": "2026-11-25",
+      "status": "VERIFIED",
+      "test_evidence": "tests/skills/test_v04_skills.py: ffmpeg 6.1.1 (syarat >=6.1); recipe trim dan reframe vertikal 1080x1920 lulus. Cakupan: resep inti, bukan alur tool MCP upstream."
+    },
+    {
       "name": "finishing-a-development-branch",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -142,6 +207,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
+      "name": "flutter-architecture",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/flutter-architecture",
+      "license": "MIT",
+      "library_path": "skills/flutter/flutter-architecture",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "frontend-design",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -153,6 +231,19 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "i18n-rtl-l10n",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/i18n-rtl-l10n",
+      "license": "MIT",
+      "library_path": "skills/flutter/i18n-rtl-l10n",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "internal-comms",
@@ -181,6 +272,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. Belum diuji. evaluation.py membutuhkan Anthropic API (berbayar): tidak dijalankan. Panduan lain belum diuji."
     },
     {
+      "name": "navigation-and-routing",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/navigation-and-routing",
+      "license": "MIT",
+      "library_path": "skills/flutter/navigation-and-routing",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "pdf",
       "category": "office-documents",
       "classification": "IMPORTED",
@@ -192,6 +296,32 @@
       "imported_on": "2026-11-25",
       "status": "VERIFIED",
       "test_evidence": "tests/skills/test_office_documents.py: detect fillable, extract, fill roundtrip (PASS)"
+    },
+    {
+      "name": "persistence-drift",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/persistence-drift",
+      "license": "MIT",
+      "library_path": "skills/flutter/persistence-drift",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "plc-skill",
+      "category": "automation",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/MIGO-OvO/plc-skill",
+      "source_commit": "82e541946e8f92f688b94d476b1b5fc09f531947",
+      "source_path": ".",
+      "license": "MIT",
+      "library_path": "skills/automation/plc-skill",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "pptx",
@@ -218,6 +348,19 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "remotion-motion-graphics",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/haidrrrry/claude-remotion-skill",
+      "source_commit": "1dcbe5e3fc6cf970bd10d3cc05f0a8a5d19d0383",
+      "source_path": "remotion-motion-graphics",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/remotion-motion-graphics",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "requesting-code-review",
@@ -259,6 +402,19 @@
       "test_evidence": "tests/skills/test_governance_and_creative.py: GIFBuilder + validate_gif produce valid emoji GIF <64KB (PASS)"
     },
     {
+      "name": "state-management-riverpod",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/state-management-riverpod",
+      "license": "MIT",
+      "library_path": "skills/flutter/state-management-riverpod",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "subagent-driven-development",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -270,6 +426,32 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "supabase",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/supabase/agent-skills",
+      "source_commit": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "source_path": "skills/supabase",
+      "license": "MIT",
+      "library_path": "skills/software-development/supabase",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "supabase-postgres-best-practices",
+      "category": "software-development",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/supabase/agent-skills",
+      "source_commit": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "source_path": "skills/supabase-postgres-best-practices",
+      "license": "MIT",
+      "library_path": "skills/software-development/supabase-postgres-best-practices",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "systematic-debugging",
@@ -285,6 +467,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
+      "name": "terminal-inserts",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/Liamrjohnston/remotion-motion-graphics-skill",
+      "source_commit": "b860c7921f2220b9e2a84e815ba0ae7b10858f08",
+      "source_path": "skills/terminal-inserts",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/terminal-inserts",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "test-driven-development",
       "category": "software-development",
       "classification": "IMPORTED",
@@ -298,6 +493,19 @@
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
     },
     {
+      "name": "testing-strategy",
+      "category": "flutter",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/zakariaf/Flutter-Skills",
+      "source_commit": "e073e5ea10c963d2c52ab1e423bd314c28a56154",
+      "source_path": "skills/testing-strategy",
+      "license": "MIT",
+      "library_path": "skills/flutter/testing-strategy",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
       "name": "theme-factory",
       "category": "creative-production",
       "classification": "IMPORTED",
@@ -309,6 +517,188 @@
       "imported_on": "2026-11-25",
       "status": "IMPORTED",
       "test_evidence": "Smoke saja: sintaks valid (py_compile/node --check). Perilaku belum diuji. instruksi saja, tidak ada script yang dieksekusi."
+    },
+    {
+      "name": "threejs-animation",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-animation",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-animation",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-audio",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-audio",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-audio",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-camera",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-camera",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-camera",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-core",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-core",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-core",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-geometry",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-geometry",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-geometry",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-lighting",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-lighting",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-lighting",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-loaders",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-loaders",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-loaders",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-materials",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-materials",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-materials",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-performance",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-performance",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-performance",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-physics",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-physics",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-physics",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-postprocessing",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-postprocessing",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-postprocessing",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-react",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-react",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-react",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-shaders",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-shaders",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-shaders",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
+    },
+    {
+      "name": "threejs-xr",
+      "category": "motion-graphics",
+      "classification": "IMPORTED",
+      "source_repo": "https://github.com/alton47/threejs-skills",
+      "source_commit": "7b8e25638cff83a6be4926d8f05001022cc80ac3",
+      "source_path": "skills/threejs-xr",
+      "license": "MIT",
+      "library_path": "skills/motion-graphics/threejs-xr",
+      "imported_on": "2026-11-25",
+      "status": "VALIDATED",
+      "test_evidence": "Struktur, provenance, lisensi, dan pemindaian risiko lulus (tidak ada HIGH). Perilaku belum diuji: instruksi saja; dependensi (npm/pip) belum dipasang (lazy installation)."
     },
     {
       "name": "using-git-worktrees",

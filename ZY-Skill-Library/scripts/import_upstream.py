@@ -102,9 +102,11 @@ def _main(argv: list[str] | None = None) -> int:
     p.add_argument("--license-file", default=None, help="Path lisensi relatif terhadap source, mis. LICENSE")
     p.add_argument("--skill", action="append", required=True, help="nama_skill:kategori (boleh diulang)")
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--commit", default=None,
+                   help="SHA upstream eksplisit (wajib bila --source bukan repo git, mis. folder staging)")
     args = p.parse_args(argv)
 
-    commit = resolve_commit(args.source)
+    commit = args.commit or resolve_commit(args.source)
     manifest = _load_manifest()
     existing = {e["name"]: e for e in manifest["entries"]}
     for spec in args.skill:
