@@ -242,7 +242,7 @@ Skala: **H** (berdampak tinggi), **M** (relevan), **L** (rendah). Tanda "bersyar
 
 Ringkasan: Firecrawl tidak punya profil H. Claude-BugHunter punya H (Money App) dan M–H (AmiraVerse, bersyarat). Stitch tidak punya H; konflik neon bernilai M.
 
-## Backlog prioritas (menunggu persetujuan; tidak ada yang diimplementasikan)
+## Backlog prioritas (versi awal; digantikan oleh bagian J, 2026-11-25)
 
 | ID | Prio | Item (digabung dari) | Prasyarat | Rp0 | Langkah bila disetujui |
 |---|---|---|---|---|---|
@@ -295,7 +295,7 @@ Tidak ada ADOPT langsung: setiap kandidat punya bagian yang harus ditulis ulang 
 
 ## I.3 Verifikasi sumber UI/UX Pro Max (read-only; tidak ada yang dipasang)
 
-Sumber: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill. Clone shallow (`--depth 1`, `GIT_LFS_SKIP_SMUDGE=1`) di luar repository. HEAD `bde080f` (2026-11-26 00:34 +0530; author commit "Jay Pokale"; subject "fix(ui-styling): find installed shadcn components under src/ and custom aliases (#602)"). 750 berkas; 25 MB tanpa `.git`. Tidak ada filter LFS di `.gitattributes`.
+Sumber: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill. Clone shallow (`--depth 1`, `GIT_LFS_SKIP_SMUDGE=1`) di luar repository. HEAD `bde080f` (2026-11-26 00:34 +0530; author commit "kontributor publik (nama tidak dicantumkan)"; subject "fix(ui-styling): find installed shadcn components under src/ and custom aliases (#602)"). 750 berkas; 25 MB tanpa `.git`. Tidak ada filter LFS di `.gitattributes`.
 
 **Identitas**
 - Repository publik milik `nextlevelbuilder`. `plugin.json` dan `skill.json` menunjuk ke repository yang sama.
@@ -353,3 +353,81 @@ Sumber: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill. Clone shallow (
 - Verifikasi lisensi per font (54 TTF) dan data `phosphor-icons-upstream.json`.
 - Verifikasi sumber paket npm: `cli/package.json` (2.5.0) berbeda dengan registry (2.15.0).
 - Pengujian perilaku skill: tidak dijalankan.
+
+---
+
+# J. Pembaruan backlog setelah audit intelligence v0.8 (2026-11-25)
+
+Sumber: `ZY-Skill-Library/research/v0.8-intelligence/` (delapan dokumen dan `evidence/triage-summary.tsv`). Tidak ada implementasi, instalasi, atau perubahan kode. Setiap item menunggu persetujuan per ID.
+
+## J.1 Koreksi checkpoint (bagian I)
+
+- Klaim "generator UI/UX Pro Max berbayar" tidak terverifikasi. Yang terverifikasi: generator memakai API key (`GEMINI_API_KEY`, `ATLASCLOUD_API_KEY`, `MUAPI_API_KEY`, `UBERLLM_API_KEY`) dan mengirim prompt ke layanan pihak ketiga. Biaya aktual belum diverifikasi.
+- Penolakan generator tetap berlaku berdasarkan kebijakan data keluar DENY BY DEFAULT, terlepas dari harganya.
+- "Rp0" di bagian I hanya berlaku untuk pemasangan lokal. Biaya generator tidak diketahui.
+- Koreksi ini dimasukkan ke commit riset berikutnya yang disetujui. Commit checkpoint sebelumnya tidak diubah.
+
+## J.2 Prioritas baru (usulan; menunggu persetujuan)
+
+| Prioritas | Item | Alasan |
+|---|---|---|
+| P1 | K2 (P09), K1 (P02, mode A), K7 (P01), K8 (P17) | Keamanan defensif untuk Money App dan AmiraVerse; sumber desain; gerbang kualitas visual; sinkronisasi dokumen |
+| P2 | K3 (P10), K4 (P11), K10 (P12), K11 (P13) | Perluasan skill VERIFIED yang sudah ada; standar memori dan persetujuan |
+| P3 | K5 (prasyarat), K6 (CVE, menunggu sumber data), K12 (P14), K13 (P03–P07), K14 (P08, P15) | Prasyarat mode URL; panduan adaptasi; metodologi paper-only |
+| DEFER / DOMAIN / BLOCKED | D1–D7 dan item 39 | Lihat `SELECTIVE-INTEGRATION-PROPOSAL.md` dan `MASTER-REPOSITORY-REGISTER.md` bagian 5 |
+
+## J.3 Revisi K1–K9
+
+| ID | Status baru | Perubahan berdasarkan bukti | Paket |
+|---|---|---|---|
+| K1 | P1 (diperkecil) | Mode A saja, dari sumber kode. Tanpa Node, Puppeteer, Stitch, atau StitchMCP. Data UI/UX Pro Max (bde080f) menjadi sumber opsional dengan persetujuan terpisah. Batasan palet neon tetap | P02 |
+| K2 | P1 (RLS dikecualikan) | Cakupan: authz, autentikasi, API. RLS sudah dibahas oleh skill Supabase. Konten CC BY 4.0 dari Claude-BugHunter wajib diberi atribusi. Tanpa payload | P09 |
+| K3 | P2 | Perluasan `secret-leak-scan` untuk artefak build: source map, `.git` yang terbuka, `.env` di dalam artefak | P10 |
+| K4 | P2 | Perluasan `markitdown-converter` dengan deteksi kehilangan konten untuk halaman yang dirender JavaScript | P11 |
+| K5 | P3 (prasyarat) | Wajib sebelum mode URL pada K1 atau kandidat ST-09 dan ST-12. Allowlist domain; tolak IP privat dan loopback; tanpa kredensial | — |
+| K6 | P3, DEFER | Belum ada sumber data CVE dengan lisensi jelas | — |
+| K7 | P1, sebagian terisi | Gerbang kualitas desain sudah diusulkan (critique dan audit dari Impeccable, gerbang Floor dan Reflex dari Hallmark). Visual QA berbasis render tetap gap | P01 |
+| K8 | P1 | Sinkronisasi dokumen. Angka diambil dari validator dan tes, bukan dari ingatan | P17 |
+| K9 | Sebagian terjawab | Terjawab: URL UI/UX Pro Max diverifikasi; Stitch Cloud dan MCP REJECT untuk tahap ini; kebijakan data keluar DENY BY DEFAULT. Masih terbuka: enam baris GAP, brief Sebelum Sepi Menjadi Rumah, repo Blender Skills (item 39), keputusan memori lokal, dan persetujuan Ollama | — |
+
+## J.4 Item baru
+
+| ID | Prioritas | Item | Catatan | Paket |
+|---|---|---|---|---|
+| K10 | P2 | Standar memori proyek lokal (C04) | Tanpa cloud, tanpa hook; batas ukuran per entri; retrieval kata kunci. Gap terbesar di registry | P12 |
+| K11 | P2 | Prosedur gerbang persetujuan (C02) | Titik STOP, log keputusan | P13 |
+| K12 | P3 | Validasi walk-forward dan out-of-sample (C23) | Riset dan paper saja. Tanpa tuning pada data out-of-sample | P14 |
+| K13 | P3 | Panduan adaptasi: web-platform subset (P03), GSAP (P05), diagram (P04), recipe cards (P06), Three.js (P07) | Satu per satu, dengan atribusi dan pin commit | P03–P07 |
+| K14 | P3 | Metodologi trading paper-only (P08) dan pengetahuan browser debugging (P15) | Tanpa broker dan tanpa MCP | P08, P15 |
+
+## J.5 Ditolak dan ditunda (tidak masuk backlog)
+
+Lihat `MASTER-REPOSITORY-REGISTER.md` bagian 5: REJECT 20 item, DEFER 7, DOMAIN ONLY 4, KNOWLEDGE ONLY 8, BLOCKED 1 (item 39). Tidak ada item yang di-ADOPT langsung.
+
+## J.6 Status
+
+- Tidak ada implementasi. Tidak ada perubahan kode. Tidak ada instalasi. Tidak ada PR, merge, atau force push.
+- Repositori kandidat: 51 ditinjau. 41 dibaca mendalam, 2 dengan pemeriksaan terarah (04, 32), 8 hanya triage (25, 29, 31, 34, 38, 41, 50, 51).
+- Repositori unik setelah deduplikasi: 106 (56 historis dan 52 baru, dikurangi 2 tumpang tindih).
+- Benchmark: 52 diusulkan, 0 dijalankan. Pengukuran token: NOT MEASURABLE di runtime ini.
+- Checkpoint riset berikutnya: menunggu persetujuan diff.
+
+---
+
+# K. Penutupan supervisor (2026-11-26)
+
+Checkpoint ini memuat BACKLOG-V0.8.md dan `research/v0.8-intelligence/` (delapan dokumen dan `evidence/`). Pekerjaan lanjutan (audit mendalam, desain memori, profil domain, dan paket persetujuan implementasi) tidak termasuk checkpoint ini dan belum di-commit.
+
+- **Frozen baseline:** code `7039fed` tidak berubah. Frozen snapshot `940368f` adalah ancestor dari HEAD. Checkpoint ini tidak mengubah kode, skill, skrip, registry, atau tes. Sejak `7039fed` hanya `tests/requirements-test.txt` (+9 baris) yang berubah, dari commit `940368f`, dan itu sudah ada sebelum checkpoint ini.
+- **P01–P17: NOT AUTHORIZED.** Tidak ada implementasi, instalasi, atau perubahan berkas library. Lihat `SELECTIVE-INTEGRATION-PROPOSAL.md`.
+- **Memori proyek lokal: PRIORITY CANDIDATE.** Desain saja; implementasi menunggu persetujuan. Tidak bergantung pada Claude-Mem, layanan cloud, atau MCP jarak jauh.
+- **Item 39 (Blender Skills): BLOCKED.** Dua repository dengan nama sama: 39a (EL4CTEO) dan 39b (arjun988). Kanonik belum dipilih.
+- **Ollama: DEFER.** Tidak dipasang dan tidak diunduh. Model besar memerlukan persetujuan.
+- **Empat domain GAP: BACKLOG ONLY.** Iklan komersial, explainer edukasi, game Android dan browser, dan lingkungan 3D realistis. Matriks memuat enam baris GAP (`PROJECT-DOMAIN-MATRIX.md` bagian 1). Dua baris lain (Sebelum Sepi Menjadi Rumah dan WTP/WWTP) belum mendapat keputusan supervisor dan menunggu keputusan pemilik.
+- **EarthStop Golden Master: AWAITING COMPLETION.** Kriteria belum didefinisikan (V7). Item M15, M17, dan I3 bergantung padanya.
+- **Rekonsiliasi angka:** total historis 56; repository audit 52; tumpang tindih 2; entri unik 106; tidak diklaim terkonfirmasi 3 (fsrs, serta item 39a dan 39b); repository unik terkonfirmasi 103. Angka 32 adalah subset register konsolidasi (26 + 6, baris 191 bagian ini) dan dikesampingkan sebagai jumlah historis. Rincian di `MASTER-REPOSITORY-REGISTER.md` bagian 3a.
+- **Pemisahan runtime dan pengetahuan:** `MASTER-REPOSITORY-REGISTER.md` bagian 7.
+- **Bukti tersimpan:** `evidence/triage-summary.tsv` (25 kolom; `readme_head` dihapus), `evidence/identity-ls-remote.tsv` (52 identitas dan satu alias), dan `evidence/METHOD.md`. Hash penuh dan indikator cukup untuk verifikasi ulang. Klon di `/home/user/ext/research-cache/` dapat dibuat ulang dari URL dan hash; penghapusannya diusulkan setelah audit lanjutan selesai.
+- **Koreksi:** "four GAP" menjadi "six" di `PROJECT-DOMAIN-MATRIX.md`, `INTELLIGENCE-ARCHITECTURE-V0.8.md` bagian 6, dan `SELECTIVE-INTEGRATION-PROPOSAL.md` bagian 5. "39b (REJECT)" di matriks domain menjadi "39 (BLOCKED)" sesuai register.
+- **Nama:** nama kontributor non-pemilik pada I.3 diganti dengan "kontributor publik". Nama pembuat dan pemegang hak cipta repository publik dipertahankan karena diperlukan untuk verifikasi identitas dan lisensi.
+- **Biaya: Rp0.** Tidak ada layanan berbayar, API berbayar, atau unduhan model.

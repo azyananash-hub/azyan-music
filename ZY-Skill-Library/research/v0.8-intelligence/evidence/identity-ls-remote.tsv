@@ -1,0 +1,54 @@
+id	clone_dir	source_url	canonical_owner_repo	head_full_ls_remote	head_full_clone	identity_check	identity_status	note
+01	affaan-m__ECC	https://github.com/affaan-m/ECC	affaan-m/ecc	4adeee6732a12d1540f49a4d50a38ce8c97f9a53	4adeee6732a12d1540f49a4d50a38ce8c97f9a53	match	RESOLVED	
+02	Graphify-Labs__graphify	https://github.com/Graphify-Labs/graphify	graphify-labs/graphify	02c27dc246cd7bc359d0f4acaf53a3fce595bc1e	02c27dc246cd7bc359d0f4acaf53a3fce595bc1e	match	REPO RESOLVED; PACKAGE NAME UNRESOLVED	README install name graphifyy differs from repo name (item 02)
+03	thedotmack__claude-mem	https://github.com/thedotmack/claude-mem	thedotmack/claude-mem	11b47f9f4b8dc3614fab7452647f578886468849	11b47f9f4b8dc3614fab7452647f578886468849	match	RESOLVED	
+04	obra__superpowers	https://github.com/obra/superpowers	obra/superpowers	22f0b463e7a5e579904dd6211a520321035526f7	22f0b463e7a5e579904dd6211a520321035526f7	match	RESOLVED	Overlaps historical group A (obra/superpowers)
+05	alibaba__open-code-review	https://github.com/alibaba/open-code-review	alibaba/open-code-review	d4f568f71d3a9d5c5ec972791b1509e40cd31ad1	d4f568f71d3a9d5c5ec972791b1509e40cd31ad1	match	RESOLVED	
+06	cursor__plugins	https://github.com/cursor/plugins	cursor/plugins	41e400932eca14f289e7db717a70455256b6d388	41e400932eca14f289e7db717a70455256b6d388	match	RESOLVED	
+07	backnotprop__plannotator	https://github.com/backnotprop/plannotator	backnotprop/plannotator	9d77678f4db77cabfc3a237a840bcc4c0bd43491	9d77678f4db77cabfc3a237a840bcc4c0bd43491	match	RESOLVED	
+08	ahmedkhaleel2004__gitdiagram	https://github.com/ahmedkhaleel2004/gitdiagram	ahmedkhaleel2004/gitdiagram	dae121cd2e52ecf28f58a77b65e776ad5cd092a2	dae121cd2e52ecf28f58a77b65e776ad5cd092a2	match	RESOLVED	
+09	morluto__rea	https://github.com/morluto/rea	morluto/rea	a9d103167484234027415cf7816f4bd8335bf8a7	a9d103167484234027415cf7816f4bd8335bf8a7	match	RESOLVED	
+10	cheaper-inference__OmniRoute	https://github.com/cheaper-inference/OmniRoute	cheaper-inference/omniroute	29a023c6b39f7a728d1b7784a2cf34dc2d8347ee	29a023c6b39f7a728d1b7784a2cf34dc2d8347ee	match	RESOLVED	
+11	tashfeenahmed__freellmapi	https://github.com/tashfeenahmed/freellmapi	tashfeenahmed/freellmapi	7c9a38050814585958f690a96e13f5500459b0a7	7c9a38050814585958f690a96e13f5500459b0a7	match	RESOLVED	
+12	mnfst__awesome-free-llm-apis	https://github.com/mnfst/awesome-free-llm-apis	mnfst/awesome-free-llm-apis	0838371416a4d31f44b12dd5de1043d5e8e51ec7	0838371416a4d31f44b12dd5de1043d5e8e51ec7	match	RESOLVED	
+13	ollama__ollama	https://github.com/ollama/ollama	ollama/ollama	784dd544291825e8f5f064672dc2bd7f4d9345ed	784dd544291825e8f5f064672dc2bd7f4d9345ed	match	RESOLVED	
+14	OpenHands__OpenHands	https://github.com/OpenHands/OpenHands	openhands/openhands	ccdc5f51c3595fafdbf2ce57706cef65c3c52d6b	ccdc5f51c3595fafdbf2ce57706cef65c3c52d6b	match	RESOLVED	
+15	n8n-io__nod	https://github.com/n8n-io/nod	n8n-io/nod	9333d3be8ee0861cc967c66007a40f7cb2b7dc17	9333d3be8ee0861cc967c66007a40f7cb2b7dc17	match	RESOLVED	
+16	ag-ui-protocol__ag-ui	https://github.com/ag-ui-protocol/ag-ui	ag-ui-protocol/ag-ui	ed94ca4a3240527d3ef20fd0f0cc63501f44e469	ed94ca4a3240527d3ef20fd0f0cc63501f44e469	match	RESOLVED	
+17	ChromeDevTools__chrome-devtools-mcp	https://github.com/ChromeDevTools/chrome-devtools-mcp	chromedevtools/chrome-devtools-mcp	8c43179464d368a6a3c7f8ce2ee024e1e736b795	8c43179464d368a6a3c7f8ce2ee024e1e736b795	match	RESOLVED	
+18	Panniantong__agent-reach	https://github.com/Panniantong/agent-reach	panniantong/agent-reach	8d9ecc1f5521fe7d223cde782aaa4005695e2671	8d9ecc1f5521fe7d223cde782aaa4005695e2671	match	RESOLVED	
+19	D4Vinci__Scrapling	https://github.com/D4Vinci/Scrapling	d4vinci/scrapling	938867232230fb7b164fa97211497c204fa2e167	938867232230fb7b164fa97211497c204fa2e167	match	RESOLVED	
+20	mvanhorn__last30days-skill	https://github.com/mvanhorn/last30days-skill	mvanhorn/last30days-skill	ed7ec6752b766ea3eb62239b374900764e9b5453	ed7ec6752b766ea3eb62239b374900764e9b5453	match	RESOLVED	
+21	HKUDS__CLI-Anything	https://github.com/HKUDS/CLI-Anything	hkuds/cli-anything	34f519533bc175d2fe287ab8316b0dd99bb9cc43	34f519533bc175d2fe287ab8316b0dd99bb9cc43	match	RESOLVED	
+22	pbakaus__impeccable	https://github.com/pbakaus/impeccable	pbakaus/impeccable	9e460a87ef338ee9d12c7beed8fedc597a5af5f7	9e460a87ef338ee9d12c7beed8fedc597a5af5f7	match	RESOLVED	
+23	nutlope__hallmark	https://github.com/nutlope/hallmark	nutlope/hallmark	04977e15f3dfd6ee4b74c887dac3eb52665d6c92	04977e15f3dfd6ee4b74c887dac3eb52665d6c92	match	RESOLVED	
+24	meta__astryx	https://github.com/meta/astryx	meta/astryx	d7c7aa42865203c0cb609674ffcc72cfee242ef3	d7c7aa42865203c0cb609674ffcc72cfee242ef3	match	RESOLVED	
+25	satnaing__shadcn-admin	https://github.com/satnaing/shadcn-admin	satnaing/shadcn-admin	a156d9b90519348c4d71f0f0e6fcea179c49a43f	a156d9b90519348c4d71f0f0e6fcea179c49a43f	match	RESOLVED	
+26	GoogleChrome__modern-web-guidance-src	https://github.com/GoogleChrome/modern-web-guidance-src	googlechrome/modern-web-guidance-src	92686ac7d6ebd6c794b575335a7ff4a3e7f66ecb	92686ac7d6ebd6c794b575335a7ff4a3e7f66ecb	match	RESOLVED	
+27	cathrynlavery__diagram-design	https://github.com/cathrynlavery/diagram-design	cathrynlavery/diagram-design	b228c5d77794a84150fca41b22940bb316b1398d	b228c5d77794a84150fca41b22940bb316b1398d	match	RESOLVED	
+28	mjmirza__app-store-compliance	https://github.com/mjmirza/app-store-compliance	mjmirza/app-store-compliance	7f7f0377620b07f062733f9973180e45240fbe9a	7f7f0377620b07f062733f9973180e45240fbe9a	match	RESOLVED	
+29	OpenMontageInc__OpenMontage	https://github.com/OpenMontageInc/OpenMontage	openmontageinc/openmontage	2e003e65fa99a0f329478a2c1cdcf26bc481933a	2e003e65fa99a0f329478a2c1cdcf26bc481933a	match	RESOLVED	
+31	kajisho5__ffmpeg-skill	https://github.com/kajisho5/ffmpeg-skill	kajisho5/ffmpeg-skill	31b47c263348c9f2d4b5b673f576a7d9a5787f6c	31b47c263348c9f2d4b5b673f576a7d9a5787f6c	match	RESOLVED	Overlaps historical group A (kajisho5/ffmpeg-skill)
+33	jamiepine__voicebox	https://github.com/jamiepine/voicebox	jamiepine/voicebox	8dc2a5bfe0f783edd53f8a346a22dcad9c1fb793	8dc2a5bfe0f783edd53f8a346a22dcad9c1fb793	match	RESOLVED	
+34	debpalash__VoiceStudio	https://github.com/debpalash/VoiceStudio	debpalash/voicestudio	d9061408c20406dfb1b1cbb80450549533c70b0a	d9061408c20406dfb1b1cbb80450549533c70b0a	match	RESOLVED	
+35	louiseliu__hyperFrames-video-shotcraft	https://github.com/louiseliu/hyperFrames-video-shotcraft	louiseliu/hyperframes-video-shotcraft	1df77f1ab080323558f70a5fb880fad0f88f87fc	1df77f1ab080323558f70a5fb880fad0f88f87fc	match	RESOLVED	
+41	Comfy-Org__ComfyUI	https://github.com/Comfy-Org/ComfyUI	comfy-org/comfyui	a2103ae69d98d8ef94c150f5a472b89775eed929	a2103ae69d98d8ef94c150f5a472b89775eed929	match	RESOLVED	
+42	viettranx__3dviz-pro-max	https://github.com/viettranx/3dviz-pro-max	viettranx/3dviz-pro-max	d077e0e68915c25be8e71d74684d3144fd1c2aca	d077e0e68915c25be8e71d74684d3144fd1c2aca	match	RESOLVED	
+43	majidmanzarpour__threejs-game-skills	https://github.com/majidmanzarpour/threejs-game-skills	majidmanzarpour/threejs-game-skills	8286774b22a2566bf894dbc825825c16921866af	8286774b22a2566bf894dbc825825c16921866af	match	RESOLVED	
+45	tradermonty__claude-trading-skills	https://github.com/tradermonty/claude-trading-skills	tradermonty/claude-trading-skills	5de030b068d175d6ed936e8ca1d31325d4820196	5de030b068d175d6ed936e8ca1d31325d4820196	match	RESOLVED	
+46	HKUDS__Vibe-Trading	https://github.com/HKUDS/Vibe-Trading	hkuds/vibe-trading	2134f408b1cd715c74fa8c5021f4402d50b00ea8	2134f408b1cd715c74fa8c5021f4402d50b00ea8	match	RESOLVED	
+47	microsoft__qlib	https://github.com/microsoft/qlib	microsoft/qlib	54355232463878d2eebb91fe0ee5fa7fa1f5976c	54355232463878d2eebb91fe0ee5fa7fa1f5976c	match	RESOLVED	
+48	TauricResearch__TradingAgents	https://github.com/TauricResearch/TradingAgents	tauricresearch/tradingagents	121265d18d467ac717f7af99cb0d669c15d2e73c	121265d18d467ac717f7af99cb0d669c15d2e73c	match	RESOLVED	
+49	AI4Finance-Foundation__FinGPT	https://github.com/AI4Finance-Foundation/FinGPT	ai4finance-foundation/fingpt	464916bdf91afaaecb5a504aee1b2a66bc444653	464916bdf91afaaecb5a504aee1b2a66bc444653	match	RESOLVED	
+50	neosun100__MuMuAINovel	https://github.com/neosun100/MuMuAINovel	neosun100/mumuainovel	9a9f275993e143d979f8495b35a8d06ed877b3a3	9a9f275993e143d979f8495b35a8d06ed877b3a3	match	RESOLVED	
+51	yogsec__Hacking-Tools	https://github.com/yogsec/Hacking-Tools	yogsec/hacking-tools	eac2233fc86b10fe35947df11cd8e2761381b735	eac2233fc86b10fe35947df11cd8e2761381b735	match	RESOLVED	
+32	Bujiazi__MotionClone	https://github.com/Bujiazi/MotionClone	bujiazi/motionclone	8b3d937f005a90c2950c2ec96332fa5c34190c70	8b3d937f005a90c2950c2ec96332fa5c34190c70	match	RESOLVED	Alias LPengYang/MotionClone listed in alias row
+30	heygen-com__hyperframes	https://github.com/heygen-com/hyperframes	heygen-com/hyperframes	c7cb3eefd482dbdb971f24af4e4e659c2d540835	c7cb3eefd482dbdb971f24af4e4e659c2d540835	match	RESOLVED	
+36	greensock__gsap-skills	https://github.com/greensock/gsap-skills	greensock/gsap-skills	aed9cfd3277740755f6bfc1155c7aa645403b760	aed9cfd3277740755f6bfc1155c7aa645403b760	match	RESOLVED	
+37	Tejashmakwana__motionmaxxing	https://github.com/Tejashmakwana/motionmaxxing	tejashmakwana/motionmaxxing	8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c	8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c	match	RESOLVED	
+38	ahujasid__blender-mcp	https://github.com/ahujasid/blender-mcp	ahujasid/blender-mcp	a5a8acf2c6ae44a73670e0caf34663f16456d645	a5a8acf2c6ae44a73670e0caf34663f16456d645	match	RESOLVED	
+39a	EL4CTEO__blender-skills	https://github.com/EL4CTEO/blender-skills	el4cteo/blender-skills	1a1cc6c49312f9f370aae86f52b7b907f29c94f6	1a1cc6c49312f9f370aae86f52b7b907f29c94f6	match	REPO RESOLVED; CANDIDATE UNRESOLVED	Item 39 pair; canonical choice BLOCKED (EL4CTEO)
+39b	arjun988__blender-skills	https://github.com/arjun988/blender-skills	arjun988/blender-skills	904f095d8f36a6e72adaebb08d07f884a074743d	904f095d8f36a6e72adaebb08d07f884a074743d	match	REPO RESOLVED; CANDIDATE UNRESOLVED	Item 39 pair; canonical choice BLOCKED (arjun988)
+40	achimala__dream-loop	https://github.com/achimala/dream-loop	achimala/dream-loop	9bddb901f7d071cfefdd21e264267c757177a9df	9bddb901f7d071cfefdd21e264267c757177a9df	match	RESOLVED	
+44	wheresryan22__anatomy	https://github.com/wheresryan22/anatomy	wheresryan22/anatomy	1482e8469b0a9e0d8cc18ea2740a01423d29ae80	1482e8469b0a9e0d8cc18ea2740a01423d29ae80	match	RESOLVED	
+32-alias	(not cloned)	https://github.com/LPengYang/MotionClone	lpengyang/motionclone	8b3d937f005a90c2950c2ec96332fa5c34190c70	n/a	same HEAD prefix as item 32 (only full hash found in audit output)	ALIAS (not counted separately)	Register item 32; deduplicated

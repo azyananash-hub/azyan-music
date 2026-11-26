@@ -1,0 +1,57 @@
+# SELECTIVE-INTEGRATION-PROPOSAL — ZY v0.8 Intelligence Audit
+
+Status: PROPOSAL ONLY. No implementation, no installation, no file in the library has been changed by this package. Keputusan supervisor 2026-11-26: P01–P17 NOT AUTHORIZED.
+
+STOP FOR OWNER APPROVAL BEFORE IMPLEMENTATION. Approval is requested per item. Items may be approved, changed or declined independently.
+
+Rules for every item:
+- Content adaptations are copied as text with attribution and the upstream commit recorded in `ADAPTATION.md` or `SOURCE.md`.
+- No item installs an external program. No item adds a hook, an MCP server, or a network call.
+- Rp0 for the adopted form. Paid APIs and external generation services are excluded.
+- Rollback for every item: delete the new folder or restore the modified file from git (`git revert`), rebuild the registry (`python scripts/build_registry.py`), re-run `python scripts/validate_library.py` and the unit tests. No history is rewritten, no force push.
+
+## 1. Proposed items
+
+| ID | Source (repo @ commit) | Selected component (only this) | Files to create or modify (ZY library paths) | Dependencies and install commands | Security, cost, hardware | Existing overlap | Benchmark (see BENCHMARK doc) | Rollback |
+|---|---|---|---|---|---|---|---|---|
+| P01 Design-quality review (K7, with K1) | pbakaus/impeccable @9e460a87ef338ee9d12c7beed8fedc597a5af5f7 (Apache-2.0, NOTICE.md); nutlope/hallmark @04977e15f3dfd6ee4b74c887dac3eb52665d6c92 (MIT) | Critique and audit rules (Impeccable); Floor and Reflex gate tiers (Hallmark), rewritten as a checklist | CREATE `skills/software-development/design-quality-review/` (SKILL.md, references/checklist.md, ADAPTATION.md, SOURCE.md, NOTICE); CREATE `tests/skills/test_design_quality_review.py` | None (Markdown and stdlib tests). No npm, no npx | No network, no hooks, no credentials, no payloads. Rp0. No hardware | frontend-design (IMPORTED); web-artifacts-builder; quality-gate (video only). Overlap diff required before writing | B-UI-1 | Delete folder; rebuild registry |
+| P02 DESIGN.md token skill (K1), optional UI/UX Pro Max data | google-labs-code/stitch-skills @75f4696 (taste-design rules, design-md schema; Apache-2.0, NOTICE to check); nextlevelbuilder/ui-ux-pro-max-skill @bde080f (data source; MIT; font licences per file) | Mode A only (source code input). Taste rules and schema. UI/UX Pro Max CSV data only if separately approved | CREATE `skills/software-development/design-tokens-md/` (SKILL.md, ADAPTATION.md, SOURCE.md); MODIFY `references/skill-constraints.json` (palette constraints for neon profiles, with overrides for EarthStop and Silent Neon Tokyo, as cinematic-camera) | None in mode A. No Node, no Puppeteer, no Stitch, no StitchMCP, no `stitch*:*` permissions | No network in mode A. Rp0. Mode B (live URL) excluded until K5 allowlist exists | taste-design vs frontend-design (IMPORTED); theme-factory | B-UI-2 | Delete folder; revert constraints file |
+| P03 Web-platform guidance subset (26) | GoogleChrome/modern-web-guidance-src @92686ac7d6ebd6c794b575335a7ff4a3e7f66ecb (Apache-2.0) | 3–5 guidance sections: layout, accessibility, reduced motion | CREATE `skills/software-development/web-platform-guidance-subset/` (SKILL.md, ADAPTATION.md, SOURCE.md, LICENSE, NOTICE) | None. Do not run `npx modern-web-guidance@latest`; pin the npm version only after a registry check and approval | No cron, no postinstall, no network. Rp0. No hardware | accessible-animation; micro-interaction; svg-animation (PARTIAL) | B-UI-3 | Delete folder |
+| P04 Engineering diagrams (27) | cathrynlavery/diagram-design @b228c5d77794a84150fca41b22940bb316b1398d (MIT) | SVG and HTML output rules; four diagram types (architecture, block, sequence, quadrant) | CREATE `skills/engineering/engineering-diagrams/` (SKILL.md, references/types.md, templates/*.svg, ADAPTATION.md) | None. XML well-formedness checked with stdlib | Remove the Google Fonts link and URL onboarding. No external resources in output. Rp0. No hardware | Existing engineering skills do not draw diagrams (UNIQUE GAP C20) | B-ENG-1 | Delete folder |
+| P05 GSAP motion guidance (36) | greensock/gsap-skills @aed9cfd3277740755f6bfc1155c7aa645403b760 (MIT) | Timeline, easing and choreography guidance for HTML motion | CREATE `skills/motion-graphics/gsap-motion-guidance/` (SKILL.md, references, ADAPTATION.md) | None. GSAP library is not part of ZY | No network. Rp0. No hardware | motion-graphics; svg-animation; micro-interaction (PARTIAL; scope limited to GSAP) | B-CRE-2 | Delete folder |
+| P06 Cinematic shot recipe cards (35) | louiseliu/hyperFrames-video-shotcraft @1df77f1ab080323558f70a5fb880fad0f88f87fc (Apache-2.0) | Recipe cards as data and cinematography rules. Not the HyperFrames compositions | CREATE `skills/creative-production/cinematic-shot-recipes/` (SKILL.md, data/recipes.json, ADAPTATION.md) | None | Data only. Rp0. No hardware. Relation to environment plugin unverified | cinematic-storyboarding (CUSTOM); cinematic-camera (IMPORTED) (PARTIAL) | B-CRE-2 | Delete folder |
+| P07 Three.js game patterns (43) | majidmanzarpour/threejs-game-skills @8286774b22a2566bf894dbc825825c16921866af (MIT) | Character control, camera follow, mobile performance guidance (text) | CREATE `skills/motion-graphics/threejs-game-patterns/` (SKILL.md, ADAPTATION.md) | None. Scaffold and helper scripts excluded | Drop Tripo3D and ElevenLabs helpers. Rp0. No hardware | threejs-* (14 IMPORTED) (PARTIAL; scope must not repeat threejs-performance) | B-GAM-1 | Delete folder |
+| P08 Trade review methodology, paper-only (45) | tradermonty/claude-trading-skills @5de030b068d175d6ed936e8ca1d31325d4820196 (MIT) | Risk management, trade plan and review process text only | CREATE `skills/quantitative-trading/trade-review-methodology/` (SKILL.md, ADAPTATION.md, disclaimers) | None | Exclude FMP API paths, launchd jobs, broker data, any script. No win-rate claims. Rp0 | trade-statistics (VERIFIED); position-size-calculator (VERIFIED) (PARTIAL) | B-TRD-1 | Delete folder |
+| P09 Defensive app-security review (K2; BugHunter CB-02, CB-03, CB-13) | elementalsouls/Claude-BugHunter @6a2153d (MIT code; CC BY 4.0 content) | Static checklists for authorisation, authentication, API. Mitigation steps. Reporting structure | CREATE `skills/software-development/defensive-app-security-review/` (SKILL.md, references/checklists.md, ADAPTATION.md with CC BY 4.0 attribution) | None | No payloads, no exploitation steps, no external targets. RLS excluded (Supabase skills). Rp0 | supabase and supabase-postgres-best-practices (RLS); secret-leak-scan (PARTIAL) | B-SEC-1 | Delete folder |
+| P10 Artefact leak check extension (K3; CB-04) | Concept from elementalsouls/Claude-BugHunter @6a2153d; implementation written by ZY (CUSTOM) | Patterns: source maps, exposed `.git`, `.env` inside build output | MODIFY `skills/software-development/secret-leak-scan/scripts/` (VERIFIED skill); MODIFY its tests | None | Local file scan only. Rp0. No hardware | secret-leak-scan (extension, not a new skill) | B-SEC-2 | Revert the two files via git |
+| P11 Markdown loss guard (K4; FC-06, FC-07) | Measurement from firecrawl audit (no code reused) | Loss detection and fallback for JS-rendered pages | MODIFY `skills/office-documents/markitdown-converter/` scripts (VERIFIED skill); MODIFY tests | None | Local only. Rp0 | markitdown-converter (extension) | B-DOC-1 | Revert via git |
+| P12 Project memory standard (C04) | None (ZY-authored design) | Local, bounded, explicit-write memory format | CREATE `skills/governance/project-memory-standard/` (SKILL.md in the 13-section CUSTOM format, templates/memory-entry.md); CREATE tests | None | No cloud, no hooks, no embeddings in version 1. Size cap per entry. Rp0. No hardware | Environment memory is not a ZY skill; no overlap | B-MEM-1 | Delete folder |
+| P13 Approval-gate procedure (C02) | None (ZY-authored) | Decision log, approval gates, STOP points | CREATE `skills/governance/approval-gate/` (SKILL.md, CUSTOM format) | None | No tool. Rp0 | prd-engineering and technology-selection (governance) (PARTIAL) | B-GOV-1 | Delete folder |
+| P14 Walk-forward and out-of-sample validation (C23) | Methods from 46 Vibe-Trading and 47 Qlib (knowledge only; no code copied) | Procedure and small validator for strategy-backtesting | MODIFY `skills/quantitative-trading/strategy-backtesting/scripts/` (VERIFIED skill) OR CREATE `skills/quantitative-trading/walk-forward-validation/`; CREATE tests | None (stdlib) | Research and paper only. No broker. Rp0. No hardware | strategy-backtesting (VERIFIED); portfolio-metrics-quantstats (IMPORTED) (PARTIAL) | B-TRD-2 | Delete folder or revert via git |
+| P15 Browser-debugging knowledge (17) | ChromeDevTools/chrome-devtools-mcp @8c43179464d368a6a3c7f8ce2ee024e1e736b795 (Apache-2.0; NOTICE to check) | Knowledge text on accessibility audits and performance traces. No MCP | MODIFY `skills/software-development/webapp-testing/references/` (VERIFIED skill) | None. No MCP, no npx | No live-browser profile use. Rp0 | webapp-testing (PARTIAL) | B-WEB-1 | Revert via git |
+| P16 FFmpeg upstream review (31) | kajisho5/ffmpeg-skill @31b47c263348c9f2d4b5b673f576a7d9a5787f6c (MIT) | Diff review only. No import | None until a re-import is approved. Review note in research/ | None | Rp0 | ffmpeg-skill (IMPORTED at 73436cb) | Diff review | No change made |
+| P17 Documentation sync (K8) | This package and the registry | Counts from validator and tests; source-of-truth rule | MODIFY `README.md`, `research/PROGRESS.md` (header only), `references/sources-and-licenses.md` (status column) | None. Counts obtained by running validator and tests | No external data. Rp0 | Documentation only | Consistency check (B-DOC-2) | Revert via git |
+
+Not proposed for implementation in this round:
+
+| ID | Candidate | Reason | Condition for re-review |
+|---|---|---|---|
+| D1 | 13 Ollama (DOMAIN ONLY) | Owner approval and hardware test required; install must use a verified binary | Owner approval; owner-machine test with a small model |
+| D2 | 33 Voicebox (DEFER) | Language and hardware benchmark not run; consent policy not written | Benchmark B-VOI-1 on owner machine; Indonesian evidence |
+| D3 | 30 HyperFrames (DEFER) | Telemetry on by default | Telemetry removal verified and tested |
+| D4 | 02 Graphify (DEFER) | Package identity; Dart support; local-path network behaviour | Verification of all three |
+| D5 | 41 ComfyUI, 42 3Dviz (DEFER) | Hardware (GTX 1650 4 GB); telemetry path; asset licences | Hardware and licence checks |
+| D6 | 28 App Store Compliance (KNOWLEDGE ONLY) | Canonical legal text external and unreviewed | Canonical text and NOTICE reviewed; then re-author checklist |
+| D7 | 09, 14, 46, 48, 06 (REJECT) | Prohibited or unacceptable risk | Not reconsidered without a new owner policy |
+
+## 2. Approval request (exact)
+
+Approve, change or decline each item by ID:
+
+1. P01, P02, P03, P04, P05, P06, P07, P08, P09 (adaptations; each creates a new folder and must carry ADAPTATION.md).
+2. P10, P11, P14, P15 (modifications to existing VERIFIED skills; each needs a diff shown before the change).
+3. P12, P13 (new governance skills, CUSTOM format).
+4. P16 (review only), P17 (documentation sync; numbers from validator and tests only).
+5. Owner decisions required first (see INTELLIGENCE-ARCHITECTURE-V0.8.md, section 6): profiles for the six GAP rows, the Sebelum Sepi Menjadi Rumah brief, and the Blender Skills repository (item 39).
+
+No item will be implemented until the owner approves it by ID.
