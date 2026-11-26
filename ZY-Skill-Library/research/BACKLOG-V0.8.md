@@ -431,3 +431,37 @@ Checkpoint ini memuat BACKLOG-V0.8.md dan `research/v0.8-intelligence/` (delapan
 - **Koreksi:** "four GAP" menjadi "six" di `PROJECT-DOMAIN-MATRIX.md`, `INTELLIGENCE-ARCHITECTURE-V0.8.md` bagian 6, dan `SELECTIVE-INTEGRATION-PROPOSAL.md` bagian 5. "39b (REJECT)" di matriks domain menjadi "39 (BLOCKED)" sesuai register.
 - **Nama:** nama kontributor non-pemilik pada I.3 diganti dengan "kontributor publik". Nama pembuat dan pemegang hak cipta repository publik dipertahankan karena diperlukan untuk verifikasi identitas dan lisensi.
 - **Biaya: Rp0.** Tidak ada layanan berbayar, API berbayar, atau unduhan model.
+
+---
+
+# L. Pembaruan pasca-checkpoint (2026-11-26; belum di-commit)
+
+Bagian ini mencatat pekerjaan setelah checkpoint riset `7c411de`. Tidak ada implementasi, instalasi, atau perubahan kode. Setiap item menunggu persetujuan.
+
+## L.1 Kandidat tambahan (belum diaudit; deduplikasi terhadap register dilakukan lebih dulu)
+
+| Kandidat | URL | Hasil deduplikasi | Status |
+|---|---|---|---|
+| Meetily | https://github.com/Zackriya-Solutions/meetily | Tidak ada di register historis maupun audit v0.8 | BACKLOG; belum diaudit |
+| REA Video | https://github.com/JuneYaooo/rea-video | Nama mirip dengan item 09 (morluto/rea, "Reverse Engineer Anything"), tetapi repositori berbeda. Dicatat terpisah agar tidak tertukar | BACKLOG; belum diaudit |
+| Kiri | https://github.com/libracoder/kiri | Tidak ada di register | BACKLOG; belum diaudit |
+| MotionClone (referensi identitas tambahan) | https://motionclone.lol | Bukan kandidat baru. Referensi identitas untuk item 32 (Bujiazi/MotionClone; HEAD identik dengan LPengYang/MotionClone) | Referensi; isi situs belum diverifikasi |
+
+## L.2 Hasil pembacaan mendalam
+
+Lihat `research/v0.8-intelligence/evidence/deep-audit-2026-11-26.md`. Kelas register tidak berubah, kecuali P16 (item 31) yang ditutup.
+
+## L.3 Keputusan turunan
+
+- **BL-1 (Blender 39a, selektif):** BLOCKED sampai pemilik mengonfirmasi repositori dan memilih. Rekomendasi: 39a, content-only, maksimal tiga skill. 39b tidak direkomendasikan karena runtime MCP-nya. Lihat `BLENDER-SKILLS-COMPARISON.md`.
+- **Memori proyek lokal (P12):** desain disetujui pemilik. Implementasi menunggu persetujuan. Lihat `PROJECT-MEMORY-DESIGN.md`.
+- **Profil A–D:** tidak ada profil baru yang diusulkan. Skema profil hanya berisi kategori dan override. Lihat `DOMAIN-PROFILE-PROPOSALS.md`.
+- **Ollama:** DEFER. Tidak dipasang dan tidak diunduh. Mesin pemilik belum terhubung untuk pemeriksaan. Lihat `OLLAMA-ASSESSMENT.md`.
+- **OpenRoots (item 28):** UNVERIFIED. Teks kanonik tidak dapat diambil karena DNS `openroots.org` diblokir kebijakan jaringan lingkungan.
+- **Kapabilitas kreatif:** celah nyata: bahasa Indonesia untuk TTS (belum ada bukti engine), pengucapan Jepang (perlu benchmark), karakter konsisten, pipeline aset 3D (menunggu BL-1), dan QA loudness (V5). Tidak ada renderer kedua yang diusulkan.
+
+## L.4 Usulan dan status
+
+- Batch-1 = P12 + P04 + P17 (direkomendasikan). Status: NOT AUTHORIZED sampai persetujuan per ID. Lihat `IMPLEMENTATION-APPROVAL-PACKAGE.md`.
+- Pembersihan cache riset `/home/user/ext/research-cache` (sekitar 5,4 GB): diusulkan, belum dijalankan. Lihat bagian 5 paket persetujuan.
+- Commit checkpoint kedua untuk dokumen pasca-checkpoint: menunggu persetujuan.

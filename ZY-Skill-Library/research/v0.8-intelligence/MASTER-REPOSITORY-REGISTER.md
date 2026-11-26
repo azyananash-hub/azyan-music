@@ -18,8 +18,8 @@ Date: 2026-11-25. Repository HEAD before this package: `79cccccb` (research chec
 | Candidates reviewed (static) | 51 of 51 |
 | Canonical identity resolved | 50 of 51 |
 | IDENTITY UNRESOLVED | 1 (item 39, Blender Skills: two exact-name repositories, both audited) |
-| Depth of review | 41 read in depth (LICENSE, README, external hosts, pipe-to-shell lines, hook and MCP configs); 2 with targeted checks (04, 32); 8 triage-only (25, 29, 31, 34, 38, 41, 50, 51) |
-| Decision-basis note | Item 38 rests on triage counts and a search snippet, not a deep read of the repository code. Verify before any use |
+| Depth of review | 49 read in depth (41 before the 2026-11-26 audit, plus 25, 29, 31, 34, 38, 41, 50, 51); 2 with targeted checks (04, 32); 0 triage-only. See section 8 |
+| Decision-basis note | Resolved 2026-11-26: item 38 is verified by code reading (section 8). Before that audit it rested on triage counts only |
 | Identity notes | item 02: PyPI install name `graphifyy` differs from repo name; item 32: `Bujiazi/MotionClone` and `LPengYang/MotionClone` share HEAD `8b3d937f`; item 40: README credits `@anshuc`, LICENSE says "Anshu Chimala" |
 
 ## 3. Historical deduplication
@@ -226,3 +226,27 @@ Kelas runtime mengikuti bagian 5. Item 39 dipecah menjadi 39a dan 39b. Status TE
 | 49 | FinGPT | MIT | DEFER | DIIZINKAN | Model berat dan GPU |
 | 50 | MuMuAINovel | GPL-3.0 | KNOWLEDGE ONLY | BATAS | Konsep memori naratif ditulis ulang sendiri |
 | 51 | Hacking-Tools | MIT | REJECT | TIDAK DIUSULKAN | Katalog ofensif; tidak ada nilai defensif yang dibutuhkan |
+
+## 8. Pembaruan audit mendalam (2026-11-26; pasca-checkpoint, belum di-commit)
+
+Delapan kandidat yang sebelumnya hanya triage (25, 29, 31, 34, 38, 41, 50, 51) kini dibaca mendalam. Bukti ada di `evidence/deep-audit-2026-11-26.md` (commit, path, dan baris). Kelas tidak berubah kecuali item 31, yang ditutup.
+
+| ID | Kelas sebelumnya | Kelas sekarang | Perubahan | Bukti |
+|---|---|---|---|---|
+| 02 | DEFER | DEFER | Dart terbukti di kode. Identitas dalam repositori konsisten (`graphifyy`). Jaringan pada jalur lokal dan kepemilikan PyPI belum terbukti | Deep audit bagian 2 |
+| 05 | DEFER | DEFER | Egress hanya ke endpoint yang dikonfigurasi. Telemetri default OFF. Dart tidak terbukti | Deep audit bagian 2 |
+| 25 | DOMAIN ONLY | DOMAIN ONLY | Tidak ada skrip lifecycle atau hook. Tidak berubah | Deep audit bagian 1 |
+| 28 | KNOWLEDGE ONLY | KNOWLEDGE ONLY (TERTUNDA) | Teks kanonik OpenRoots tidak dapat diambil karena DNS diblokir. Adaptasi tertunda | Deep audit bagian 2 |
+| 29 | REJECT | REJECT | API HeyGen berbayar. AGPL. Pengetahuan hanya BATAS | Deep audit bagian 1 |
+| 30 | DEFER | DEFER | Telemetri aktif secara default (opt-out), menurut dokumentasi repositori | Deep audit bagian 2 |
+| 31 | MERGE (tinjau pembaruan) | MERGE (DITUTUP) | Salinan impor identik dengan upstream. Tidak perlu impor ulang | Deep audit bagian 1 |
+| 33 | DEFER | DEFER | Jepang terbukti di kode. Indonesia tidak terbukti | Deep audit bagian 2 |
+| 34 | REJECT | REJECT | Telemetri default OFF. Jepang terbukti di kode. Indonesia tidak terbukti | Deep audit bagian 1 |
+| 38 | REJECT | REJECT | Dasar terbukti di kode: `exec` tanpa batas secara default; installer `@latest`. Default telemetri belum ditentukan | Deep audit bagian 1 |
+| 39 | BLOCKED | BLOCKED | Perbandingan selesai. Rekomendasi: 39a selektif. Kanonik menunggu pemilik | `BLENDER-SKILLS-COMPARISON.md` |
+| 41 | DEFER | DEFER | Klaim vendor 4 GB VRAM dan 8 GB RAM belum diuji | Deep audit bagian 1 |
+| 45 | ADAPT (metodologi) | ADAPT (metodologi) | Tidak ditemukan pengiriman order pada pola yang diperiksa. Referensi MCP Alpaca hanya dokumen | Deep audit bagian 2 |
+| 50 | KNOWLEDGE ONLY | KNOWLEDGE ONLY | `mcp_config.json` ada (runtime REJECT). Pola literal kredensial tidak ditemukan | Deep audit bagian 1 |
+| 51 | REJECT | REJECT | Katalog ofensif; 13 berkas tanpa skrip | Deep audit bagian 1 |
+
+Cakupan setelah pembaruan: 49 dibaca mendalam (41 sebelumnya ditambah 8), 2 pemeriksaan terarah (04, 32), dan 0 hanya triage. Jumlah kandidat tetap 51.

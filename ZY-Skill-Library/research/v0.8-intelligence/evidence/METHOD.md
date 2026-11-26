@@ -67,7 +67,7 @@ Batas penafsiran:
 
 - Setiap bukti terkait satu repository, satu hash commit penuh (`identity-ls-remote.tsv`), dan satu path relatif di dalam repository.
 - Klon dapat dibuat ulang dari URL di `identity-ls-remote.tsv` lalu diperiksa pada hash yang sama. Isi pohon git ditentukan oleh hash commit.
-- Skrip yang dipakai berada di luar repository dan tidak disalin ke dalam repository. SHA-256:
+- Skrip yang dipakai disalin ke `evidence/tools/` untuk audit ulang. Library tidak menjalankan skrip ini. SHA-256:
   - `triage.sh`: 5b41ec0dd9f877d3af72bd108ce96909cf361c981ca4ff71c9824ad5a9a713f2
   - `deep.sh`: bce573c56b30f1e4f0d0f358de63e764bd1de4b381b89d87263cb01b3ba4b673
 - Perubahan kolom: `readme_head` (kutipan README 140 karakter) dihapus. Kolom itu berisi teks pihak ketiga dan tidak dipakai untuk keputusan. Jumlah kolom turun dari 26 menjadi 25; jumlah baris tetap 52.
